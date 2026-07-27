@@ -1882,6 +1882,10 @@ function submitSearch(){
   });
   var up=document.getElementById("up");
   window.addEventListener("scroll",function(){ up.classList.toggle("on",window.scrollY>520); },{passive:true});
+  window.addEventListener("hashchange",function(){
+    var hh=(location.hash||"").replace("#","");
+    if(hh!==CUR && TABS.some(function(x){return x.id===hh})) go(hh);
+  });
 })();
 </script>
 </body>
