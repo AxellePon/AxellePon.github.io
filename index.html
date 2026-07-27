@@ -1653,14 +1653,17 @@ function renderTabs(){
   fitTabs();
 }
 /* garantit une seule ligne : réduit padding puis taille de police, et bascule en icônes seules en dernier recours */
-function fitTabs(){
+var fitT=null;
+function fitTabs(retry){
   var c=document.getElementById("tabs"); if(!c) return;
+  if(c.clientWidth<280){ schedRefit(retry); return; }   // mesure non fiable : on réessaie plus tard
   c.classList.remove("icons-only");
   var pad=12, fs=13.2, guard=0;
   c.style.setProperty("--tabpad",pad+"px");
   c.style.setProperty("--tabfs",fs+"px");
   function over(){
     var tabs=c.querySelectorAll(".tab");
+    if(!tabs.length) return -1;
     var tot=0; tabs.forEach(function(t){ tot+=t.offsetWidth; });
     return tot+(tabs.length-1)*4 - c.clientWidth;
   }
@@ -1671,6 +1674,11 @@ function fitTabs(){
     c.style.setProperty("--tabpad",pad+"px");
     c.style.setProperty("--tabfs",fs+"px");
   }
+  if(over()>0 && !c.classList.contains("icons-only")) schedRefit(retry);  // pas encore bon : on relance
+}
+function schedRefit(retry){
+  retry=(retry||0)+1; if(retry>6) return;
+  clearTimeout(fitT); fitT=setTimeout(function(){ fitTabs(retry); }, 180*retry);
 }
 function renderAll(){
   TABS.forEach(function(x){ document.getElementById("p-"+x.id).innerHTML=RENDER[x.id](); });
