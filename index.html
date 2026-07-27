@@ -1908,7 +1908,11 @@ function submitSearch(){
   var up=document.getElementById("up");
   window.addEventListener("scroll",function(){ up.classList.toggle("on",window.scrollY>520); },{passive:true});
   var rt; window.addEventListener("resize",function(){ clearTimeout(rt); rt=setTimeout(fitTabs,120); });
+  window.addEventListener("load",fitTabs);
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitTabs);
+  requestAnimationFrame(function(){ requestAnimationFrame(fitTabs); });
+  setTimeout(fitTabs,300);
+  if(window.ResizeObserver){ new ResizeObserver(function(){ fitTabs(); }).observe(document.getElementById("tabs")); }
   window.addEventListener("hashchange",function(){
     var hh=(location.hash||"").replace("#","");
     if(hh!==CUR && TABS.some(function(x){return x.id===hh})) go(hh);
