@@ -104,8 +104,8 @@ nav.tabs{position:sticky;top:68px;z-index:50;background:color-mix(in srgb,var(--
 .tab[aria-selected="true"]{background:var(--ink);color:var(--bg)}
 .tab svg{width:var(--tabic,15px);height:var(--tabic,15px);opacity:.85;flex-shrink:0}
 /* repli automatique en icônes seules quand les libellés ne tiennent plus */
+.tabs-in.icons-only .tab{font-size:0}
 .tabs-in.icons-only .tab svg{width:18px;height:18px}
-.tabs-in.icons-only .tab .tl{display:none}
 .tabs-in.icons-only .tab{flex:1;padding:9px 4px}
 
 /* LAYOUT */
@@ -1649,7 +1649,7 @@ var CUR="home", HLTERM="";
 
 function renderTabs(){
   document.getElementById("tabs").innerHTML=TABS.map(function(x){
-    return '<button class="tab" role="tab" id="tab-'+x.id+'" aria-selected="'+(CUR===x.id)+'" title="'+t(x.label).replace(/&amp;/g,"&")+'" aria-label="'+t(x.label).replace(/&amp;/g,"&")+'" onclick="go(\''+x.id+'\')">'+ic(x.icon,15)+'<span class="tl">'+t(x.label)+'</span></button>';
+    return '<button class="tab" role="tab" id="tab-'+x.id+'" aria-selected="'+(CUR===x.id)+'" title="'+t(x.label).replace(/&amp;/g,"&")+'" aria-label="'+t(x.label).replace(/&amp;/g,"&")+'" onclick="go(\''+x.id+'\')">'+ic(x.icon,15)+t(x.label)+'</button>';
   }).join("");
   fitTabs();
 }
