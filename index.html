@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Axelle Poncet — Cheffe de projet Data &amp; IA</title>
+<title>Axelle Poncet · Cheffe de projet Data &amp; IA</title>
 <meta name="description" content="Portfolio d'Axelle Poncet, cheffe de projet Data & IA. CRO, analytics et IA appliquée. Réalisations chiffrées, prix et projets.">
 <meta name="author" content="Axelle Poncet">
-<meta property="og:title" content="Axelle Poncet — Cheffe de projet Data & IA">
+<meta property="og:title" content="Axelle Poncet · Cheffe de projet Data & IA">
 <meta property="og:description" content="Là où la donnée devient décision.">
 <meta property="og:image" content="assets/photo-axelle.jpg">
 <meta property="og:type" content="profile">
@@ -147,6 +147,15 @@ h2.sec{font-size:clamp(24px,3.4vw,32px);margin-bottom:10px}
 .hero-meta a:hover{color:var(--accent)}
 
 /* STATS / PILLARS */
+.phare{display:flex;align-items:flex-start;gap:22px;width:100%;text-align:left;padding:26px 30px;border-radius:var(--radius);color:var(--ink);background:linear-gradient(120deg,var(--accent-soft),transparent 72%);border:1px solid color-mix(in srgb,var(--accent) 34%,transparent);transition:.2s;box-shadow:var(--shadow);cursor:pointer;font-family:inherit}
+.phare:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--accent)}
+.phare .ic{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent);flex-shrink:0}
+.phare .tx{flex:1;min-width:0}
+.phare .tag{display:inline-block;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;font-weight:750;color:var(--accent);margin-bottom:9px}
+.phare h3{font-size:19px;margin-bottom:9px;line-height:1.3}
+.phare p{font-size:14.2px;color:var(--ink-2);margin:0 0 12px}
+.phare .cta{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:650;color:var(--accent)}
+@media(max-width:640px){.phare{flex-direction:column;gap:14px;padding:22px}}
 .stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;position:relative;overflow:hidden;transition:.2s;box-shadow:var(--shadow)}
 .stat:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
 .stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--accent),var(--accent-2))}
@@ -430,7 +439,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--ink-3);font-s
 </button>
 <script>
 /* ==========================================================================
-   PORTFOLIO — AXELLE PONCET · textes bilingues : ["fr","en"]
+   PORTFOLIO · AXELLE PONCET · textes bilingues : ["fr","en"]
    ========================================================================== */
 var L = 0;
 var T = {
@@ -461,11 +470,11 @@ var TABS = [
 var ME = {
   name:"Axelle Poncet",
   role:["Cheffe de projet Data & IA","Data & AI Project Manager"],
-  avail:["Disponible à partir de novembre 2026 · Paris / Île-de-France","Available from November 2026 · Paris, France"],
+  avail:["Disponible immédiatement · Paris / Île-de-France","Available immediately · Paris, France"],
   photo:"assets/photo-axelle.jpg",
   pitch:[
-    "Actuellement cheffe de projet digital chez Groupama, au sein de l'équipe CRO &amp; Analytics : je pilote le cycle de vie complet des A/B tests sur le site, l'espace client et l'application mobile, j'analyse les parcours utilisateurs sur Adobe Analytics et Contentsquare, et je transforme ces mesures en décisions produit arbitrées avec les équipes. Formée à la gestion de projet et à l'IA appliquée.",
-    "Currently a digital project manager at Groupama, within the CRO &amp; Analytics team: I run the full A/B testing lifecycle across the website, the customer area and the mobile app, analyse user journeys in Adobe Analytics and Contentsquare, and turn those measurements into product decisions agreed with the teams. Trained in project management and applied AI."
+    "Pendant un an, cheffe de projet digital chez Groupama au sein de l'équipe CRO &amp; Analytics : pilotage des A/B tests sur le site, l'espace client et l'application mobile, analyse des parcours utilisateurs sur Adobe Analytics et Contentsquare, et conception de l'atelier qui a initié tout le pôle digital à l'IA générative. Formée à la gestion de projet et à l'IA appliquée.",
+    "For one year, digital project manager at Groupama within the CRO &amp; Analytics team: running A/B tests across the website, the customer area and the mobile app, analysing user journeys in Adobe Analytics and Contentsquare, and designing the workshop that introduced the whole digital division to generative AI. Trained in project management and applied AI."
   ],
   email:"axelle-poncet@hotmail.com",
   phone:"+33 6 43 53 98 26",
@@ -476,6 +485,12 @@ var ME = {
 
 /* ---------- ACCUEIL ---------- */
 var HOME = {
+  phare:{
+    tag:["Réalisation la plus récente","Most recent work"],
+    h:["J'ai conçu et animé l'atelier qui a initié tout le pôle digital à l'IA générative","I designed and ran the workshop that introduced the whole digital division to generative AI"],
+    p:["Une heure et demie, cinquante-six slides, toutes les équipes et les managers réunis. De l'enquête terrain auprès de chaque équipe jusqu'aux trente-neuf pages de fiches actions individuelles laissées à l'organisation. Le tout construit seule, de A à Z.","Ninety minutes, fifty-six slides, every team and manager in the room. From a field survey of each team to the thirty-nine pages of individual action sheets left with the organisation. All of it built single-handedly, end to end."],
+    cta:["Voir le détail de la mission","See the full assignment"]
+  },
   stats:[
     {v:"Bac+6", u:["Mastère Spécialisé®","Advanced Master's"], k:["Label Conférence des Grandes Écoles, titre RNCP niveau 7, 75 crédits ECTS","CGE label, RNCP level 7 qualification, 75 ECTS credits"]},
     {v:"4 ans", u:["en alternance","of apprenticeship"], k:["En entreprise sans interruption depuis 2021, dans trois organisations","In-company without interruption since 2021, across three organisations"]},
@@ -505,9 +520,9 @@ var CV = {
     {id:"asso",n:["Projets associatifs","Volunteering"], ic:"M12 21s-7-4.6-9.3-9A5.3 5.3 0 0112 5.8 5.3 5.3 0 0121.3 12c-2.3 4.4-9.3 9-9.3 9z"}
   ],
   xp:[
-    {open:true, date:["oct. 2025 – nov. 2026","Oct 2025 – Nov 2026"],
+    {open:true, date:["oct. 2025 - oct. 2026","Oct 2025 - Oct 2026"],
      h:["Cheffe de projet digital","Digital Project Manager"],
-     org:["Groupama Assurances Mutuelles — Paris","Groupama Assurances Mutuelles — Paris"],
+     org:["Groupama Assurances Mutuelles, Paris","Groupama Assurances Mutuelles, Paris"],
      tag:["Alternance · Équipe CRO &amp; Analytics, Pôle Digital Omnicanal","Apprenticeship · CRO &amp; Analytics team, Omnichannel Digital Division"],
      li:[
        ["<b>Pilotage du cycle de vie complet des A/B tests</b> sur Groupama.fr, l'espace client et l'application mobile : instruction, recette, mise en ligne, suivi, arbitrage.","<b>End-to-end ownership of the A/B testing lifecycle</b> on Groupama.fr, the customer area and the mobile app: spec, QA, go-live, monitoring, decision."],
@@ -518,9 +533,9 @@ var CV = {
      ],
      tags:["Adobe Analytics","Adobe Target","Contentsquare","Skeepers","Jira","AgilePM","IA générative"]},
 
-    {open:true, date:["nov. 2022 – oct. 2024","Nov 2022 – Oct 2024"],
+    {open:true, date:["nov. 2022 - oct. 2024","Nov 2022 - Oct 2024"],
      h:["Conseillère marketing &amp; commerciale","Marketing &amp; Sales Consultant"],
-     org:["Green Seed France — Paris","Green Seed France — Paris"],
+     org:["Green Seed France, Paris","Green Seed France, Paris"],
      tag:["Alternance · Conseil en marketing et ventes, agroalimentaire international","Apprenticeship · Marketing &amp; sales consultancy, international food &amp; beverage"],
      li:[
        ["<b>Pilotage de projets clients de bout en bout</b> pour des marques britanniques entrant sur le marché français, dont Dormen Foods et HCC Meat Promotion Wales.","<b>End-to-end client project management</b> for British brands entering the French market, including Dormen Foods and HCC Meat Promotion Wales."],
@@ -530,9 +545,9 @@ var CV = {
      ],
      tags:["Études de marché","Nielsen / Kantar","Reporting KPI","B2B","LinkedIn"]},
 
-    {open:true, date:["mars – déc. 2021","Mar – Dec 2021"],
+    {open:true, date:["mars - déc. 2021","Mar - Dec 2021"],
      h:["Chargée de marketing digital","Digital Marketing Officer"],
-     org:["NJ Création — Paris","NJ Création — Paris"],
+     org:["NJ Création, Paris","NJ Création, Paris"],
      tag:["Alternance · E-commerce et communication","Apprenticeship · E-commerce and communications"],
      li:[
        ["<b>Pilotage du site e-commerce PrestaShop</b> avec les développeurs : correction de bugs, référencement, nouvelles fonctionnalités, optimisation des parcours par l'analyse comportementale.","<b>PrestaShop e-commerce site management</b> with the developers: bug fixing, SEO, new features, journey optimisation through behavioural analysis."],
@@ -541,31 +556,31 @@ var CV = {
      ],
      tags:["PrestaShop","SEO","Google Analytics","Automatisation","InDesign"]},
 
-    {open:false, date:["mars – oct. 2020","Mar – Oct 2020"],
+    {open:false, date:["mars - oct. 2020","Mar - Oct 2020"],
      h:["Employée polyvalente","Retail Assistant"],
-     org:["Carrefour Market (Société Plane) — Châteauroux","Carrefour Market (Société Plane) — Châteauroux"],
+     org:["Carrefour Market (Société Plane), Châteauroux","Carrefour Market (Société Plane), Châteauroux"],
      tag:["CDD de 8 mois, pendant la crise sanitaire","8-month fixed-term contract, during the health crisis"],
      li:[
        ["Accueil et conseil client, commandes spéciales, gestion des stocks et suivi des relations fournisseurs, en pleine période de tension sur les approvisionnements.","Customer service and advice, special orders, stock management and supplier follow-up, at the height of the supply-chain crunch."],
-       ["<b>Ce que j'en retire</b> : la rigueur opérationnelle — une rupture de stock se voit immédiatement et se paie immédiatement ; le sang-froid face à l'afflux ; et la première fois où j'ai utilisé des données de ventes pour <i>anticiper</i> plutôt que pour constater.","<b>What I took from it</b>: operational rigour — a stockout is instantly visible and instantly costly; composure under pressure; and the first time I used sales data to <i>anticipate</i> rather than to observe."]
+       ["<b>Ce que j'en retire</b> : la rigueur opérationnelle : une rupture de stock se voit immédiatement et se paie immédiatement ; le sang-froid face à l'afflux ; et la première fois où j'ai utilisé des données de ventes pour <i>anticiper</i> plutôt que pour constater.","<b>What I took from it</b>: operational rigour: a stockout is instantly visible and instantly costly; composure under pressure; and the first time I used sales data to <i>anticipate</i> rather than to observe."]
      ],
      tags:["Rigueur opérationnelle","Relation client","Gestion des stocks"]},
 
-    {open:false, date:["avr. – juin 2019","Apr – Jun 2019"],
+    {open:false, date:["avr. - juin 2019","Apr - Jun 2019"],
      h:["Assistante RH","HR Assistant"],
      org:["Hôpital de Châteauroux","Châteauroux Hospital"],
      tag:["Stage · Direction des ressources humaines","Internship · HR department"],
      li:[
        ["<b>Fiabilisation d'une base de données d'agents</b> : mise à jour des dossiers via les outils digitaux, détection et correction des incohérences.","<b>Cleansing a staff database</b>: updating records through digital tools, detecting and correcting inconsistencies."],
-       ["<b>Contrôle des données salariales</b> pour garantir la conformité réglementaire — un écart sur une ligne de paie a des conséquences directes sur un agent.","<b>Payroll data control</b> to ensure regulatory compliance — an error on a single pay line has direct consequences for a member of staff."],
+       ["<b>Contrôle des données salariales</b> pour garantir la conformité réglementaire, car un écart sur une ligne de paie a des conséquences directes sur un agent.","<b>Payroll data control</b> to ensure regulatory compliance, since an error on a single pay line has direct consequences for a member of staff."],
        ["<b>Analyse juridique</b> des textes applicables et instruction de dossiers de revalorisation de carrière sur une base documentée.","<b>Legal analysis</b> of applicable statutes and processing of career-upgrade files on a documented basis."],
        ["<b>Ce que j'en retire</b> : le réflexe de contrôle de cohérence avant de conclure, que j'applique aujourd'hui à chacune de mes analyses.","<b>What I took from it</b>: the consistency-check reflex before drawing a conclusion, which I now apply to every analysis I produce."]
      ],
      tags:["Qualité de la donnée","Conformité","Analyse juridique","Rigueur"]},
 
-    {open:false, date:["avr. – juin 2018","Apr – Jun 2018"],
+    {open:false, date:["avr. - juin 2018","Apr - Jun 2018"],
      h:["Assistante RH","HR Assistant"],
-     org:["Manpower — Châteauroux","Manpower — Châteauroux"],
+     org:["Manpower, Châteauroux","Manpower, Châteauroux"],
      tag:["Stage · Premier projet de transformation digitale","Internship · First digital transformation project"],
      li:[
        ["<b>Déploiement de la plateforme de dématérialisation Pixid</b> entre les entreprises clientes et l'agence : paramétrage, bascule des dossiers et contrats existants, points de contrôle.","<b>Rollout of the Pixid paperless platform</b> between client companies and the agency: configuration, migration of existing files and contracts, control checkpoints."],
@@ -576,66 +591,66 @@ var CV = {
   ],
 
   edu:[
-    {open:true, date:["sept. 2025 – oct. 2026","Sep 2025 – Oct 2026"],
+    {open:true, date:["sept. 2025 - oct. 2026","Sep 2025 - Oct 2026"],
      h:["Mastère Spécialisé® Chef de projet Data &amp; IA","Advanced Master's in Data &amp; AI Project Management"],
-     org:["SKEMA Business School — Campus Grand Paris","SKEMA Business School — Grand Paris Campus"],
+     org:["SKEMA Business School, Campus Grand Paris","SKEMA Business School, Grand Paris Campus"],
      tag:["Bac+6 · Label Conférence des Grandes Écoles, titre RNCP niveau 7 · 448 h de cours/an, 75 crédits ECTS · Alternance 1 semaine par mois","Postgraduate · CGE label, RNCP level 7 · 448 teaching hours/year, 75 ECTS · One week a month in school"],
      li:[
-       ["<b>Management de projets en IA</b> — Fondamentaux du management de projet appliqués à l'IA · Agile Project Management (AgilePM®) · Management de l'innovation &amp; design thinking · Consulting methods applied to AI projects · Environnement juridique des solutions data et IA · Projet entreprise « AI Applications ».","<b>AI project management</b> — Project management fundamentals applied to AI · Agile Project Management (AgilePM®) · Innovation management &amp; design thinking · Consulting methods applied to AI projects · Legal environment of data and AI solutions · Company project \"AI Applications\"."],
-       ["<b>Fondamentaux pour l'IA</b> — Data exploration and data modelling · Computer programming with Python · Cloud computing · SQL et bases de données.","<b>AI fundamentals</b> — Data exploration and data modelling · Computer programming with Python · Cloud computing · SQL and databases."],
-       ["<b>Data et analytics</b> — Machine learning for business · Deep learning · Business intelligence &amp; data mining · Power BI et Tableau.","<b>Data and analytics</b> — Machine learning for business · Deep learning · Business intelligence &amp; data mining · Power BI and Tableau."],
-       ["<b>Stratégie et IA</b> — Business models et capacités IA · AI ethics &amp; society · Cybersecurity &amp; risk management · IA et gestion du changement · Projet entreprise « Adopting an AI Strategy ».","<b>Strategy and AI</b> — AI business models and capability · AI ethics &amp; society · Cybersecurity &amp; risk management · AI and change management · Company project \"Adopting an AI Strategy\"."],
-       ["<b>Thèse professionnelle</b> — Méthodologie de recherche, rédaction et soutenance devant jury (18 crédits ECTS), sur la gouvernance de l'IA face aux exigences réglementaires.","<b>Professional thesis</b> — Research methodology, writing and defence before a panel (18 ECTS), on AI governance in the face of regulatory requirements."],
+       ["<b>Management de projets en IA</b> : Fondamentaux du management de projet appliqués à l'IA · Agile Project Management (AgilePM®) · Management de l'innovation &amp; design thinking · Consulting methods applied to AI projects · Environnement juridique des solutions data et IA · Projet entreprise « AI Applications ».","<b>AI project management</b> : Project management fundamentals applied to AI · Agile Project Management (AgilePM®) · Innovation management &amp; design thinking · Consulting methods applied to AI projects · Legal environment of data and AI solutions · Company project \"AI Applications\"."],
+       ["<b>Fondamentaux pour l'IA</b> : Data exploration and data modelling · Computer programming with Python · Cloud computing · SQL et bases de données.","<b>AI fundamentals</b> : Data exploration and data modelling · Computer programming with Python · Cloud computing · SQL and databases."],
+       ["<b>Data et analytics</b> : Machine learning for business · Deep learning · Business intelligence &amp; data mining · Power BI et Tableau.","<b>Data and analytics</b> : Machine learning for business · Deep learning · Business intelligence &amp; data mining · Power BI and Tableau."],
+       ["<b>Stratégie et IA</b> : Business models et capacités IA · AI ethics &amp; society · Cybersecurity &amp; risk management · IA et gestion du changement · Projet entreprise « Adopting an AI Strategy ».","<b>Strategy and AI</b> : AI business models and capability · AI ethics &amp; society · Cybersecurity &amp; risk management · AI and change management · Company project \"Adopting an AI Strategy\"."],
+       ["<b>Thèse professionnelle</b> : Méthodologie de recherche, rédaction et soutenance devant jury (18 crédits ECTS), sur la gouvernance de l'IA face aux exigences réglementaires.","<b>Professional thesis</b> : Research methodology, writing and defence before a panel (18 ECTS), on AI governance in the face of regulatory requirements."],
        ["<b>Compétences visées par le référentiel</b> : interpréter et valoriser la donnée · apporter une solution à une problématique d'entreprise à l'aide de technologies d'IA · superviser la mise en œuvre d'un projet intégrant l'IA · contribuer à la stratégie data et IA de l'organisation.","<b>Competencies targeted by the framework</b>: interpreting and creating value from data · solving a business problem using AI technologies · supervising the delivery of an AI-based project · contributing to the organisation's data and AI strategy."],
        ["Triple accréditation EQUIS, AACSB et EFMD · membre de la Conférence des Grandes Écoles · 6ᵉ au classement SIGEM · 18ᵉ Master in Management au Financial Times 2025.","Triple EQUIS, AACSB and EFMD accreditation · member of the Conférence des Grandes Écoles · ranked 6th in the SIGEM league table · 18th Master in Management, Financial Times 2025."]
      ],
      tags:["Python","SQL","Machine learning","Deep learning","AgilePM®","Power BI","Tableau","Cloud computing","AI Act","Design thinking"]},
 
-    {open:true, date:["sept. 2022 – août 2024","Sep 2022 – Aug 2024"],
-     h:["Master Grande École — Business &amp; Marketing","Master in Management — Business &amp; Marketing"],
-     org:["NEOMA Business School — Rouen","NEOMA Business School — Rouen"],
+    {open:true, date:["sept. 2022 - août 2024","Sep 2022 - Aug 2024"],
+     h:["Master Grande École, parcours Business &amp; Marketing","Master in Management, Business &amp; Marketing"],
+     org:["NEOMA Business School, Rouen","NEOMA Business School, Rouen"],
      tag:["Bac+5 · Programme Grande École en alternance · Intégralité des cours dispensés en anglais","Master's level · Grande École programme, apprenticeship track · Entirely taught in English"],
      li:[
-       ["<b>Spécialisation marketing digital</b> — Stratégie digitale, acquisition et référencement, e-commerce &amp; CRM, marketing relationnel.","<b>Digital marketing specialisation</b> — Digital strategy, acquisition and SEO, e-commerce &amp; CRM, relationship marketing."],
-       ["<b>Data et intelligence consommateur</b> — Data analytics appliqué au marketing, consumer intelligence, exploitation de panels et construction de tableaux de bord.","<b>Data and consumer intelligence</b> — Marketing data analytics, consumer intelligence, panel analysis and dashboard building."],
-       ["<b>Gestion de projet et stratégie</b> — Conduite de projets marketing, stratégie d'entreprise, finance et négociation, en contexte international.","<b>Project management and strategy</b> — Running marketing projects, corporate strategy, finance and negotiation, in an international context."],
+       ["<b>Spécialisation marketing digital</b> : Stratégie digitale, acquisition et référencement, e-commerce &amp; CRM, marketing relationnel.","<b>Digital marketing specialisation</b> : Digital strategy, acquisition and SEO, e-commerce &amp; CRM, relationship marketing."],
+       ["<b>Data et intelligence consommateur</b> : Data analytics appliqué au marketing, consumer intelligence, exploitation de panels et construction de tableaux de bord.","<b>Data and consumer intelligence</b> : Marketing data analytics, consumer intelligence, panel analysis and dashboard building."],
+       ["<b>Gestion de projet et stratégie</b> : Conduite de projets marketing, stratégie d'entreprise, finance et négociation, en contexte international.","<b>Project management and strategy</b> : Running marketing projects, corporate strategy, finance and negotiation, in an international context."],
        ["<b>Retour sur expérience formalisé</b> à l'issue des deux ans d'alternance chez Green Seed France : analyse des missions, compétences acquises et bilan, soutenu devant jury.","<b>Formal experience report</b> at the end of the two-year apprenticeship at Green Seed France: analysis of assignments, skills acquired and overall review, defended before a panel."],
        ["Triple accréditation EQUIS, AACSB et AMBA · membre de la Conférence des Grandes Écoles · 7ᵉ au classement SIGEM · 30ᵉ Master in Management au Financial Times 2025.","Triple EQUIS, AACSB and AMBA accreditation · member of the Conférence des Grandes Écoles · ranked 7th in the SIGEM league table · 30th Master in Management, Financial Times 2025."]
      ],
      tags:["Stratégie digitale","Data analytics","Consumer intelligence","E-commerce","CRM","Anglais professionnel"]},
 
-    {open:false, date:["déc. 2020 – déc. 2021","Dec 2020 – Dec 2021"],
+    {open:false, date:["déc. 2020 - déc. 2021","Dec 2020 - Dec 2021"],
      h:["Bachelor Marketing","Bachelor's degree in Marketing"],
-     org:["PPA Business School — Paris","PPA Business School — Paris"],
+     org:["PPA Business School, Paris","PPA Business School, Paris"],
      tag:["Bac+3 · Parcours en apprentissage, en parallèle de l'alternance chez NJ Création","Undergraduate · Apprenticeship track, alongside the NJ Création placement"],
      li:[
-       ["<b>Marketing et marque</b> — Stratégie de marque, positionnement, plan marketing et communication 360°.","<b>Marketing and brand</b> — Brand strategy, positioning, marketing plan and 360° communications."],
-       ["<b>Études et décision</b> — Méthodologie d'études de marché, analyse concurrentielle, décision stratégique et diagnostic d'entreprise.","<b>Research and decision-making</b> — Market research methodology, competitive analysis, strategic decision-making and business diagnosis."],
-       ["<b>Digital</b> — Référencement naturel et payant (SEO / SEA), e-commerce, analyse de performance des campagnes.","<b>Digital</b> — Organic and paid search (SEO / SEA), e-commerce, campaign performance analysis."],
-       ["<b>Gestion de projet</b> — Cadrage, planification et conduite de projets en équipe, avec restitution devant jury professionnel.","<b>Project management</b> — Framing, planning and running team projects, with a presentation to a professional panel."]
+       ["<b>Marketing et marque</b> : Stratégie de marque, positionnement, plan marketing et communication 360°.","<b>Marketing and brand</b> : Brand strategy, positioning, marketing plan and 360° communications."],
+       ["<b>Études et décision</b> : Méthodologie d'études de marché, analyse concurrentielle, décision stratégique et diagnostic d'entreprise.","<b>Research and decision-making</b> : Market research methodology, competitive analysis, strategic decision-making and business diagnosis."],
+       ["<b>Digital</b> : Référencement naturel et payant (SEO / SEA), e-commerce, analyse de performance des campagnes.","<b>Digital</b> : Organic and paid search (SEO / SEA), e-commerce, campaign performance analysis."],
+       ["<b>Gestion de projet</b> : Cadrage, planification et conduite de projets en équipe, avec restitution devant jury professionnel.","<b>Project management</b> : Framing, planning and running team projects, with a presentation to a professional panel."]
      ],
      tags:["SEO / SEA","Études de marché","Stratégie de marque","E-commerce","Gestion de projet"]},
 
-    {open:false, date:["2016 – 2019","2016 – 2019"],
+    {open:false, date:["2016 - 2019","2016 - 2019"],
      h:["DUT Gestion des Entreprises et des Administrations","Two-year degree in Business &amp; Administration Management"],
-     org:["IUT de l'Indre — Université d'Orléans","IUT de l'Indre — University of Orléans"],
+     org:["IUT de l'Indre, Université d'Orléans","IUT de l'Indre, University of Orléans"],
      tag:["Bac+2 · Membre du Bureau des Étudiants · Trois projets tutorés menés en équipe","Undergraduate · Student Union member · Three team-based tutored projects"],
      li:[
-       ["<b>Gestion et finance</b> — Comptabilité générale et analytique, gestion financière, contrôle de gestion, fiscalité.","<b>Management and finance</b> — General and cost accounting, financial management, management control, taxation."],
-       ["<b>Quantitatif et systèmes d'information</b> — Statistiques descriptives et inférentielles, mathématiques appliquées à la gestion, bases de données et systèmes d'information — ma première formation à la manipulation de données structurées.","<b>Quantitative and information systems</b> — Descriptive and inferential statistics, mathematics applied to management, databases and information systems — my first training in handling structured data."],
-       ["<b>Droit, RH et marketing</b> — Droit des affaires et du travail, gestion des ressources humaines, marketing fondamental.","<b>Law, HR and marketing</b> — Business and employment law, human resource management, marketing fundamentals."],
-       ["<b>Projets tutorés</b> — Trois projets menés en équipe pour des associations et institutions locales, dont un en tant que coordinatrice de projet (voir l'onglet <b>Associatif</b>).","<b>Tutored projects</b> — Three team projects for local charities and institutions, one of them as project coordinator (see the <b>Volunteering</b> tab)."]
+       ["<b>Gestion et finance</b> : Comptabilité générale et analytique, gestion financière, contrôle de gestion, fiscalité.","<b>Management and finance</b> : General and cost accounting, financial management, management control, taxation."],
+       ["<b>Quantitatif et systèmes d'information</b> : Statistiques descriptives et inférentielles, mathématiques appliquées à la gestion, bases de données et systèmes d'information : ma première formation à la manipulation de données structurées.","<b>Quantitative and information systems</b> : Descriptive and inferential statistics, mathematics applied to management, databases and information systems: my first training in handling structured data."],
+       ["<b>Droit, RH et marketing</b> : Droit des affaires et du travail, gestion des ressources humaines, marketing fondamental.","<b>Law, HR and marketing</b> : Business and employment law, human resource management, marketing fundamentals."],
+       ["<b>Projets tutorés</b> : Trois projets menés en équipe pour des associations et institutions locales, dont un en tant que coordinatrice de projet (voir l'onglet <b>Associatif</b>).","<b>Tutored projects</b> : Three team projects for local charities and institutions, one of them as project coordinator (see the <b>Volunteering</b> tab)."]
      ],
      tags:["Statistiques","Bases de données","Systèmes d'information","Finance","Droit","Projets tutorés"]},
 
-    {open:false, date:["2015 – 2016","2015 – 2016"],
+    {open:false, date:["2015 - 2016","2015 - 2016"],
      h:["Baccalauréat Scientifique","French Scientific Baccalaureate"],
      org:["Lycée Saint-Vincent","Lycée Saint-Vincent"],
-     tag:["Spécialisation ISN — Informatique et Sciences du Numérique","ISN specialisation — Computer Science and Digital Science"],
+     tag:["Spécialisation ISN (Informatique et Sciences du Numérique)","ISN specialisation (Computer Science and Digital Science)"],
      li:[
-       ["<b>Spécialisation ISN</b> — Logique algorithmique, structuration d'un problème, notions de programmation et de représentation de l'information.","<b>ISN specialisation</b> — Algorithmic logic, problem structuring, programming and information representation concepts."],
+       ["<b>Spécialisation ISN</b> : Logique algorithmique, structuration d'un problème, notions de programmation et de représentation de l'information.","<b>ISN specialisation</b> : Algorithmic logic, problem structuring, programming and information representation concepts."],
        ["<b>Ce que j'en garde</b> : l'habitude de décomposer un problème avant de chercher une solution, et l'aisance à échanger avec des équipes techniques sans être moi-même développeuse.","<b>What I kept from it</b>: the habit of breaking a problem down before looking for a solution, and the ease of working with technical teams without being a developer myself."],
-       ["<b>Option européenne</b> — Enseignement renforcé en anglais, prolongé ensuite par les cursus NEOMA et SKEMA dispensés en anglais. <b>Option cinéma-audiovisuel</b> — analyse de l'image et narration.","<b>European section</b> — Intensive English teaching, later continued through the English-taught NEOMA and SKEMA programmes. <b>Film studies option</b> — image analysis and narrative."]
+       ["<b>Option européenne</b> : Enseignement renforcé en anglais, prolongé ensuite par les cursus NEOMA et SKEMA dispensés en anglais. <b>Option cinéma-audiovisuel</b> : analyse de l'image et narration.","<b>European section</b> : Intensive English teaching, later continued through the English-taught NEOMA and SKEMA programmes. <b>Film studies option</b> : image analysis and narrative."]
      ],
      tags:["ISN","Logique algorithmique","Option européenne","Anglais renforcé"]}
   ]
@@ -646,8 +661,8 @@ var CV = {
 var SKILLS = {
   certs:[
     {y:["Certification en cours","Certification in progress"], n:"AgilePM®", d:["Management de projet agile, méthode DSDM","Agile project management, DSDM method"],
-     tip:["Cadre agile de gestion de projet le plus utilisé en Europe. Il structure un projet en phases (faisabilité, fondations, développement itératif, déploiement) et impose de fixer les délais et le budget pour faire varier le périmètre — l'inverse de la gestion de projet classique.","The most widely used agile project framework in Europe. It structures a project into phases (feasibility, foundations, iterative development, deployment) and fixes time and cost so that scope becomes the variable — the opposite of classic project management."]},
-    {y:"2025", n:"PCEP", d:["Certified Entry-Level Python Programmer — Python Institute","Certified Entry-Level Python Programmer — Python Institute"],
+     tip:["Cadre agile de gestion de projet le plus utilisé en Europe. Il structure un projet en phases (faisabilité, fondations, développement itératif, déploiement) et impose de fixer les délais et le budget pour faire varier le périmètre, soit l'inverse de la gestion de projet classique.","The most widely used agile project framework in Europe. It structures a project into phases (feasibility, foundations, iterative development, deployment) and fixes time and cost so that scope becomes the variable, the opposite of classic project management."]},
+    {y:"2025", n:"PCEP", d:["Certified Entry-Level Python Programmer, Python Institute","Certified Entry-Level Python Programmer, Python Institute"],
      tip:["Certification officielle du Python Institute. Elle atteste la maîtrise des fondamentaux du langage : syntaxe, types et structures de données, conditions et boucles, fonctions, gestion des erreurs. C'est le socle qui permet de lire, comprendre et adapter du code d'analyse.","Official Python Institute certification. It attests mastery of the language fundamentals: syntax, data types and structures, conditions and loops, functions, error handling. The foundation needed to read, understand and adapt analysis code."]},
     {y:"2023", n:"Google Analytics 4", d:["Mesure d'audience et de conversion","Audience and conversion measurement"],
      tip:["Certification Google sur la nouvelle génération d'Analytics, fondée sur les événements plutôt que sur les sessions. Elle couvre la configuration du suivi, les rapports d'acquisition et d'engagement, les conversions et l'analyse des parcours.","Google certification on the event-based generation of Analytics. It covers tracking setup, acquisition and engagement reports, conversions and journey analysis."]},
@@ -658,7 +673,7 @@ var SKILLS = {
   ],
   langs:[
     {n:["Français","French"], lvl:["Langue maternelle","Native"], pct:100},
-    {n:["Anglais","English"], lvl:["C1 — TOEIC 900","C1 — TOEIC 900"], pct:82},
+    {n:["Anglais","English"], lvl:["C1 (TOEIC 900)","C1 (TOEIC 900)"], pct:82},
     {n:["Espagnol","Spanish"], lvl:["B2","B2"], pct:50}
   ],
   lvlNames:[["Notions","Opérationnel","Avancé"],["Foundational","Working","Advanced"]],
@@ -675,13 +690,14 @@ var SKILLS = {
       {n:"Google Analytics 4", lvl:2, note:["Certifiée 2023 · rapports d'acquisition, d'engagement et de conversion","Certified 2023 · acquisition, engagement and conversion reports"]}
     ]},
     {id:"ia", n:["IA appliquée","Applied AI"], items:[
-      {n:["IA générative en production","Generative AI in production"], lvl:2, note:["Conception de prompts structurés avec règles de contrôle explicites, industrialisation de chaînes de reporting, validation humaine systématique","Designing structured prompts with explicit control rules, industrialising reporting chains, systematic human validation"]},
+      {n:["IA générative en production","Generative AI in production"], lvl:3, note:["Prompts structurés à règles de contrôle, industrialisation de chaînes de reporting, et conception d'un atelier d'acculturation pour un pôle entier","Structured prompts with control rules, industrialised reporting chains, and an enablement workshop built for a whole division"]},
       {n:"Python", lvl:1, note:["Certifiée PCEP · lecture, compréhension et adaptation de scripts d'analyse et de modélisation","PCEP certified · reading, understanding and adapting analysis and modelling scripts"]},
-      {n:["Gouvernance de l'IA","AI governance"], lvl:2, note:["AI Act, inventaire des cas d'usage, classification par le risque, documentation et suivi des modèles — sujet de ma thèse professionnelle","EU AI Act, use-case inventory, risk classification, model documentation and monitoring — the topic of my professional thesis"]}
+      {n:["Gouvernance de l'IA","AI governance"], lvl:2, note:["AI Act, inventaire des cas d'usage, classification par le risque, documentation et suivi des modèles : sujet de ma thèse professionnelle","EU AI Act, use-case inventory, risk classification, model documentation and monitoring: the topic of my professional thesis"]}
     ]},
     {id:"pm", n:["Gestion de projet","Project management"], items:[
       {n:["AgilePM® / DSDM","AgilePM® / DSDM"], lvl:2, note:["Certification en cours · phases, rôles, priorisation MoSCoW, itérations à périmètre variable","Certification in progress · phases, roles, MoSCoW prioritisation, variable-scope iterations"]},
       {n:"Jira", lvl:2, note:["Board d'expérimentation, tickets constat / hypothèse / KPI, suivi du cycle de vie","Experimentation board, insight / hypothesis / KPI tickets, lifecycle tracking"]},
+      {n:["Formation & acculturation","Training & enablement"], lvl:3, note:["Conception et animation d'un atelier de 1 h 30 sur l'IA générative pour huit équipes et leurs managers, livrables et fiches actions individuelles à l'appui","Designing and running a 90-minute generative-AI workshop for eight teams and their managers, with deliverables and individual action sheets"]},
       {n:["Ateliers & restitution en comité","Workshops & committee reporting"], lvl:3, note:["Cadrage de besoin, ateliers UX / contenu / SEO, restitution en COPIL : une slide, un constat, une recommandation","Needs framing, UX / content / SEO workshops, steering-committee reporting: one slide, one insight, one recommendation"]}
     ]}
   ],
@@ -696,7 +712,7 @@ var SKILLS = {
       {l:["Restitution & dataviz","Reporting & dataviz"], v:75,
        tip:["À voir dans <b>Académique › Business intelligence et data mining</b>, et dans les supports de restitution en COPIL décrits dans <b>Entreprise</b>.","See <b>Academic › Business intelligence and data mining</b>, and the steering-committee decks described in <b>Company</b>."]},
       {l:["IA appliquée","Applied AI"], v:68,
-       tip:["À voir dans <b>Académique › Hackathon mc2i</b> (vision par ordinateur, prix du meilleur business model) et <b>Entreprise › IA et automatisation</b>.","See <b>Academic › mc2i hackathon</b> (computer vision, best business model prize) and <b>Company › AI and automation</b>."]}
+       tip:["À voir dans <b>Entreprise › Acculturation à l'IA</b> (atelier conçu et animé pour tout le pôle) et <b>Académique › Hackathon mc2i</b> (vision par ordinateur, prix du meilleur business model).","See <b>Company › AI enablement</b> (workshop designed and delivered for the whole division) and <b>Academic › mc2i hackathon</b> (computer vision, best business model prize)."]}
     ]
   },
   qualities:[
@@ -705,7 +721,7 @@ var SKILLS = {
     {n:["Fiabilité","Reliability"], v:90,
      tip:["Le tri quotidien du trafic robot, sept jours sur sept, dont dépend la validité de toutes les analyses du pôle. Voir <b>Entreprise › Analytics et pilotage</b>.","Daily bot-traffic sorting, seven days a week, on which the validity of every analysis in the division depends. See <b>Company › Analytics and steering</b>."]},
     {n:["Esprit de synthèse","Synthesis"], v:78,
-     tip:["Une slide, un constat, une recommandation, les détails en annexe — une règle que je me suis imposée après un retour d'évaluation. Voir <b>Recommandations</b>.","One slide, one insight, one recommendation, details in the appendix — a rule I set myself after an appraisal. See <b>References</b>."]},
+     tip:["Une slide, un constat, une recommandation, les détails en annexe. Une règle que je me suis imposée après un retour d'évaluation. Voir <b>Recommandations</b>.","One slide, one insight, one recommendation, details in the appendix. A rule I set myself after an appraisal. See <b>References</b>."]},
     {n:["Sens du collectif","Team orientation"], v:85,
      tip:["Faire coopérer dix équipes aux intérêts divergents autour d'une hypothèse mesurable, et coordonner cinq personnes sur le terrain à VivaTech. Voir <b>Académique › VivaTech</b>.","Getting ten teams with diverging interests to cooperate around a measurable hypothesis, and coordinating five people in the field at VivaTech. See <b>Academic › VivaTech</b>."]},
     {n:["Autonomie","Autonomy"], v:88,
@@ -726,9 +742,34 @@ var SKILLS = {
 <script>
 /* ---------- MISSIONS EN ENTREPRISE (regroupées par thème) ---------- */
 var WORK = {
-  intro:["Mes missions data et gestion de projet, regroupées par thème. Cliquez sur un bloc pour le déplier.","My data and project-management assignments, grouped by theme. Click a block to expand it."],
+  intro:["Mes missions data, IA et gestion de projet, regroupées par thème. Cliquez sur un bloc pour le déplier.","My data, AI and project-management assignments, grouped by theme. Click a block to expand it."],
   themes:[
-  {id:"ab", open:true, ic:"M3 3v18h18 M7 15l3-4 3 3 5-7", org:"Groupama · 2025-2026",
+  {id:"accult", open:true, ic:"M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z M9 21h6 M4.2 4.2l1.5 1.5 M18.3 4.2l-1.5 1.5 M2 12h2 M20 12h2", org:"Groupama \u00b7 2026",
+   n:["Acculturation \u00e0 l'IA &amp; conduite du changement","AI enablement &amp; change management"],
+   s:["Ma r\u00e9alisation la plus r\u00e9cente : faire passer tout un p\u00f4le \u00e0 l'IA g\u00e9n\u00e9rative.","My most recent work: getting a whole division started with generative AI."],
+   items:[
+    {h:["Concevoir et animer l'atelier d'acculturation \u00e0 l'IA du p\u00f4le digital","Designing and running the digital division's AI enablement workshop"], per:["Septembre 2026","September 2026"],
+     teaser:["Une heure et demie, cinquante-six slides, toutes les \u00e9quipes et les managers du p\u00f4le r\u00e9unis. Un atelier con\u00e7u seule, de l'enqu\u00eate terrain jusqu'aux fiches actions individuelles.","Ninety minutes, fifty-six slides, every team and manager in the division. A workshop built single-handedly, from field survey to individual action sheets."],
+     cah:[
+       ["L'IA g\u00e9n\u00e9rative arrivait dans l'entreprise sans mode d'emploi. Copilot Chat \u00e9tait d\u00e9j\u00e0 disponible gratuitement pour tous dans Teams, et pratiquement personne ne s'en servait : pas de m\u00e9thode, aucun cas d'usage identifi\u00e9 sur les t\u00e2ches r\u00e9elles, et une r\u00e9putation de gadget. En parall\u00e8le, des demandes de licences remontaient sans dossier pour les arbitrer.","Generative AI was arriving with no instructions. Copilot Chat was already free and available to everyone in Teams, and almost nobody used it: no method, no use cases identified on real tasks, and a reputation as a gimmick. Meanwhile licence requests were coming up with no business case to arbitrate them."],
+       ["<b>Enqu\u00eate pr\u00e9alable aupr\u00e8s de chaque \u00e9quipe</b> pour recenser les t\u00e2ches r\u00e9p\u00e9titives et les besoins r\u00e9els, puis <b>test en conditions r\u00e9elles</b> des outils sur ces t\u00e2ches, \u00e9checs document\u00e9s \u00e0 l'appui. Construction d'un atelier de 1 h 30 : fonctionnement d'un mod\u00e8le sans jargon, m\u00e9thode de r\u00e9daction de prompt en quatre temps (r\u00f4le, contexte, t\u00e2che, format), dix cas d'usage chiffr\u00e9s tir\u00e9s des processus r\u00e9els des \u00e9quipes, comparatif de trois solutions avec calcul du seuil de rentabilit\u00e9, et un test interactif \u00ab humain ou IA ? \u00bb pour exercer l'\u0153il critique.","<b>A preliminary survey of every team</b> to list repetitive tasks and real needs, then <b>live testing</b> of the tools on those tasks, with failures documented. Building a 90-minute workshop: how a model works without jargon, a four-part prompt-writing method (role, context, task, format), ten quantified use cases drawn from the teams' actual processes, a comparison of three solutions with a break-even calculation, and an interactive \u201chuman or AI?\u201d test to train critical judgement."],
+       ["Animation devant l'ensemble des \u00e9quipes et des managers du p\u00f4le, suivie de trois livrables laiss\u00e9s \u00e0 l'organisation : une biblioth\u00e8que de prompts class\u00e9e par famille de t\u00e2ches, une fiche m\u00e9mo de r\u00e9daction, et trente-neuf pages de fiches actions individuelles d\u00e9taillant, personne par personne, quoi mettre en place et dans quel ordre. Le dossier de demande de licences, \u00e9tay\u00e9 par les cas d'usage de chaque \u00e9quipe, a \u00e9t\u00e9 instruit dans la foul\u00e9e.","Delivered to every team and manager in the division, followed by three deliverables left with the organisation: a prompt library organised by task family, a one-page prompt-writing memo, and thirty-nine pages of individual action sheets setting out, person by person, what to put in place and in what order. The licence business case, backed by each team's use cases, was prepared in its wake."]],
+     metrics:[
+       {m:"1 h 30", c:"neu", l:["d'atelier con\u00e7u, r\u00e9dig\u00e9 et anim\u00e9 seule","of workshop designed, written and delivered single-handedly"]},
+       {m:"56", c:"neu", l:["slides, con\u00e7us \u00e0 la charte graphique du groupe","slides, built to the group's brand guidelines"]},
+       {m:"8", c:"neu", l:["\u00e9quipes du p\u00f4le adress\u00e9es, managers compris","teams in the division addressed, managers included"]},
+       {m:"10", c:"neu", l:["cas d'usage chiffr\u00e9s sur les processus r\u00e9els des \u00e9quipes","quantified use cases on the teams' real processes"]},
+       {m:"39", c:"neu", l:["pages de fiches actions individuelles laiss\u00e9es \u00e0 l'\u00e9quipe","pages of individual action sheets left with the team"]},
+       {m:"~3 h", c:"up", l:["estimation du temps hebdomadaire r\u00e9cup\u00e9rable par personne, sur les seuls cas chiffr\u00e9s","estimated weekly time recoverable per person, on the quantified cases alone"]}],
+     bullets:[
+       ["<b>Un parti pris p\u00e9dagogique</b> : partir des t\u00e2ches que les gens d\u00e9testent faire plut\u00f4t que des capacit\u00e9s de l'outil. Chaque cas d'usage annonce le temps pass\u00e9 aujourd'hui, le temps vis\u00e9, et ce qui reste manuel.","<b>A deliberate teaching choice</b>: start from the tasks people dislike rather than from the tool's capabilities. Each use case states today's time, the target time, and what stays manual."],
+       ["<b>L'honn\u00eatet\u00e9 comme m\u00e9thode</b> : les \u00e9checs r\u00e9els de l'outil gratuit sont montr\u00e9s captures \u00e0 l'appui, les temps annonc\u00e9s sont signal\u00e9s comme des estimations, et les solutions non disponibles dans l'entreprise sont identifi\u00e9es comme telles sur chaque slide.","<b>Honesty as method</b>: the free tool's real failures are shown with screenshots, the stated times are flagged as estimates, and solutions unavailable in the company are marked as such on every slide."],
+       ["<b>Un volet \u00e9conomique</b> : comparatif de trois solutions \u00e0 0 \u20ac, 26 \u20ac et 18 \u20ac par mois, explication des trois architectures sous-jacentes, et seuil de rentabilit\u00e9 calcul\u00e9 pour que la d\u00e9cision de licence ne repose pas sur une impression.","<b>An economic angle</b>: three solutions compared at \u20ac0, \u20ac26 and \u20ac18 a month, the three underlying architectures explained, and a break-even point calculated so the licensing decision rests on more than an impression."],
+       ["<b>Une suite pr\u00e9vue</b> : une biblioth\u00e8que de prompts aliment\u00e9e par le p\u00f4le, pour que la r\u00e9ussite de l'un devienne celle de tous.","<b>A planned follow-up</b>: a division-wide prompt library fed by everyone, so that one person's win becomes everyone's."]],
+     tags:["Conduite du changement","Acculturation IA","Formation","Animation","Microsoft Copilot","Business case","P\u00e9dagogie"]}
+   ]},
+
+  {id:"ab", ic:"M3 3v18h18 M7 15l3-4 3 3 5-7", org:"Groupama · 2025-2026",
    n:["Expérimentation &amp; A/B testing","Experimentation &amp; A/B testing"],
    s:["Ma mission phare : environ la moitié de mon temps.","My flagship assignment: roughly half my time."],
    items:[
@@ -774,7 +815,7 @@ var WORK = {
     {h:["Décider de ne pas développer","Deciding not to build"], per:["2026","2026"],
      teaser:["Un résultat négatif correctement documenté a autant de valeur qu'un gain, à condition d'être formulé comme une décision et non comme un échec.","A properly documented negative result is worth as much as a gain, provided it is framed as a decision rather than a failure."],
      cah:[
-       ["Une refonte de menu motivée par un objectif légitime de simplification de la maintenance, et l'ajout de la prise de rendez-vous en visioconférence — deux évolutions considérées comme évidemment bénéfiques.","A menu redesign driven by a legitimate maintenance-simplification goal, and the addition of video-call appointment booking — both assumed to be obviously beneficial."],
+       ["Une refonte de menu motivée par un objectif légitime de simplification de la maintenance, et l'ajout de la prise de rendez-vous en visioconférence : deux évolutions considérées comme évidemment bénéfiques.","A menu redesign driven by a legitimate maintenance-simplification goal, and the addition of video-call appointment booking: both assumed to be obviously beneficial."],
        ["Test d'appétence en amont du développement. Sur le canal supplémentaire, mesure non seulement du clic mais de la conversion finale, pour détecter un report de canal.","Appetite testing upstream of development. On the extra channel, measuring not only clicks but final conversion, to detect channel cannibalisation."],
        ["Menu : version historique conservée. Visioconférence : report de canal identifié et itération engagée. Dans les deux cas, développements non engagés.","Menu: legacy version kept. Video call: channel shift identified and iteration launched. In both cases, development avoided."]],
      metrics:[
@@ -791,7 +832,7 @@ var WORK = {
     {h:["Garantir la fiabilité de la donnée, sept jours sur sept","Guaranteeing data reliability, seven days a week"], per:["2025-2026","2025-2026"],
      teaser:["Suivi quotidien des indicateurs et tri du trafic robot. Une mission apparemment ingrate, et pourtant la condition de validité de tout le reste.","Daily indicator monitoring and bot-traffic sorting. A seemingly thankless assignment, and yet the validity condition for everything else."],
      cah:[
-       ["Des taux de conversion, d'engagement et de lead suivis quotidiennement par tout le pôle digital — et un trafic automatisé capable de les fausser du jour au lendemain.","Conversion, engagement and lead rates tracked daily by the whole digital division — and automated traffic able to distort them overnight."],
+       ["Des taux de conversion, d'engagement et de lead suivis quotidiennement par tout le pôle digital, et un trafic automatisé capable de les fausser du jour au lendemain.","Conversion, engagement and lead rates tracked daily by the whole digital division, and automated traffic able to distort them overnight."],
        ["Relevé quotidien dans Adobe Analytics, vérification qu'une adresse détectée n'est pas une campagne légitime, ajout au segment d'exclusion. Traitement jour par jour : une plage de plusieurs jours fausse le tri. En parallèle, contrôle de l'évolution de chaque indicateur et alertes qualifiées sur les variations anormales.","Daily review in Adobe Analytics, verification that a flagged address is not a legitimate campaign, addition to the exclusion segment. Processed day by day: a multi-day range breaks the sorting. In parallel, monitoring of each indicator and qualified alerts on abnormal variations."],
        ["Un référentiel de mesure fiable pour tout le pôle, et un réflexe de contrôle de cohérence que j'applique désormais à toutes mes analyses.","A reliable measurement baseline for the whole division, and a consistency-check reflex I now apply to every analysis."]],
      metrics:[{m:"365", c:"neu", l:["jours par an, week-ends inclus","days a year, weekends included"]},{m:"1", c:"neu", l:["segment d'exclusion maintenu pour toute l'équipe","exclusion segment maintained for the whole team"]}],
@@ -809,9 +850,9 @@ var WORK = {
     {h:["Mesurer l'effet de l'arrêt des campagnes de marque en SEA","Measuring the impact of stopping brand paid-search campaigns"], per:["2026","2026"],
      teaser:["Un fichier interactif pour rendre plusieurs milliers de lignes lisibles par des équipes non analystes.","An interactive file making several thousand rows readable for non-analyst teams."],
      cah:[
-       ["Des données de trafic et de devis par levier, produit et device, illisibles en l'état pour les équipes métier qui devaient s'en servir.","Traffic and quote data by channel, product and device — unreadable as-is for the business teams that needed them."],
+       ["Des données de trafic et de devis par levier, produit et device, illisibles en l'état pour les équipes métier qui devaient s'en servir.","Traffic and quote data by channel, product and device, unreadable as-is for the business teams that needed them."],
        ["Construction d'un fichier d'analyse interactif permettant de naviguer par levier, produit et période sans compétence analytique, puis lecture croisée avant/après sur la part de devis par produit.","Built an interactive analysis file allowing navigation by channel, product and period without analytical skills, then a cross-read before/after on quote share by product."],
-       ["Un arbitrage rendu visible — gain sur l'automobile, perte sur la santé — qui n'apparaissait pas sur les volumes globaux.","A trade-off made visible — a gain on car, a loss on health — invisible in aggregate volumes."]],
+       ["Un arbitrage rendu visible (gain sur l'automobile, perte sur la santé) qui n'apparaissait pas sur les volumes globaux.","A trade-off made visible (a gain on car, a loss on health), invisible in aggregate volumes."]],
      metrics:[{m:"+0,9 pt", c:"up", l:["de part de devis sur l'automobile","of quote share on car insurance"]},{m:"−0,6 pt", c:"down", l:["de part de devis sur la santé","of quote share on health insurance"]}],
      tags:["Adobe Analytics","SEO / SEA","Excel interactif","Aide à la décision"]}
    ]},
@@ -853,7 +894,7 @@ var WORK = {
     {h:["Piloter des projets clients à l'international","Managing international client projects"], per:["2022-2024","2022-2024"],
      teaser:["Deux portefeuilles B2B pilotés de bout en bout, de l'étude d'opportunité au référencement en distribution.","Two B2B portfolios managed end to end, from opportunity study to retail listing."],
      cah:[
-       ["Des marques britanniques — dont Dormen Foods et HCC Meat Promotion Wales — cherchant à s'implanter durablement sur un marché français très concurrentiel.","British brands — including Dormen Foods and HCC Meat Promotion Wales — seeking a lasting foothold in a highly competitive French market."],
+       ["Des marques britanniques, dont Dormen Foods et HCC Meat Promotion Wales, cherchant à s'implanter durablement sur un marché français très concurrentiel.","British brands, including Dormen Foods and HCC Meat Promotion Wales, seeking a lasting foothold in a highly competitive French market."],
        ["Liaison entre les clients, les distributeurs et les détaillants : coordination des commandes, développement de nouveaux produits adaptés au marché local, présentations commerciales, bilans marketing, budgets annuels et suivi des campagnes promotionnelles.","Interface between clients, distributors and retailers: order coordination, development of new products adapted to the local market, sales presentations, marketing reviews, annual budgets and promotional campaign tracking."],
        ["Des références en distribution développées, dont Picard sur le portefeuille Dormen, et une montée en autonomie complète sur la relation client directe.","Retail listings developed, including Picard on the Dormen portfolio, and full autonomy gained on direct client relationships."]],
      metrics:[{m:"2", c:"neu", l:["portefeuilles clients B2B en responsabilité","B2B client portfolios owned"]},{m:"11", c:"neu", l:["agences du réseau international mobilisables","offices in the international network"]}],
@@ -905,7 +946,7 @@ var WORK = {
      cah:[
        ["Une présence sociale peu active et une boutique en ligne qui ne captait qu'une fraction du trafic disponible.","A low-activity social presence and an online store capturing only a fraction of available traffic."],
        ["Calendrier éditorial, création de contenu, animation de la communauté, mise en place d'un partenariat, et refonte des supports de communication.","Editorial calendar, content creation, community management, setting up a partnership, and redesign of communication materials."],
-       ["Un suivi des KPI réseaux sociaux et site croisés chaque mois pour orienter les contenus suivants — ma première boucle mesure → décision.","Monthly cross-reading of social and site KPIs to steer the next content — my first measure → decision loop."]],
+       ["Un suivi des KPI réseaux sociaux et site croisés chaque mois pour orienter les contenus suivants : ma première boucle mesure → décision.","Monthly cross-reading of social and site KPIs to steer the next content: my first measure → decision loop."]],
      metrics:[{m:["Partenariat","Partnership"], c:"neu", l:["mis en place pour élargir l'audience","set up to widen the audience"]},{m:["Mensuel","Monthly"], c:"neu", l:["reporting KPI site et réseaux sociaux","site and social KPI reporting"]}],
      tags:["Réseaux sociaux","Content","Analytics","Suite Adobe"]}
    ]},
@@ -914,25 +955,25 @@ var WORK = {
    n:["Premières expériences","Early roles"],
    s:["Trois expériences courtes qui ont forgé des réflexes que j'utilise encore tous les jours.","Three short roles that forged reflexes I still use every day."],
    items:[
-    {h:["Carrefour Market — la rigueur opérationnelle","Carrefour Market — operational rigour"], per:["2020 · 8 mois","2020 · 8 months"],
+    {h:["Carrefour Market : la rigueur opérationnelle","Carrefour Market: operational rigour"], per:["2020 · 8 mois","2020 · 8 months"],
      teaser:["Huit mois en CDD en pleine crise sanitaire, sur un terrain où l'erreur se voit tout de suite.","Eight months on a fixed-term contract during the health crisis, on a floor where mistakes show instantly."],
      cah:[
        ["Un magasin sous tension d'approvisionnement, des ruptures fréquentes et un flux client considérablement accru.","A store under supply pressure, frequent stockouts and a considerably increased customer flow."],
-       ["Accueil et conseil client, commandes spéciales, gestion des stocks et relation fournisseurs — avec une exploitation des données de ventes pour anticiper la demande plutôt que la constater.","Customer service and advice, special orders, stock management and supplier relations — using sales data to anticipate demand rather than observe it."],
+       ["Accueil et conseil client, commandes spéciales, gestion des stocks et relation fournisseurs, avec une exploitation des données de ventes pour anticiper la demande plutôt que la constater.","Customer service and advice, special orders, stock management and supplier relations, using sales data to anticipate demand rather than observe it."],
        ["<b>Ce que ça m'a apporté :</b> la rigueur opérationnelle, parce qu'une rupture de stock se voit et se paie immédiatement ; le sang-froid face à l'afflux ; et le sens du service, qui reste utile face à un Product Owner mécontent.","<b>What it gave me:</b> operational rigour, because a stockout is instantly visible and instantly costly; composure under pressure; and a service mindset, still useful when facing an unhappy Product Owner."]],
      metrics:[{m:["Rigueur","Rigour"], c:"neu", l:["opérationnelle et sang-froid sous tension","operational rigour and composure under pressure"]}],
      tags:["Rigueur opérationnelle","Relation client","Gestion des stocks"]},
 
-    {h:["Hôpital de Châteauroux — la qualité de la donnée","Châteauroux Hospital — data quality"], per:["2019 · 3 mois","2019 · 3 months"],
+    {h:["Hôpital de Châteauroux : la qualité de la donnée","Châteauroux Hospital: data quality"], per:["2019 · 3 mois","2019 · 3 months"],
      teaser:["Contrôle de données salariales dans la fonction publique hospitalière, où une erreur a un visage.","Payroll data control in public hospital administration, where an error has a face."],
      cah:[
        ["Des dossiers d'agents incomplets ou obsolètes en base, avec un risque de non-conformité et un impact direct sur les rémunérations.","Incomplete or outdated staff records in the database, with a compliance risk and direct impact on pay."],
        ["Fiabilisation et mise à jour des dossiers via les outils digitaux, contrôle des données salariales, puis analyse juridique des textes applicables et instruction de dossiers de revalorisation de carrière.","Cleansing and updating records through digital tools, payroll data control, then legal analysis of applicable statutes and processing of career-upgrade files."],
-       ["<b>Ce que ça m'a apporté :</b> le réflexe de contrôle de cohérence avant de conclure — vérifier la donnée d'entrée plutôt que faire confiance au tableau. C'est exactement ce que je fais aujourd'hui avec le tri du trafic robot.","<b>What it gave me:</b> the consistency-check reflex before concluding — verifying the input data rather than trusting the table. Exactly what I do today with bot-traffic sorting."]],
+       ["<b>Ce que ça m'a apporté :</b> le réflexe de contrôle de cohérence avant de conclure : vérifier la donnée d'entrée plutôt que faire confiance au tableau. C'est exactement ce que je fais aujourd'hui avec le tri du trafic robot.","<b>What it gave me:</b> the consistency-check reflex before concluding: verifying the input data rather than trusting the table. Exactly what I do today with bot-traffic sorting."]],
      metrics:[{m:["Conformité","Compliance"], c:"neu", l:["des données salariales contrôlée","of payroll data verified"]}],
      tags:["Qualité de la donnée","Conformité","Analyse juridique"]},
 
-    {h:["Manpower — la conduite du changement","Manpower — change management"], per:["2018 · 3 mois","2018 · 3 months"],
+    {h:["Manpower : la conduite du changement","Manpower: change management"], per:["2018 · 3 mois","2018 · 3 months"],
      teaser:["Mon premier projet de transformation digitale, et la leçon qui m'a le plus servi depuis.","My first digital transformation project, and the lesson that has served me most since."],
      cah:[
        ["Des échanges de contrats sur papier entre l'agence et les entreprises clientes, et une population d'intérimaires peu familière des outils numériques.","Paper-based contract exchanges between the agency and client companies, and a temp-worker population unfamiliar with digital tools."],
@@ -951,14 +992,14 @@ var AWARDS = {
   order:["aiw","vt","dx"],
   items:[
     {id:"dx", year:"2025", place:["1ʳᵉ place","1st place"],
-     h:["Digital Experience Awards — catégorie Best CRO Team","Digital Experience Awards — Best CRO Team category"],
+     h:["Digital Experience Awards, catégorie Best CRO Team","Digital Experience Awards, Best CRO Team category"],
      meta:["Décernés par Contentsquare · Cérémonie du 16 décembre 2025 · Équipe CRO &amp; Analytics, Groupama Assurances Mutuelles","Awarded by Contentsquare · Ceremony 16 December 2025 · CRO &amp; Analytics team, Groupama Assurances Mutuelles"],
      body:[
        "Notre équipe CRO &amp; Analytics a remporté la première place de la catégorie Best CRO Team, après avoir figuré parmi les trois finalistes. Le jury a distingué une démarche collective et une culture de l'expérimentation construites sur huit ans.",
        "Our CRO &amp; Analytics team won first place in the Best CRO Team category, after being shortlisted among the three finalists. The jury recognised a collective approach and an experimentation culture built over eight years."
      ],
      bullets:[
-       ["<b>Ce que le jury a distingué</b> : le passage d'une démarche artisanale en 2018 — un équivalent temps plein sur les seuls parcours de devis, sans méthodologie ni rituels — à un dispositif structuré couvrant trois environnements digitaux.","<b>What the jury recognised</b>: the shift from an artisanal approach in 2018 — one full-time equivalent on quote journeys alone, with no methodology and no rituals — to a structured programme covering three digital environments."],
+       ["<b>Ce que le jury a distingué</b> : le passage d'une démarche artisanale en 2018 (un équivalent temps plein sur les seuls parcours de devis, sans méthodologie ni rituels) à un dispositif structuré couvrant trois environnements digitaux.","<b>What the jury recognised</b>: the shift from an artisanal approach in 2018 (one full-time equivalent on quote journeys alone, with no methodology and no rituals) to a structured programme covering three digital environments."],
        ["<b>Les preuves apportées</b> : environ six tests mis en ligne chaque mois, aucun projet digital ne démarrant sans analyse préalable, et un tiers des tests mensuels désormais proposés par les Product Owners eux-mêmes.","<b>The evidence provided</b>: around six tests launched every month, no digital project starting without a prior analysis, and a third of monthly tests now proposed by the Product Owners themselves."],
        ["<b>Ma contribution à l'équipe primée</b> : le pilotage du cycle de vie des tests, le suivi quotidien de la performance et la garantie de la qualité de la donnée sur laquelle repose l'ensemble de la démarche.","<b>My contribution to the awarded team</b>: running the test lifecycle, daily performance monitoring and guaranteeing the data quality on which the whole approach rests."]
      ],
@@ -969,16 +1010,16 @@ var AWARDS = {
      tags:["CRO","Contentsquare","Culture d'expérimentation","Travail d'équipe"]},
 
     {id:"aiw", year:"2026", place:["Prix du Meilleur Business Model","Best Business Model prize"],
-     h:["AI Insights Week — hackathon SKEMA × mc2i","AI Insights Week — SKEMA × mc2i hackathon"],
+     h:["AI Insights Week : hackathon SKEMA × mc2i","AI Insights Week: SKEMA × mc2i hackathon"],
      meta:["Février 2026 · 9 équipes en compétition, 50 étudiants · Cas industriel réel proposé par mc2i","February 2026 · 9 competing teams, 50 students · Real industrial case set by mc2i"],
      body:[
        "Une semaine complète en équipe de six sur un cas industriel réel : automatiser le contrôle qualité de pièces de fonderie, encore réalisé à l'œil nu. Neuf équipes ont produit neuf architectures et neuf propositions de valeur distinctes. La nôtre a été distinguée pour son business model.",
        "A full week in a team of six on a real industrial case: automating quality control of foundry parts, still done by eye. Nine teams produced nine distinct architectures and value propositions. Ours was recognised for its business model."
      ],
      bullets:[
-       ["<b>Pourquoi le business model a fait la différence</b> : nous n'avons pas seulement livré un modèle qui détecte des défauts, nous avons chiffré sa rentabilité, son coût de déploiement et sa capacité à être adoptée par des opérateurs — une vraie mission de conseil plutôt qu'un exercice technique.","<b>Why the business model made the difference</b>: we did not just deliver a model that detects defects, we quantified its profitability, deployment cost and ability to be adopted by operators — a genuine consulting engagement rather than a technical exercise."],
+       ["<b>Pourquoi le business model a fait la différence</b> : nous n'avons pas seulement livré un modèle qui détecte des défauts, nous avons chiffré sa rentabilité, son coût de déploiement et sa capacité à être adoptée par des opérateurs : une vraie mission de conseil plutôt qu'un exercice technique.","<b>Why the business model made the difference</b>: we did not just deliver a model that detects defects, we quantified its profitability, deployment cost and ability to be adopted by operators: a genuine consulting engagement rather than a technical exercise."],
        ["<b>Les dimensions intégrées</b> : cybersécurité, cadre juridique, IoT, conduite du changement et impact sociétal, en plus de l'architecture technique.","<b>The dimensions covered</b>: cybersecurity, legal framework, IoT, change management and societal impact, alongside the technical architecture."],
-       ["Le détail technique du projet — jeux de données, modèles comparés, application livrée — figure dans l'onglet <b>Académique</b>.","The technical detail of the project — datasets, models compared, delivered application — is in the <b>Academic</b> tab."]
+       ["Le détail technique du projet (jeux de données, modèles comparés, application livrée) figure dans l'onglet <b>Académique</b>.","The technical detail of the project (datasets, models compared, delivered application) is in the <b>Academic</b> tab."]
      ],
      imgs:[
        {src:"assets/prix-aiw-1.jpg", cap:["Le trophée AI Insights Week 2026","The AI Insights Week 2026 trophy"]},
@@ -989,16 +1030,16 @@ var AWARDS = {
      tags:["Business model","Computer vision","Conseil","mc2i","SKEMA"]},
 
     {id:"vt", year:"2026", place:["Meilleur rapport &amp; meilleures recommandations","Best report &amp; best recommendations"],
-     h:["VivaTech Learning Expedition — étude Vertical AI pour Brexon","VivaTech Learning Expedition — Vertical AI study for Brexon"],
+     h:["VivaTech Learning Expedition : étude Vertical AI pour Brexon","VivaTech Learning Expedition: Vertical AI study for Brexon"],
      meta:["Juin 2026 · Jury composé d'entrepreneurs incubés chez SKEMA Entrepreneurs · Équipe de 5","June 2026 · Jury of entrepreneurs incubated at SKEMA Entrepreneurs · Team of 5"],
      body:[
        "72 heures d'enquête terrain au cœur du plus grand salon tech européen, pour le compte de Brexon, startup française spécialisée dans le traitement des dossiers d'appels d'offres publics du BTP. Le jury a distingué notre rapport et nos recommandations parmi l'ensemble des équipes.",
        "72 hours of field research at the heart of Europe's largest tech show, for Brexon, a French startup specialising in public construction tender processing. The jury singled out our report and recommendations among all the teams."
      ],
      bullets:[
-       ["<b>Mon rôle</b> : coordination et cadrage de l'équipe de cinq — répartition des rôles entre benchmark et UX, architecture technique, entretiens terrain et captation vidéo, puis consolidation des livrables.","<b>My role</b>: coordinating and framing the five-person team — allocating roles across benchmark and UX, technical architecture, field interviews and video capture, then consolidating the deliverables."],
-       ["<b>Ce qui a été salué</b> : la capacité à transformer des observations de terrain — entretiens avec des fondateurs, CTO et product leads sur les stands LegalTech, HealthTech, FinTech, GovTech et InsurTech — en recommandations concrètes et actionnables pour la roadmap 2026-2027 du client.","<b>What was praised</b>: the ability to turn field observations — interviews with founders, CTOs and product leads on LegalTech, HealthTech, FinTech, GovTech and InsurTech stands — into concrete, actionable recommendations for the client's 2026-2027 roadmap."],
-       ["<b>Le fil rouge critique</b> : une analyse de la surcharge cognitive — sans cadrage, l'IA générative élargit le périmètre du travail possible plus qu'elle ne réduit le travail nécessaire.","<b>The critical thread</b>: an analysis of cognitive overload — without framing, generative AI widens the scope of possible work more than it reduces the work required."]
+       ["<b>Mon rôle</b> : coordination et cadrage de l'équipe de cinq : répartition des rôles entre benchmark et UX, architecture technique, entretiens terrain et captation vidéo, puis consolidation des livrables.","<b>My role</b>: coordinating and framing the five-person team: allocating roles across benchmark and UX, technical architecture, field interviews and video capture, then consolidating the deliverables."],
+       ["<b>Ce qui a été salué</b> : la capacité à transformer des observations de terrain (entretiens avec des fondateurs, CTO et product leads sur les stands LegalTech, HealthTech, FinTech, GovTech et InsurTech) en recommandations concrètes et actionnables pour la roadmap 2026-2027 du client.","<b>What was praised</b>: the ability to turn field observations (interviews with founders, CTOs and product leads on LegalTech, HealthTech, FinTech, GovTech and InsurTech stands) into concrete, actionable recommendations for the client's 2026-2027 roadmap."],
+       ["<b>Le fil rouge critique</b> : une analyse de la surcharge cognitive : sans cadrage, l'IA générative élargit le périmètre du travail possible plus qu'elle ne réduit le travail nécessaire.","<b>The critical thread</b>: an analysis of cognitive overload: without framing, generative AI widens the scope of possible work more than it reduces the work required."]
      ],
      imgs:[
        {src:"assets/prix-vt-1.jpg", cap:["Cérémonie de remise des prix de la Learning Expedition VivaTech 2026","VivaTech 2026 Learning Expedition award ceremony"]}
@@ -1017,26 +1058,26 @@ var SCHOOL = {
      h:["Contrôle qualité industriel par vision par ordinateur","Industrial quality control through computer vision"],
      teaser:["Une semaine, neuf équipes, un cas industriel réel. Notre équipe remporte le prix du Meilleur Business Model.","One week, nine teams, a real industrial case. Our team won the Best Business Model prize."],
      kpi:{v:"100 %", l:["de recall sur la classe défectueuse","recall on the defective class"]},
-     lead:["Le client, un industriel produisant des turbines de pompes par moulage, contrôle encore la qualité de ses pièces à l'œil nu — un processus lent, fatigant et faillible.","The client, a manufacturer producing pump turbines by casting, still inspects part quality by eye — a slow, tiring and fallible process."],
+     lead:["Le client, un industriel produisant des turbines de pompes par moulage, contrôle encore la qualité de ses pièces à l'œil nu, un processus lent, fatigant et faillible.","The client, a manufacturer producing pump turbines by casting, still inspects part quality by eye, a slow, tiring and fallible process."],
      cah:[
        ["Détecter automatiquement les défauts de moulage (soufflures, porosités, fissures) sur photos, dans un contexte où laisser passer une pièce défectueuse coûte bien plus cher qu'une fausse alerte.","Automatically detecting casting defects (blowholes, porosity, cracks) from photos, where letting a defective part through costs far more than a false alarm."],
-       ["Comparaison d'un CNN entraîné <i>from scratch</i> (4 blocs convolutionnels, BatchNorm, early stopping) et d'une approche hybride par <i>transfer learning</i> — ResNet50 gelé comme extracteur de 2 048 caractéristiques, puis SVM, Random Forest et XGBoost. Métrique prioritaire : le <b>recall</b> sur la classe défectueuse.","Comparison of a CNN trained <i>from scratch</i> (4 convolutional blocks, BatchNorm, early stopping) with a hybrid <i>transfer learning</i> approach — frozen ResNet50 as a 2,048-feature extractor, then SVM, Random Forest and XGBoost. Priority metric: <b>recall</b> on the defective class."],
+       ["Comparaison d'un CNN entraîné <i>from scratch</i> (4 blocs convolutionnels, BatchNorm, early stopping) et d'une approche hybride par <i>transfer learning</i> : ResNet50 gelé comme extracteur de 2 048 caractéristiques, puis SVM, Random Forest et XGBoost. Métrique prioritaire : le <b>recall</b> sur la classe défectueuse.","Comparison of a CNN trained <i>from scratch</i> (4 convolutional blocks, BatchNorm, early stopping) with a hybrid <i>transfer learning</i> approach: frozen ResNet50 as a 2,048-feature extractor, then SVM, Random Forest and XGBoost. Priority metric: <b>recall</b> on the defective class."],
        ["Un prototype devenu produit : application Streamlit avec verdict, niveau de confiance, localisation visuelle du défaut, recherche d'images similaires (CBIR), description automatique par modèle vision-langage et tableau de bord de KPI en direct.","A prototype turned product: a Streamlit app with verdict, confidence level, visual defect localisation, similar-image retrieval (CBIR), automatic description by a vision-language model and a live KPI dashboard."]],
      metrics:[{m:"5 268", c:"neu", l:["images d'entraînement, 715 de test","training images, 715 for testing"]},{m:"100 %", c:"up", l:["de recall sur la classe défectueuse (ResNet50 + SVM)","recall on the defective class (ResNet50 + SVM)"]},{m:"9", c:"neu", l:["équipes en compétition, 50 étudiants","teams competing, 50 students"]}],
      chart:"models",
-     honest:["<b>Limite assumée.</b> Ces performances tiennent à un jeu de données homogène — vue frontale, éclairage stable, défauts marqués. Elles devraient être revalidées sur de nouvelles séries de production avant tout déploiement réel.","<b>Acknowledged limitation.</b> These results rely on a homogeneous dataset — frontal view, stable lighting, marked defects. They would need revalidation on new production runs before any real deployment."],
+     honest:["<b>Limite assumée.</b> Ces performances tiennent à un jeu de données homogène : vue frontale, éclairage stable, défauts marqués. Elles devraient être revalidées sur de nouvelles séries de production avant tout déploiement réel.","<b>Acknowledged limitation.</b> These results rely on a homogeneous dataset: frontal view, stable lighting, marked defects. They would need revalidation on new production runs before any real deployment."],
      tags:["Python","PyTorch","ResNet50","SVM / XGBoost","Streamlit","CBIR","Vision-language model"]},
 
     {id:"these", f:"gov", org:"SKEMA", per:["2025-2026","2025-2026"], img:"assets/acad-these.jpg",
      ic:"M4 19.5A2.5 2.5 0 016.5 17H20 M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z",
-     h:["Thèse professionnelle — La gouvernance de l'IA","Professional thesis — AI governance"],
+     h:["Thèse professionnelle : la gouvernance de l'IA","Professional thesis: AI governance"],
      teaser:["Sept entretiens dans deux grands groupes financiers pour comprendre comment on répond concrètement à l'AI Act.","Seven interviews in two large financial groups to understand how the EU AI Act is answered in practice."],
      kpi:{v:"7", l:["entretiens semi-directifs conduits et analysés","semi-structured interviews conducted and analysed"]},
      lead:["Comment les entreprises peuvent-elles répondre aux exigences réglementaires en matière d'intelligence artificielle, et anticiper celles à venir, à travers des mécanismes de gouvernance ?","How can organisations meet AI regulatory requirements, and anticipate those to come, through governance mechanisms?"],
      cah:[
        ["L'AI Act impose des obligations dont la traduction opérationnelle reste floue, dans des organisations où l'IA se diffuse plus vite que les dispositifs de contrôle.","The EU AI Act imposes obligations whose operational translation remains unclear, in organisations where AI spreads faster than control mechanisms."],
-       ["Revue de la littérature récente et enquête qualitative : sept entretiens semi-directifs menés dans deux grands groupes financiers français de maturité contrastée, auprès de profils complémentaires — gouvernance IA, conformité et risques, data science et MLOps, AI office.","Literature review and qualitative study: seven semi-structured interviews conducted in two large French financial groups of contrasting maturity, across complementary roles — AI governance, compliance and risk, data science and MLOps, AI office."],
-       ["La gouvernance se construit en adaptant les dispositifs de maîtrise des risques existants ; elle ne devient effective que par son outillage — inventaire des cas d'usage, classification par le risque, validation indépendante, documentation, suivi, automatisation.","Governance is built by adapting existing risk-management frameworks; it only becomes effective through tooling — use-case inventory, risk classification, independent validation, documentation, monitoring, automation."]],
+       ["Revue de la littérature récente et enquête qualitative : sept entretiens semi-directifs menés dans deux grands groupes financiers français de maturité contrastée, auprès de profils complémentaires : gouvernance IA, conformité et risques, data science et MLOps, AI office.","Literature review and qualitative study: seven semi-structured interviews conducted in two large French financial groups of contrasting maturity, across complementary roles: AI governance, compliance and risk, data science and MLOps, AI office."],
+       ["La gouvernance se construit en adaptant les dispositifs de maîtrise des risques existants ; elle ne devient effective que par son outillage : inventaire des cas d'usage, classification par le risque, validation indépendante, documentation, suivi, automatisation.","Governance is built by adapting existing risk-management frameworks; it only becomes effective through tooling: use-case inventory, risk classification, independent validation, documentation, monitoring, automation."]],
      metrics:[{m:"7", c:"neu", l:["entretiens semi-directifs","semi-structured interviews"]},{m:"2", c:"neu", l:["grandes organisations financières comparées","large financial organisations compared"]},{m:["Sept. 2026","Sep 2026"], c:"neu", l:["soutenance, rédigée en binôme","defence, co-written"]}],
      bullets:[
        ["<b>Difficultés persistantes identifiées</b> : incertitude réglementaire, angle mort de l'IA générative et du <i>shadow AI</i>, pénurie de compétences.","<b>Persistent difficulties identified</b>: regulatory uncertainty, the blind spot of generative AI and <i>shadow AI</i>, and the skills shortage."],
@@ -1045,12 +1086,12 @@ var SCHOOL = {
 
     {id:"vivatech", f:"conseil", org:["SKEMA × Brexon","SKEMA × Brexon"], per:["Juin 2026","June 2026"], award:true, img:"assets/acad-vivatech.jpg",
      ic:"M12 2a10 10 0 100 20 10 10 0 000-20z M2 12h20 M12 2a15 15 0 010 20 15 15 0 010-20z",
-     h:["VivaTech — Étude Vertical AI pour Brexon","VivaTech — Vertical AI study for Brexon"],
+     h:["VivaTech : étude Vertical AI pour Brexon","VivaTech: Vertical AI study for Brexon"],
      teaser:["72 heures d'enquête terrain au plus grand salon tech européen, en coordination d'une équipe de cinq.","72 hours of field research at Europe's largest tech show, coordinating a team of five."],
      kpi:{v:"72 h", l:["d'enquête terrain, équipe de 5 coordonnée","of field research, team of 5 coordinated"]},
      lead:["Quel est l'état réel des architectures du Vertical AI en 2026, comment s'y positionne Brexon, et quels verticaux d'extension sont pertinents pour les processus à forte intensité documentaire ?","What is the real state of Vertical AI architectures in 2026, how does Brexon sit within it, and which adjacent verticals make sense for document-heavy processes?"],
      cah:[
-       ["Brexon, startup incubée chez SKEMA Entrepreneurs et lauréate de la Bourse French Tech Innovation 2026, traite les réponses aux appels d'offres publics du BTP — un marché de l'ordre de 89 milliards d'euros par an, sur des dossiers de plusieurs centaines de pages.","Brexon, incubated at SKEMA Entrepreneurs and winner of the 2026 French Tech Innovation grant, handles public construction tender responses — a market worth around €89bn a year, on bid packs running to hundreds of pages."],
+       ["Brexon, startup incubée chez SKEMA Entrepreneurs et lauréate de la Bourse French Tech Innovation 2026, traite les réponses aux appels d'offres publics du BTP, un marché de l'ordre de 89 milliards d'euros par an, sur des dossiers de plusieurs centaines de pages.","Brexon, incubated at SKEMA Entrepreneurs and winner of the 2026 French Tech Innovation grant, handles public construction tender responses, a market worth around €89bn a year, on bid packs running to hundreds of pages."],
        ["<b>Coordination et cadrage</b> d'une équipe de cinq aux rôles complémentaires, puis interviews de fondateurs, CTO et product leads sur les stands LegalTech, HealthTech, FinTech, GovTech et InsurTech.","<b>Coordination and framing</b> of a five-person team with complementary roles, then interviews with founders, CTOs and product leads on LegalTech, HealthTech, FinTech, GovTech and InsurTech stands."],
        ["Cartographie des éditeurs, matrice de maturité des briques technologiques (RAG, long context, Document AI), verticaux d'extension prioritaires et recommandations architecturales 2026-2027. Travail primé par le jury.","A vendor map, a maturity matrix of technology building blocks (RAG, long context, Document AI), priority expansion verticals and 2026-2027 architecture recommendations. Work awarded by the jury."]],
      metrics:[{m:"5", c:"neu", l:["personnes coordonnées sur des rôles complémentaires","people coordinated across complementary roles"]},{m:"5", c:"neu", l:["verticaux explorés en entretiens terrain","verticals explored through field interviews"]},{m:"89 Md€", c:"neu", l:["taille du marché adressé par le client","size of the client's addressable market"]}],
@@ -1058,7 +1099,7 @@ var SCHOOL = {
 
     {id:"endoless", f:"gov", org:["SKEMA × ENDOless","SKEMA × ENDOless"], per:["2025-2026","2025-2026"], img:"assets/acad-endoless.jpg",
      ic:"M12 21s-7-4.6-9.3-9A5.3 5.3 0 0112 5.8 5.3 5.3 0 0121.3 12c-2.3 4.4-9.3 9-9.3 9z",
-     h:["EquaHealth VR — IA et biais de genre en santé","EquaHealth VR — AI and gender bias in healthcare"],
+     h:["EquaHealth VR : IA et biais de genre en santé","EquaHealth VR: AI and gender bias in healthcare"],
      teaser:["Concevoir un moteur de données de santé « conscient du genre » avec une startup deeptech incubée à Station F.","Designing a \"gender-aware\" health data engine with a deeptech startup incubated at Station F."],
      kpi:{v:"7-10 ans", l:["de retard de diagnostic sur l'endométriose","of diagnostic delay for endometriosis"]},
      lead:["Les maladies chroniques féminines comme l'endométriose restent mal comprises, et la plupart des outils de santé numérique sont construits sur des jeux de données centrés sur des profils masculins.","Chronic female conditions such as endometriosis remain poorly understood, and most digital health tools are built on male-centric datasets."],
@@ -1084,7 +1125,7 @@ var SCHOOL = {
 
     {id:"conseil", f:"conseil", org:["SKEMA × AVISIA","SKEMA × AVISIA"], per:["2025","2025"], img:"assets/acad-conseil.jpg",
      ic:"M9 11l3 3L22 4 M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11",
-     h:["Proposition commerciale — moteur de recommandation","Commercial proposal — recommendation engine"],
+     h:["Proposition commerciale : moteur de recommandation","Commercial proposal: recommendation engine"],
      teaser:["Construire une propale complète avec un cabinet de conseil data : cadrage, méthode, architecture, chiffrage.","Building a full proposal with a data consultancy: framing, method, architecture, pricing."],
      kpi:{v:["Propale","Proposal"], l:["complète, du cadrage au chiffrage de charge","complete, from framing to effort estimate"]},
      lead:["Un exercice mené avec AVISIA, cabinet de conseil data intervenant dans le cursus : répondre à une demande client comme un consultant y répondrait.","An exercise run with AVISIA, a data consultancy contributing to the programme: answering a client request the way a consultant would."],
@@ -1097,7 +1138,7 @@ var SCHOOL = {
 
     {id:"bmia", f:"conseil", org:"SKEMA", per:["2026","2026"], img:"assets/acad-bmia.jpg",
      ic:"M3 3v18h18 M7 16l4-6 4 3 5-8",
-     h:["Business model et capacité IA — cas Carrefour","AI business model and capability — Carrefour case"],
+     h:["Business model et capacité IA : cas Carrefour","AI business model and capability: Carrefour case"],
      teaser:["Évaluer la maturité IA d'un grand distributeur et construire le modèle économique d'un cas d'usage.","Assessing a major retailer's AI maturity and building the business model for a use case."],
      kpi:{v:["Maturité","Maturity"], l:["IA évaluée, cas d'usage priorisés","AI maturity assessed, use cases prioritised"]},
      lead:["Un cas d'usage IA techniquement faisable n'est pas un cas d'usage rentable. La différence se joue sur le modèle économique et sur la capacité de l'organisation à absorber le changement.","A technically feasible AI use case is not a profitable one. The difference lies in the business model and in the organisation's capacity to absorb the change."],
@@ -1115,9 +1156,9 @@ var SCHOOL = {
      kpi:{v:"3", l:["jeux de données modélisés et restitués sous Tableau","datasets modelled and visualised in Tableau"]},
      lead:["Un tableau de bord n'a de valeur que si quelqu'un prend une décision différente après l'avoir lu.","A dashboard is only worth building if someone makes a different decision after reading it."],
      cah:[
-       ["Trois jeux de données bruts — urgences hospitalières, données salariales, distribution internationale — sans structure exploitable.","Three raw datasets — hospital emergency departments, salary data, international retail — with no usable structure."],
+       ["Trois jeux de données bruts (urgences hospitalières, données salariales, distribution internationale) sans structure exploitable.","Three raw datasets (hospital emergency departments, salary data, international retail) with no usable structure."],
        ["Modélisation OLAP, préparation et nettoyage, puis conception de visualisations sous Tableau : hiérarchiser l'information, définir des objectifs SMART, éviter la surcharge visuelle.","OLAP modelling, preparation and cleaning, then visualisation design in Tableau: prioritise information, define SMART objectives, avoid visual overload."],
-       ["Des tableaux de bord orientés décision — c'est directement ce que je fais aujourd'hui sur Adobe Analytics.","Decision-oriented dashboards — directly what I do today on Adobe Analytics."]],
+       ["Des tableaux de bord orientés décision : c'est directement ce que je fais aujourd'hui sur Adobe Analytics.","Decision-oriented dashboards: directly what I do today on Adobe Analytics."]],
      metrics:[{m:"OLAP", c:"neu", l:["modélisation multidimensionnelle","multidimensional modelling"]},{m:"3", c:"neu", l:["jeux de données préparés et restitués","datasets prepared and visualised"]}],
      tags:["Tableau","OLAP","Data mining","Power BI"]}
   ]
@@ -1130,16 +1171,16 @@ var ASSO = {
   items:[
     {id:"spa", org:["SPA de l'Indre","SPA de l'Indre"], per:["2017-2018","2017-2018"], img:"assets/asso-spa-thumb.jpg",
      ic:"M12 21s-7-4.6-9.3-9A5.3 5.3 0 0112 5.8 5.3 5.3 0 0121.3 12c-2.3 4.4-9.3 9-9.3 9z",
-     h:["« 36 mille amis » — coordinatrice de projet","\"36 mille amis\" — project coordinator"],
+     h:["« 36 mille amis » : coordinatrice de projet","\"36 mille amis\" : project coordinator"],
      teaser:["Redonner une image et des moyens à un refuge en crise. Mon premier rôle de coordination, sur un projet de neuf mois.","Restoring the image and the means of a struggling animal shelter. My first coordination role, on a nine-month project."],
      kpi:{v:["Coordinatrice","Coordinator"], l:["d'une équipe projet de 5 personnes","of a five-person project team"]},
-     lead:["Le refuge des Rosiers recueille chaque année plusieurs centaines de chiens et de chats. Après des accusations de maltraitance et de détournement de fonds visant son ancienne direction, l'association avait perdu son crédit auprès des habitants — et une partie de ses ressources.","The Rosiers shelter takes in several hundred dogs and cats each year. After accusations of mistreatment and misappropriation targeting its former management, the charity had lost its standing with local people — and part of its resources."],
+     lead:["Le refuge des Rosiers recueille chaque année plusieurs centaines de chiens et de chats. Après des accusations de maltraitance et de détournement de fonds visant son ancienne direction, l'association avait perdu son crédit auprès des habitants, et une partie de ses ressources.","The Rosiers shelter takes in several hundred dogs and cats each year. After accusations of mistreatment and misappropriation targeting its former management, the charity had lost its standing with local people, and part of its resources."],
      cah:[
        ["Un double objectif contradictoire à tenir simultanément : collecter des fonds pour couvrir les dépenses courantes du refuge, et reconstruire une image publique fortement dégradée. Un projet volontairement risqué, choisi pour cette raison.","Two contradictory objectives to meet at once: raise funds to cover the shelter's running costs, and rebuild a badly damaged public image. A deliberately risky project, chosen for that reason."],
        ["<b>En tant que coordinatrice</b> : constitution et répartition des rôles de l'équipe (secrétariat, communication, trésorerie), construction du budget et du planning prévisionnels, animation de réunions hebdomadaires avec comptes rendus écrits, pilotage des tâches sur Trello et partage documentaire sur Google Drive. Intégration des étudiants de première année comme renfort opérationnel.","<b>As coordinator</b>: forming the team and allocating roles (secretariat, communication, treasury), building the forecast budget and schedule, running weekly meetings with written minutes, task management on Trello and document sharing on Google Drive. Bringing first-year students in as operational reinforcement."],
        ["Quatre canaux de collecte activés en parallèle et une opération de reconquête d'image menée jusqu'au financement d'une identité visuelle propre au refuge.","Four fundraising channels activated in parallel and an image-recovery operation carried through to funding a visual identity of the shelter's own."]],
      bullets:[
-       ["<b>Recherche de sponsors</b> : démarchage de cliniques vétérinaires et de fournisseurs d'alimentation animale. Royal Canin accepte de financer la communication de l'événement public — le seul retour positif, obtenu contre un cahier des charges formalisé.","<b>Sponsorship</b>: canvassing veterinary clinics and pet-food suppliers. Royal Canin agreed to fund the public event's communication — the only positive response, secured against a formal specification."],
+       ["<b>Recherche de sponsors</b> : démarchage de cliniques vétérinaires et de fournisseurs d'alimentation animale. Royal Canin accepte de financer la communication de l'événement public : le seul retour positif, obtenu contre un cahier des charges formalisé.","<b>Sponsorship</b>: canvassing veterinary clinics and pet-food suppliers. Royal Canin agreed to fund the public event's communication: the only positive response, secured against a formal specification."],
        ["<b>Opération emballage cadeaux</b> chez Nocibé du 7 au 24 décembre, avec un planning de rotation des bénévoles sur dix-huit jours.","<b>Gift-wrapping operation</b> at Nocibé from 7 to 24 December, with an eighteen-day volunteer rota."],
        ["<b>Opération croquettes</b> en partenariat avec le Carrefour de Châteauroux et un club de marche local, sur une collecte annuelle qui atteint habituellement une tonne.","<b>Pet-food collection</b> in partnership with the Châteauroux Carrefour store and a local walking club, on an annual drive that usually reaches one tonne."],
        ["<b>Cagnotte en ligne</b> sur Leetchi, relayée sur les réseaux et sur les flyers, dédiée au financement du logo.","<b>Online fundraiser</b> on Leetchi, relayed on social media and flyers, dedicated to funding the logo."],
@@ -1159,17 +1200,17 @@ var ASSO = {
 
     {id:"sourires", org:["Un cadeau des sourires","Un cadeau des sourires"], per:["2018","2018"], img:"assets/asso-sourires.jpg",
      ic:"M12 8v8 M8 12h8 M12 2a10 10 0 100 20 10 10 0 000-20z",
-     h:["« 36 rayons de sourires » — communication externe","\"36 rayons de sourires\" — external communications"],
+     h:["« 36 rayons de sourires » : communication externe","\"36 rayons de sourires\" : external communications"],
      teaser:["Collecter des jouets pour les urgences pédiatriques de Châteauroux, et faire connaître une association naissante.","Collecting toys for the Châteauroux paediatric emergency unit, and putting a young charity on the map."],
      kpi:{v:["~10 000","~10,000"], l:["passages par an aux urgences pédiatriques concernées","annual visits to the paediatric emergency unit concerned"]},
      lead:["L'association « Un cadeau, des sourires, des urgences » a été créée par une infirmière du service pour occuper les enfants pendant l'attente avant les soins. Son stock de jouets neufs doit être réapprovisionné toute l'année.","The charity \"Un cadeau, des sourires, des urgences\" was founded by a nurse in the unit to occupy children during the wait before treatment. Its stock of new toys needs replenishing all year round."],
      cah:[
        ["Une association de trois personnes, sans notoriété, dont le stock de jouets s'épuise plus vite qu'il ne se reconstitue.","A three-person charity, with no public profile, whose toy stock runs down faster than it is replenished."],
        ["<b>En tant que chargée de communication externe</b> : rédaction et diffusion du communiqué de presse, obtention d'un partenariat avec BNP Paribas pour l'impression gratuite de 300 tracts, coordination des validations auprès de l'association, de la tutrice universitaire, de la banque et de l'adjoint au maire, puis distribution terrain le jour du marché.","<b>As external communications lead</b>: writing and issuing the press release, securing a partnership with BNP Paribas for the free printing of 300 flyers, coordinating sign-off from the charity, the academic supervisor, the bank and the deputy mayor, then field distribution on market day."],
-       ["Une soirée patinoire ouverte exceptionnellement au public, un stand de gâteaux tenu sur deux week-ends, une cagnotte en ligne — l'intégralité des entrées et des ventes reversée à l'association.","An ice rink evening opened specially to the public, a cake stand run across two weekends, an online fundraiser — every entry fee and sale donated to the charity."]],
+       ["Une soirée patinoire ouverte exceptionnellement au public, un stand de gâteaux tenu sur deux week-ends, une cagnotte en ligne : l'intégralité des entrées et des ventes reversée à l'association.","An ice rink evening opened specially to the public, a cake stand run across two weekends, an online fundraiser: every entry fee and sale donated to the charity."]],
      bullets:[
        ["<b>Relations institutionnelles</b> : obtention de l'ouverture exceptionnelle de la patinoire municipale le 7 décembre de 19 h à 20 h, et des autorisations de tenir un stand sur trois créneaux, via l'adjoint au maire, le régisseur de la patinoire et le service événementiel de la ville.","<b>Institutional relations</b>: securing the exceptional opening of the municipal ice rink on 7 December from 7 to 8pm, and stand authorisations across three slots, via the deputy mayor, the rink manager and the city events department."],
-       ["<b>Contraintes produit intégrées</b> au brief de collecte : jouets neufs et emballés uniquement, tranche d'âge indiquée, aucun jouet évoquant la violence — des règles d'hygiène et de sécurité imposées par le service.","<b>Product constraints built into the collection brief</b>: new and packaged toys only, age range indicated, no violence-themed toys — hygiene and safety rules set by the unit."],
+       ["<b>Contraintes produit intégrées</b> au brief de collecte : jouets neufs et emballés uniquement, tranche d'âge indiquée, aucun jouet évoquant la violence, des règles d'hygiène et de sécurité imposées par le service.","<b>Product constraints built into the collection brief</b>: new and packaged toys only, age range indicated, no violence-themed toys, hygiene and safety rules set by the unit."],
        ["<b>Cagnotte en ligne</b> sans frais mise en place et relayée sur les réseaux et les supports imprimés.","<b>Fee-free online fundraiser</b> set up and relayed on social media and printed materials."]],
      metrics:[
        {m:"300", c:"neu", l:["tracts imprimés gratuitement grâce à un partenariat bancaire","flyers printed free of charge through a banking partnership"]},
@@ -1185,7 +1226,7 @@ var ASSO = {
      lead:["Les commerces indépendants du centre-ville de Châteauroux étaient largement absents des supports numériques : ni horaires fiables, ni visuels, ni description exploitable.","Independent shops in Châteauroux town centre were largely absent from digital channels: no reliable opening hours, no visuals, no usable description."],
      cah:[
        ["Une information commerciale dispersée, obsolète ou inexistante, qui empêchait toute valorisation collective du commerce de proximité.","Commercial information that was scattered, outdated or non-existent, preventing any collective promotion of local retail."],
-       ["Constitution d'une fiche standardisée par commerce — coordonnées, horaires détaillés par jour, photographie de la devanture, logo et description commerciale — puis collecte en porte-à-porte auprès de quatorze enseignes du centre-ville : prêt-à-porter, alimentation, optique, esthétique, chocolaterie, caves, salon de thé.","Building a standardised record per shop — contact details, day-by-day opening hours, shopfront photograph, logo and sales description — then door-to-door collection from fourteen town-centre businesses: clothing, food, optical, beauty, chocolate, wine cellars, tea room."],
+       ["Constitution d'une fiche standardisée par commerce (coordonnées, horaires détaillés par jour, photographie de la devanture, logo et description commerciale), puis collecte en porte-à-porte auprès de quatorze enseignes du centre-ville : prêt-à-porter, alimentation, optique, esthétique, chocolaterie, caves, salon de thé.","Building a standardised record per shop (contact details, day-by-day opening hours, shopfront photograph, logo and sales description), then door-to-door collection from fourteen town-centre businesses: clothing, food, optical, beauty, chocolate, wine cellars, tea room."],
        ["Un référentiel homogène et immédiatement réutilisable, livré à la Chambre de Commerce et d'Industrie.","A homogeneous, immediately reusable reference file, delivered to the Chamber of Commerce and Industry."]],
      metrics:[
        {m:"14", c:"neu", l:["commerces documentés selon un format unique","shops documented in a single format"]},
@@ -1204,14 +1245,14 @@ var RECO = {
     body:["En tant que directrice générale de Green Seed France, j'ai recruté Axelle Poncet au cours de ses deux années d'apprentissage à NEOMA dans le cadre de son Programme Grande École, avec une spécialisation en marketing digital.","As Managing Director of Green Seed France, I recruited Axelle Poncet during her two years of apprenticeship at NEOMA within her Master in Management, specialising in digital marketing."],
     close:["Je recommande Axelle pour toute opportunité future, certaine qu'elle saura s'adapter avec succès à ses futures responsabilités.","I recommend Axelle for any future opportunity, confident she will adapt successfully to her future responsibilities."]
   },
-  fbTitle:["Retours d'évaluation — alternance Groupama","Appraisal feedback — Groupama apprenticeship"],
+  fbTitle:["Retours d'évaluation : alternance Groupama","Appraisal feedback: Groupama apprenticeship"],
   fb:[
     {q:["Elle a gagné en aisance sur la manipulation des outils, mais aussi sur la formalisation d'analyse, en challengeant la cohérence des données.","She has gained ease in handling the tools, but also in formalising analysis, by challenging data consistency."],
-     by:["Maître d'apprentissage — experte CRO","Apprenticeship supervisor — CRO expert"], ctx:["Évaluation de mi-parcours","Mid-year appraisal"]},
-    {q:["Axe de progrès : être plus synthétique en présentation. Réponse apportée : une règle personnelle — une slide, un constat, une recommandation, les détails en annexe.","Improvement area: be more concise when presenting. Response: a personal rule — one slide, one insight, one recommendation, details in the appendix."],
+     by:["Maître d'apprentissage, experte CRO","Apprenticeship supervisor, CRO expert"], ctx:["Évaluation de mi-parcours","Mid-year appraisal"]},
+    {q:["Axe de progrès : être plus synthétique en présentation. Réponse apportée : une règle personnelle : une slide, un constat, une recommandation, les détails en annexe.","Improvement area: be more concise when presenting. Response: a personal rule: one slide, one insight, one recommendation, details in the appendix."],
      by:["Visite tripartite école / entreprise","Tripartite school / company review"], ctx:["Axe de progrès et plan d'action","Improvement area and action plan"]},
     {q:["Objectif atteint : réaliser 80 à 100 % des analyses et reportings sans supervision, sur des environnements exposés à plusieurs centaines de milliers de visiteurs.","Objective met: deliver 80 to 100% of analyses and reports without supervision, on environments exposed to several hundred thousand visitors."],
-     by:["Objectif de responsabilité — livret de suivi","Accountability objective — apprenticeship logbook"], ctx:["Bilan de fin d'année","End-of-year review"]}
+     by:["Objectif de responsabilité : livret de suivi","Accountability objective: apprenticeship logbook"], ctx:["Bilan de fin d'année","End-of-year review"]}
   ],
   refNote:["Les coordonnées de mes référents professionnels sont disponibles sur demande.","Contact details for my professional referees are available on request."]
 };
@@ -1222,22 +1263,22 @@ var CONTACT = {
   lookTitle:["Ce que je recherche","What I'm looking for"],
   look:[
     [["Postes visés","Target roles"],["Cheffe de projet Data &amp; IA · Consultante CRO et valorisation de la donnée · Chef de projet digital et performance","Data &amp; AI Project Manager · CRO and data-value consultant · Digital performance project lead"]],
-    [["Disponibilité","Availability"],["Novembre 2026, à l'issue de mon alternance","November 2026, at the end of my apprenticeship"]],
+    [["Disponibilité","Availability"],["Immédiate, mon contrat chez Groupama s'est achevé début octobre 2026","Immediate, my contract at Groupama ended in early October 2026"]],
     [["Localisation","Location"],["Paris et Île-de-France · ouverte à l'hybride","Paris and Île-de-France · open to hybrid"]],
-    [["Langues de travail","Working languages"],["Français et anglais (C1 — TOEIC 900)","French and English (C1 — TOEIC 900)"]]
+    [["Langues de travail","Working languages"],["Français et anglais (C1, TOEIC 900)","French and English (C1, TOEIC 900)"]]
   ],
   faqTitle:["Questions fréquentes de recruteurs","Frequently asked by recruiters"],
   faq:[
     {q:["Quel est votre positionnement en une phrase ?","What is your positioning in one sentence?"],
-     a:["Cheffe de projet data et IA, formée à la gestion de projet et à la technique, avec un an de pratique de l'expérimentation en ligne dans un grand groupe — je transforme une mesure en décision acceptée.","A data and AI project manager, trained in both project management and the technical side, with one year of hands-on online experimentation in a large group — I turn a measurement into an accepted decision."]},
+     a:["Cheffe de projet data et IA, formée à la gestion de projet et à la technique, avec un an de pratique de l'expérimentation en ligne dans un grand groupe. Je transforme une mesure en décision acceptée.","A data and AI project manager, trained in both project management and the technical side, with one year of hands-on online experimentation in a large group. I turn a measurement into an accepted decision."]},
     {q:["Vous êtes plutôt profil technique ou profil métier ?","Are you more of a technical or a business profile?"],
-     a:["Charnière. Je comprends les mécanismes de la programmation et le fonctionnement des différents modèles d'IA — ce qu'ils peuvent produire, ce qu'ils ne peuvent pas, et où ils se trompent. Cette compréhension me permet d'obtenir des résultats techniques concrets et des gains de productivité importants, en dialoguant d'égal à égal avec les équipes techniques. Mon métier reste de faire coopérer des équipes autour d'une hypothèse mesurable.","A hinge profile. I understand how programming works and how the different AI models behave — what they can produce, what they cannot, and where they fail. That understanding lets me deliver concrete technical results and significant productivity gains, while talking on equal terms with technical teams. My job remains getting teams to cooperate around a measurable hypothesis."]},
+     a:["Charnière. Je comprends les mécanismes de la programmation et le fonctionnement des différents modèles d'IA : ce qu'ils peuvent produire, ce qu'ils ne peuvent pas, et où ils se trompent. Cette compréhension me permet d'obtenir des résultats techniques concrets et des gains de productivité importants, en dialoguant d'égal à égal avec les équipes techniques. Mon métier reste de faire coopérer des équipes autour d'une hypothèse mesurable.","A hinge profile. I understand how programming works and how the different AI models behave: what they can produce, what they cannot, and where they fail. That understanding lets me deliver concrete technical results and significant productivity gains, while talking on equal terms with technical teams. My job remains getting teams to cooperate around a measurable hypothesis."]},
     {q:["Avez-vous piloté des projets ?","Have you run projects?"],
-     a:["Oui, en responsabilité directe. Chez Groupama, je pilote le cycle de vie complet des A/B tests — environ six par mois — en coordonnant UX, intégrateurs, développeurs, Product Owners et onze caisses régionales. J'ai également piloté des agences externes de bout en bout, et coordonné une équipe projet de cinq personnes dès mon DUT, sur un projet associatif de neuf mois.","Yes, with direct accountability. At Groupama I run the full A/B testing lifecycle — around six a month — coordinating UX, integrators, developers, Product Owners and eleven regional branches. I have also managed external agencies end to end, and coordinated a five-person project team back in my first degree, on a nine-month charity project."]},
+     a:["Oui, en responsabilité directe. Chez Groupama, je pilote le cycle de vie complet des A/B tests (environ six par mois) en coordonnant UX, intégrateurs, développeurs, Product Owners et onze caisses régionales. J'ai également piloté des agences externes de bout en bout, et coordonné une équipe projet de cinq personnes dès mon DUT, sur un projet associatif de neuf mois.","Yes, with direct accountability. At Groupama I run the full A/B testing lifecycle (around six a month), coordinating UX, integrators, developers, Product Owners and eleven regional branches. I have also managed external agencies end to end, and coordinated a five-person project team back in my first degree, on a nine-month charity project."]},
     {q:["Quelles sont vos 3 plus grandes qualités ?","What are your three greatest strengths?"],
-     a:["<b>La rigueur</b> : savoir écrire « on ne peut pas conclure » plutôt que céder à un arbitrage prématuré, même sous pression de délai. <b>La fiabilité</b> : dans un dispositif où dix équipes dépendent les unes des autres, mes livrables arrivent à l'heure et sans erreur — c'est le levier sur lequel j'ai le plus consciemment investi. <b>La capacité à faire adhérer</b> : associer les parties prenantes à la formulation de l'hypothèse plutôt que leur présenter un résultat, ce qui transforme un contradicteur potentiel en prescripteur.","<b>Rigour</b>: being able to write \"we cannot conclude\" rather than rushing a decision, even under deadline pressure. <b>Reliability</b>: in a setup where ten teams depend on each other, my deliverables arrive on time and error-free — the lever I have invested in most consciously. <b>The ability to build buy-in</b>: involving stakeholders in framing the hypothesis rather than presenting them a result, which turns a potential objector into an advocate."]},
+     a:["<b>La rigueur</b> : savoir écrire « on ne peut pas conclure » plutôt que céder à un arbitrage prématuré, même sous pression de délai. <b>La fiabilité</b> : dans un dispositif où dix équipes dépendent les unes des autres, mes livrables arrivent à l'heure et sans erreur : c'est le levier sur lequel j'ai le plus consciemment investi. <b>La capacité à faire adhérer</b> : associer les parties prenantes à la formulation de l'hypothèse plutôt que leur présenter un résultat, ce qui transforme un contradicteur potentiel en prescripteur.","<b>Rigour</b>: being able to write \"we cannot conclude\" rather than rushing a decision, even under deadline pressure. <b>Reliability</b>: in a setup where ten teams depend on each other, my deliverables arrive on time and error-free, the lever I have invested in most consciously. <b>The ability to build buy-in</b>: involving stakeholders in framing the hypothesis rather than presenting them a result, which turns a potential objector into an advocate."]},
     {q:["Où en êtes-vous de votre diplôme ?","Where are you with your degree?"],
-     a:["Ma formation est terminée. J'ai achevé le Mastère Spécialisé® Chef de projet IA à SKEMA Business School (promotion 2025-2026, label Conférence des Grandes Écoles, titre RNCP niveau 7), thèse professionnelle soutenue en septembre 2026. Je suis pleinement disponible à l'issue de mon alternance, en novembre 2026.","My studies are complete. I have finished the Advanced Master's in AI Project Management at SKEMA Business School (class of 2025-2026, Conférence des Grandes Écoles label, RNCP level 7), with the professional thesis defended in September 2026. I am fully available at the end of my apprenticeship, in November 2026."]}
+     a:["Ma formation est terminée. J'ai achevé le Mastère Spécialisé® Chef de projet IA à SKEMA Business School (promotion 2025-2026, label Conférence des Grandes Écoles, titre RNCP niveau 7), thèse professionnelle soutenue en septembre 2026. Mon contrat chez Groupama s'est achevé début octobre 2026 : je suis disponible immédiatement.","My studies are complete. I have finished the Advanced Master's in AI Project Management at SKEMA Business School (class of 2025-2026, Conférence des Grandes Écoles label, RNCP level 7), with the professional thesis defended in September 2026. My contract at Groupama ended in early October 2026, so I am available immediately."]}
   ]
 };
 </script>
@@ -1256,11 +1297,11 @@ function tgTip(id,e){ e.stopPropagation(); var el=document.getElementById(id); d
 
 /* ---------- GRAPHIQUES ---------- */
 function chartBeforeAfter(){
-  var d=[{l:["Avis vérifiés — conversion tunnel auto","Verified reviews — car funnel conversion"],a:29.5,b:30.1},
-         {l:["Accès déclaration sinistre — conversion auto","Claim access — car conversion"],a:68.6,b:71.3},
-         {l:["Gabarit pages conseil — engagement","Advice-page template — engagement"],a:6.0,b:9.4},
-         {l:["Attestations en ligne — visualisation","Online certificates — views"],a:15.8,b:17.0},
-         {l:["Visuel page offre santé — taux de leads","Health offer page visual — lead rate"],a:6.0,b:7.0}];
+  var d=[{l:["Avis vérifiés : conversion tunnel auto","Verified reviews: car funnel conversion"],a:29.5,b:30.1},
+         {l:["Accès déclaration sinistre : conversion auto","Claim access: car conversion"],a:68.6,b:71.3},
+         {l:["Gabarit pages conseil : engagement","Advice-page template: engagement"],a:6.0,b:9.4},
+         {l:["Attestations en ligne : visualisation","Online certificates: views"],a:15.8,b:17.0},
+         {l:["Visuel page offre santé : taux de leads","Health offer page visual: lead rate"],a:6.0,b:7.0}];
   var W=680,rowH=54,pad=278,H=d.length*rowH+14,max=80,dec=L?".":",";
   var s='<svg viewBox="0 0 '+W+' '+H+'" role="img">';
   d.forEach(function(r,i){
@@ -1391,6 +1432,10 @@ function rHome(){
   o+='<a href="'+ME.linkedin+'" target="_blank" rel="noopener">'+liIcon(15)+'linkedin.com/in/axelle-poncet</a></div>';
   o+='</div><img class="avatar" src="'+ME.photo+'" alt="Axelle Poncet"></div></div>';
 
+  o+='<button class="phare blk" onclick="goPhare()" data-s="'+esc(t(h.phare.h)+" "+t(h.phare.p))+'">';
+  o+='<span class="ic">'+ic("M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z M9 21h6 M4.2 4.2l1.5 1.5 M18.3 4.2l-1.5 1.5 M2 12h2 M20 12h2",24)+'</span>';
+  o+='<span class="tx"><span class="tag">'+t(h.phare.tag)+'</span><h3>'+t(h.phare.h)+'</h3><p>'+t(h.phare.p)+'</p>';
+  o+='<span class="cta">'+t(h.phare.cta)+ic("M5 12h14 M13 6l6 6-6 6",15)+'</span></span></button>';
   o+='<div class="grid g4 blk">';
   h.stats.forEach(function(s){o+='<div class="stat" data-s="'+esc(t(s.k))+'"><div class="v mono">'+s.v+' <small>'+t(s.u)+'</small></div><div class="k">'+t(s.k)+'</div></div>'});
   o+='</div>';
@@ -1494,6 +1539,7 @@ function missionBlock(m){
   m.cah.forEach(function(c,i){o+='<div><h5>'+lb[i]+'</h5><p>'+t(c)+'</p></div>'});
   o+='</div>';
   if(m.metrics){o+='<div class="metrics">';m.metrics.forEach(function(x){o+='<div class="metric"><div class="m '+x.c+'">'+t(x.m)+'</div><div class="l">'+t(x.l)+'</div></div>'});o+='</div>'}
+  if(m.bullets){o+='<ul class="bullets">';m.bullets.forEach(function(b){o+='<li>'+t(b)+'</li>'});o+='</ul>'}
   if(m.chart&&CHARTS[m.chart]) o+='<div style="margin-bottom:16px">'+CHARTS[m.chart]()+'</div>';
   if(m.honest) o+='<div class="note" style="margin-bottom:16px">'+ic("M12 8v5 M12 16h.01 M12 2a10 10 0 100 20 10 10 0 000-20z",16)+'<div>'+t(m.honest)+'</div></div>';
   if(m.table){
@@ -1518,6 +1564,7 @@ function rWork(){
   });
   return o;
 }
+function goPhare(){ go("work"); setTimeout(function(){ openTheme("accult"); var e=document.getElementById("th-accult"); if(e) window.scrollTo({top:e.getBoundingClientRect().top+window.scrollY-140,behavior:"smooth"}); },120); }
 function openTheme(id){ var el=document.getElementById("th-"+id); if(el){ el.classList.add("open"); } }
 
 /* ---------- SOMMAIRE DE CARTES + DÉTAIL ---------- */
@@ -1553,7 +1600,7 @@ function detailView(x,backFn){
 var schoolFilter="all",schoolOpen=null;
 function rSchool(){
   if(schoolOpen){ var x=SCHOOL.items.filter(function(i){return i.id===schoolOpen})[0]; if(x) return detailView(x,"openSchool"); }
-  var o='<div class="eyebrow">'+t(["Projets académiques","Academic work"])+'</div><h2 class="sec">'+t(["Mastère Spécialisé® Chef de projet IA — SKEMA","Advanced Master's in AI Project Management — SKEMA"])+'</h2>';
+  var o='<div class="eyebrow">'+t(["Projets académiques","Academic work"])+'</div><h2 class="sec">'+t(["Mastère Spécialisé® Chef de projet IA, SKEMA","Advanced Master's in AI Project Management, SKEMA"])+'</h2>';
   o+='<p class="lede">'+t(SCHOOL.intro)+'</p>';
   return o+cardIndex(SCHOOL.items,SCHOOL.filters,schoolFilter,"setSchoolFilter","openSchool");
 }
@@ -1594,7 +1641,7 @@ function rReco(){
   var o='<div class="eyebrow">'+t(["Recommandations","References"])+'</div><h2 class="sec">'+t(["Ce que disent celles et ceux qui ont travaillé avec moi","What the people who worked with me say"])+'</h2>';
   o+='<p class="lede">'+t(RECO.intro)+'</p>';
   o+='<div class="card pad blk" data-s="'+esc(t(l.pull)+" "+l.name+" "+l.org)+'">';
-  o+='<div class="quote" style="margin-bottom:26px"><p>« '+t(l.pull)+' »</p><div class="by"><b>'+l.name+'</b>'+t(l.who)+' — '+l.org+' · '+t(l.date)+'</div></div>';
+  o+='<div class="quote" style="margin-bottom:26px"><p>« '+t(l.pull)+' »</p><div class="by"><b>'+l.name+'</b>'+t(l.who)+' · '+l.org+' · '+t(l.date)+'</div></div>';
   o+='<p style="font-size:14.5px;color:var(--ink-2);max-width:72ch">'+t(l.body)+'</p><p style="font-size:14.5px;color:var(--ink-2);max-width:72ch">'+t(l.close)+'</p>';
   o+='<div class="note" style="margin-top:20px">'+ic("M12 8v5 M12 16h.01 M12 2a10 10 0 100 20 10 10 0 000-20z",16)+'<div>'+t(["La lettre signée est disponible sur simple demande. Je ne la publie pas en ligne : elle comporte les coordonnées personnelles de sa signataire.","The signed letter is available on request. I do not publish it online: it contains the personal contact details of its author."])+'</div></div></div>';
   o+='<div class="eyebrow">'+t(["Évaluations","Appraisals"])+'</div><h3 style="font-size:23px;margin-bottom:26px">'+t(RECO.fbTitle)+'</h3><div class="grid g3">';
@@ -1720,7 +1767,7 @@ function animateBars(){
 function applyStatic(){
   document.querySelectorAll("[data-i18n]").forEach(function(e){ e.innerHTML=t(T[e.getAttribute("data-i18n")]); });
   document.querySelectorAll("[data-i18n-ph]").forEach(function(e){ e.placeholder=t(T[e.getAttribute("data-i18n-ph")]); });
-  document.title = L ? "Axelle Poncet — Data & AI Project Manager" : "Axelle Poncet — Cheffe de projet Data & IA";
+  document.title = L ? "Axelle Poncet · Data & AI Project Manager" : "Axelle Poncet · Cheffe de projet Data & IA";
 }
 function setLang(l){
   L=(l==="en")?1:0;
@@ -1802,7 +1849,7 @@ function buildIndex(){
   var wtb=TABS.filter(function(x){return x.id==="work"})[0];
   WORK.themes.forEach(function(th){
     th.items.forEach(function(m){
-      var body=[t(m.teaser),m.cah.map(strip).join(" "),(m.tags||[]).join(" "),
+      var body=[t(m.teaser),m.cah.map(strip).join(" "),(m.tags||[]).join(" "),(m.bullets||[]).map(strip).join(" "),
                 (m.metrics||[]).map(function(x){return t(x.m)+" "+t(x.l)}).join(" "),
                 m.table?m.table.rows.map(function(r){return t(r[0])+" "+t(r[2])}).join(" "):""].join(" ");
       IDX.push({tab:"work",tabLabel:t(wtb.label),act:"openTheme",id:th.id,anchor:"th-"+th.id,title:t(m.h),body:body.slice(0,1600),n:norm(t(m.h)+" "+body+" "+t(th.n))});
