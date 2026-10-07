@@ -3,13 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Axelle Poncet · Cheffe de projet Data &amp; IA</title>
-<meta name="description" content="Portfolio d'Axelle Poncet, cheffe de projet Data & IA. CRO, analytics et IA appliquée. Réalisations chiffrées, prix et projets.">
+<title>Axelle Poncet · Gestion de projet et Data &amp; IA</title>
+<meta name="description" content="Portfolio d'Axelle Poncet : gestion de projet, data et IA. CRO et A/B testing, analytics, IA appliquée. Réalisations chiffrées, prix et projets.">
 <meta name="author" content="Axelle Poncet">
-<meta property="og:title" content="Axelle Poncet · Cheffe de projet Data & IA">
-<meta property="og:description" content="Là où la donnée devient décision.">
-<meta property="og:image" content="assets/photo-axelle.jpg">
+<link rel="canonical" href="https://axellepon.github.io/">
+<meta property="og:site_name" content="Axelle Poncet">
+<meta property="og:locale" content="fr_FR">
 <meta property="og:type" content="profile">
+<meta property="og:url" content="https://axellepon.github.io/">
+<meta property="og:title" content="Axelle Poncet · Gestion de projet et Data &amp; IA">
+<meta property="og:description" content="Portfolio interactif : CRO et A/B testing, analytics, IA appliquée. Réalisations chiffrées, prix et projets.">
+<meta property="og:image" content="https://axellepon.github.io/assets/og-partage.jpg">
+<meta property="og:image:secure_url" content="https://axellepon.github.io/assets/og-partage.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="Axelle Poncet, gestion de projet et Data &amp; IA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Axelle Poncet · Gestion de projet et Data &amp; IA">
+<meta name="twitter:description" content="Portfolio interactif : CRO et A/B testing, analytics, IA appliquée.">
+<meta name="twitter:image" content="https://axellepon.github.io/assets/og-partage.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230d1526'/><text x='50' y='68' font-size='50' font-family='system-ui,sans-serif' font-weight='700' fill='%2338bdf8' text-anchor='middle'>AP</text></svg>">
 <style>
 /* Palette Aube : contrastes AA vérifiés dans les deux thèmes */
@@ -900,7 +913,7 @@ var WORK = {
    n:["Acculturation \u00e0 l'IA &amp; conduite du changement","AI enablement &amp; change management"],
    s:["Ma r\u00e9alisation la plus r\u00e9cente : faire passer tout un p\u00f4le \u00e0 l'IA g\u00e9n\u00e9rative.","My most recent work: getting a whole division started with generative AI."],
    items:[
-    {h:["Concevoir et animer l'atelier d'acculturation \u00e0 l'IA du p\u00f4le digital","Designing and running the digital division's AI enablement workshop"], per:["Septembre 2026","September 2026"],
+    {h:["Concevoir et animer l'atelier d'acculturation \u00e0 l'IA du p\u00f4le digital","Designing and running the digital division's AI enablement workshop"], imgs:[{src:"assets/atelier-slide-1.jpg", cap:["Le programme de l'atelier : trois objectifs de sortie et un minutage au quart d'heure, sur une heure trente.","The workshop agenda: three take-away objectives and a quarter-hour timing, across ninety minutes."]},{src:"assets/atelier-slide-2.jpg", cap:["La slide d'ouverture : l'outil déjà disponible, son coût et le temps récupérable, annoncés d'entrée.","The opening slide: the tool already available, its cost and the recoverable time, stated up front."]}], per:["Septembre 2026","September 2026"],
      teaser:["Une heure et demie, cinquante-six slides, toutes les \u00e9quipes et les managers du p\u00f4le r\u00e9unis. Un atelier con\u00e7u seule, de l'enqu\u00eate terrain jusqu'aux fiches actions individuelles.","Ninety minutes, fifty-six slides, every team and manager in the division. A workshop built single-handedly, from field survey to individual action sheets."],
      cah:[
        ["L'IA g\u00e9n\u00e9rative arrivait dans l'entreprise sans mode d'emploi. Copilot Chat \u00e9tait d\u00e9j\u00e0 disponible gratuitement pour tous dans Teams, et pratiquement personne ne s'en servait : pas de m\u00e9thode, aucun cas d'usage identifi\u00e9 sur les t\u00e2ches r\u00e9elles, et une r\u00e9putation de gadget. En parall\u00e8le, des demandes de licences remontaient sans dossier pour les arbitrer.","Generative AI was arriving with no instructions. Copilot Chat was already free and available to everyone in Teams, and almost nobody used it: no method, no use cases identified on real tasks, and a reputation as a gimmick. Meanwhile licence requests were coming up with no business case to arbitrate them."],
@@ -1690,6 +1703,7 @@ function trendIc(c){
 function missionBlock(m){
   var o='<div class="mcard" data-s="'+esc(t(m.h)+" "+t(m.teaser)+" "+m.cah.map(strip).join(" ")+" "+(m.tags||[]).join(" "))+'">';
   o+='<div class="mh"><h4>'+t(m.h)+'</h4><span class="per">'+t(m.per)+'</span></div><p>'+t(m.teaser)+'</p>';
+  if(m.imgs) o+='<div style="margin:0 0 22px">'+carousel(m.imgs)+'</div>';
   o+='<div class="cah">';
   var lb=[["Constat","Action","Résultat"],["Observation","Action","Result"]][L];
   var sic=[ic("M11 19a8 8 0 100-16 8 8 0 000 16z M21 21l-4.3-4.3",21),ic("M13 2L3 14h8l-1 8 10-12h-8l1-8z",21),ic("M12 21a9 9 0 100-18 9 9 0 000 18z M12 17a5 5 0 100-10 5 5 0 000 10z M12 13a1 1 0 100-2 1 1 0 000 2z",21)];
@@ -1986,9 +2000,10 @@ function animateBars(){
 function applyStatic(){
   document.querySelectorAll("[data-i18n]").forEach(function(e){ e.innerHTML=t(T[e.getAttribute("data-i18n")]); });
   document.querySelectorAll("[data-i18n-ph]").forEach(function(e){ e.placeholder=t(T[e.getAttribute("data-i18n-ph")]); });
-  document.title = L ? "Axelle Poncet · Data & AI Project Manager" : "Axelle Poncet · Cheffe de projet Data & IA";
+  document.title = L ? "Axelle Poncet · Project management and Data & AI" : "Axelle Poncet · Gestion de projet et Data & IA";
 }
 function setLang(l){
+  try{ document.documentElement.setAttribute("lang", l===1?"en":"fr"); }catch(e){}
   L=(l==="en")?1:0;
   document.documentElement.lang=l;
   document.getElementById("lang-fr").setAttribute("aria-pressed",L===0);
