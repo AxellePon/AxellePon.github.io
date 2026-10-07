@@ -338,7 +338,8 @@ h2.sec{font-size:clamp(26px,3.2vw,35px);margin-bottom:10px}
 .bar i{display:block;height:100%;border-radius:99px;background:var(--accent);width:0;transition:width 1s cubic-bezier(.2,.8,.3,1)}
 .certrow{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line);font-size:16.5px}
 .certrow:last-child{border-bottom:0;padding-bottom:0}
-.certrow .y{font-family:var(--mono);font-size:14px;color:var(--accent);font-weight:700;min-width:90px;padding-top:3px}
+.certrow .y{font-family:var(--mono);font-size:14px;color:var(--accent);font-weight:700;flex:0 0 122px;width:122px;line-height:1.4;padding-top:3px;overflow-wrap:break-word}
+@media(max-width:560px){.certrow{flex-direction:column;gap:6px}.certrow .y{flex:none;width:auto}}
 .qrow{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
 .qrow:last-child{border-bottom:0;padding-bottom:0}
 .qrow .rk{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-family:var(--mono);font-size:14.5px;font-weight:800;background:var(--accent-soft);color:var(--accent);flex-shrink:0}
@@ -1545,13 +1546,13 @@ function rHome(){
   o+='<a href="'+ME.linkedin+'" target="_blank" rel="noopener">'+liIcon(15)+'linkedin.com/in/axelle-poncet</a></div>';
   o+='</div><img class="avatar" src="'+ME.photo+'" alt="Axelle Poncet"></div></div>';
 
+  o+='<div class="grid g4 blk">';
+  h.stats.forEach(function(s){o+='<div class="stat" data-s="'+esc(t(s.k))+'"><div class="v mono">'+s.v+' <small>'+t(s.u)+'</small></div><div class="k">'+t(s.k)+'</div></div>'});
+  o+='</div>';
   o+='<button class="phare blk" onclick="goPhare()" data-s="'+esc(t(h.phare.h)+" "+t(h.phare.p))+'">';
   o+='<span class="ic">'+ic("M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z M9 21h6 M4.2 4.2l1.5 1.5 M18.3 4.2l-1.5 1.5 M2 12h2 M20 12h2",24)+'</span>';
   o+='<span class="tx"><span class="tag">'+t(h.phare.tag)+'</span><h3>'+t(h.phare.h)+'</h3><p>'+t(h.phare.p)+'</p>';
   o+='<span class="cta">'+t(h.phare.cta)+ic("M5 12h14 M13 6l6 6-6 6",15)+'</span></span></button>';
-  o+='<div class="grid g4 blk">';
-  h.stats.forEach(function(s){o+='<div class="stat" data-s="'+esc(t(s.k))+'"><div class="v mono">'+s.v+' <small>'+t(s.u)+'</small></div><div class="k">'+t(s.k)+'</div></div>'});
-  o+='</div>';
 
   o+='<div class="blk"><div class="eyebrow">'+t(["Positionnement","Positioning"])+'</div><h2 class="sec">'+t(["Data &amp; IA au service de la décision","Data &amp; AI in the service of decisions"])+'</h2>';
   o+='<p class="lede">'+t(["Trois choses que je sais faire, pratiquées en conditions réelles.","Three things I know how to do, practised in real conditions."])+'</p><div class="grid g3">';
