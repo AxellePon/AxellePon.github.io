@@ -123,7 +123,7 @@ section.panel.on{display:block}
 .eyebrow{font-size:13.5px;text-transform:uppercase;letter-spacing:.1em;font-weight:750;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:12px}
 .eyebrow::after{content:"";height:1.5px;flex:1;background:var(--line)}
 h2.sec{font-size:clamp(26px,3.2vw,35px);margin-bottom:10px}
-.lede{color:var(--ink-2);max-width:68ch;font-size:18.5px;line-height:1.65;margin-bottom:28px}
+.lede{color:var(--ink-2);font-size:18.5px;line-height:1.65;margin-bottom:28px}
 .blk{margin-bottom:48px}
 .blk-last{margin-bottom:16px}
 .card{background:var(--surface);border:1.5px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
@@ -304,7 +304,7 @@ html[data-theme="dark"] .cah .stp{color:#06101c}
 .detail-hd{margin-bottom:28px}
 .detail-hd .org{font-size:14px;text-transform:uppercase;letter-spacing:.09em;font-weight:750;color:var(--accent-2);margin-bottom:12px}
 .detail-hd h2{font-size:clamp(26px,3.4vw,38px);margin-bottom:14px}
-.detail-hd p{font-size:19px;line-height:1.65;color:var(--ink-2);max-width:70ch;margin:0}
+.detail-hd p{font-size:19px;line-height:1.65;color:var(--ink-2);margin:0}
 
 /* CARROUSEL */
 .caro{border:1.5px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden;box-shadow:var(--shadow)}
@@ -453,7 +453,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding:28px 0
 
 /* LISIBILITÉ DES TEXTES LONGS : mesure limitée, césure, paragraphes repliables */
 p,li,td,.k,.sub{text-wrap:pretty;hyphens:auto;-webkit-hyphens:auto}
-.lede,.phare p,.mcard>p,.detail-hd p,.fold-body p,.quote p{max-width:72ch}
+.lede,.phare p,.mcard>p,.detail-hd p,.fold-body p,.quote p{max-width:none}
 .tl-body li,.bullets li{max-width:none}
 .bullets li::marker,.tl-body li::marker{color:var(--accent)}
 .bullets li strong:first-child,.tl-body li strong:first-child{color:var(--ink)}
@@ -493,14 +493,14 @@ html[data-theme="dark"] #p-reco,html[data-theme="dark"] #tab-reco{--accent:#ee8a
 html[data-theme="dark"] #p-contact,html[data-theme="dark"] #tab-contact{--accent:#31b7e8;--on-accent:#06101c;--accent-soft:#073b4d;--page-soft:#122e3a;--page-edge:#176d8b}
 
 /* EN-TÊTE DE PAGE : bandeau teinté avec icône de l'onglet */
-.phead{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 24px;align-items:start;padding:32px 36px;margin:0 0 40px;border-radius:26px;background:var(--accent-soft);border:1.5px solid var(--page-edge,var(--line))}
-.phead .pic{grid-row:1 / span 3;width:64px;height:64px;border-radius:18px;display:grid;place-items:center;background:var(--accent);color:var(--on-accent);box-shadow:var(--shadow)}
-.phead .pic svg{width:30px;height:30px}
-.phead .eyebrow{margin:2px 0 4px}
+.phead{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 22px;align-items:start;padding:20px 32px;margin:0 0 32px;border-radius:24px;background:var(--accent-soft);border:1.5px solid var(--page-edge,var(--line))}
+.phead .pic{grid-row:1 / span 3;width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:var(--accent);color:var(--on-accent);box-shadow:var(--shadow)}
+.phead .pic svg{width:27px;height:27px}
+.phead .eyebrow{margin:0 0 2px}
 .phead .eyebrow::after{content:none}
 .phead h2.sec{margin:0}
-.phead .lede{margin:8px 0 0;color:var(--ink-2)}
-@media(max-width:640px){.phead{grid-template-columns:1fr;padding:24px}.phead .pic{grid-row:auto;width:52px;height:52px;margin-bottom:8px}}
+.phead .lede{margin:5px 0 0;color:var(--ink-2);font-size:17.5px;line-height:1.55}
+@media(max-width:640px){.phead{grid-template-columns:1fr;padding:18px 20px}.phead .pic{grid-row:auto;width:52px;height:52px;margin-bottom:8px}}
 /* Intertitres de blocs : pastille de couleur plutôt que filet */
 .blk>.eyebrow::before,.card>.eyebrow::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--accent);flex-shrink:0}
 /* Cartes : liseré supérieur coloré au survol, transitions homogènes */
@@ -1405,7 +1405,7 @@ var CONTACT = {
   intro:["Le plus simple est de m'écrire ou de passer par LinkedIn. J'y réponds sous 48 heures.","The simplest route is email or LinkedIn. I reply within 48 hours."],
   lookTitle:["Ce que je recherche","What I'm looking for"],
   look:[
-    [["Postes visés","Target roles"],["Cheffe de projet Data &amp; IA · Consultante CRO et valorisation de la donnée · Chef de projet digital et performance","Data &amp; AI Project Manager · CRO and data-value consultant · Digital performance project lead"]],
+    [["Postes visés","Target roles"],["Cheffe de projet Data &amp; IA · Consultante CRO et valorisation de la donnée · Chef de projet digital et performance · Consultante en conduite du changement et acculturation à l'IA · Analyste data et web analytics","Data &amp; AI Project Manager · CRO and data-value consultant · Digital performance project lead · AI enablement and change management consultant · Data and web analytics analyst"]],
     [["Disponibilité","Availability"],["Immédiate, mon contrat chez Groupama s'est achevé début octobre 2026","Immediate, my contract at Groupama ended in early October 2026"]],
     [["Localisation","Location"],["Paris et Île-de-France · ouverte à l'hybride","Paris and Île-de-France · open to hybrid"]],
     [["Langues de travail","Working languages"],["Français et anglais (C1, TOEIC 900)","French and English (C1, TOEIC 900)"]]
@@ -1589,7 +1589,7 @@ function rHome(){
   o+='</div></div>';
 
   o+='<div class="card pad blk-last" style="border-left:3px solid var(--accent)"><div class="eyebrow" style="margin-bottom:8px">'+t(["Projet professionnel","Career project"])+'</div>';
-  o+='<h3 style="font-size:19px;margin-bottom:12px">'+t(h.posTitle)+'</h3><p style="color:var(--ink-2);margin:0;max-width:76ch" data-s="'+esc(strip(h.posBody))+'">'+t(h.posBody)+'</p></div>';
+  o+='<h3 style="font-size:19px;margin-bottom:12px">'+t(h.posTitle)+'</h3><p style="color:var(--ink-2);margin:0" data-s="'+esc(strip(h.posBody))+'">'+t(h.posBody)+'</p></div>';
   return o;
 }
 
@@ -1773,7 +1773,7 @@ function rAwards(){
     o+='<div class="awd" id="awd-'+a.id+'" data-s="'+esc(t(a.h)+" "+t(a.place)+" "+strip(a.body)+" "+a.bullets.map(strip).join(" "))+'">';
     o+='<div class="hd"><div class="tro">'+ic("M6 9H4.5a2.5 2.5 0 010-5H6 M18 9h1.5a2.5 2.5 0 000-5H18 M4 22h16 M10 14.7V17c0 .6-.1 1.2-.4 1.7L9 20h6l-.6-1.3c-.3-.5-.4-1.1-.4-1.7v-2.3 M18 2H6v7a6 6 0 0012 0V2z",26)+'</div>';
     o+='<div><span class="badge gold" style="margin-bottom:9px;display:inline-block">'+t(a.place)+' · '+a.year+'</span><h3>'+t(a.h)+'</h3><div class="meta">'+t(a.meta)+'</div></div></div>';
-    o+='<div class="bd"><p style="font-size:17px;color:var(--ink-2);max-width:72ch">'+t(a.body)+'</p>';
+    o+='<div class="bd"><p style="font-size:17px;color:var(--ink-2)">'+t(a.body)+'</p>';
     o+='<div style="margin:22px 0">'+carousel(a.imgs)+'</div>';
     o+='<ul class="bullets" style="margin-bottom:0">';
     a.bullets.forEach(function(b){o+='<li>'+t(b)+'</li>'});
@@ -1791,7 +1791,7 @@ function rReco(){
   o+='<p class="lede">'+t(RECO.intro)+'</p>';
   o+='<div class="card pad blk" data-s="'+esc(t(l.pull)+" "+l.name+" "+l.org)+'">';
   o+='<div class="quote" style="margin-bottom:26px"><p>« '+t(l.pull)+' »</p><div class="by"><b>'+l.name+'</b>'+t(l.who)+' · '+l.org+' · '+t(l.date)+'</div></div>';
-  o+='<p style="font-size:16.5px;color:var(--ink-2);max-width:72ch">'+t(l.body)+'</p><p style="font-size:16.5px;color:var(--ink-2);max-width:72ch">'+t(l.close)+'</p>';
+  o+='<p style="font-size:16.5px;color:var(--ink-2)">'+t(l.body)+'</p><p style="font-size:16.5px;color:var(--ink-2)">'+t(l.close)+'</p>';
   o+='<div class="note" style="margin-top:20px">'+ic("M12 8v5 M12 16h.01 M12 2a10 10 0 100 20 10 10 0 000-20z",16)+'<div>'+t(["La lettre signée est disponible sur simple demande.","The signed letter is available on request."])+'</div></div></div>';
   o+='<div class="eyebrow">'+t(["Évaluations","Appraisals"])+'</div><h3 style="font-size:23px;margin-bottom:26px">'+t(RECO.fbTitle)+'</h3><div class="grid g3">';
   RECO.fb.forEach(function(x){
