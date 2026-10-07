@@ -394,11 +394,11 @@ td b{color:var(--ink);font-weight:650}
 .quote .by{font-size:15.5px;color:var(--ink-2)}
 .quote .by b{color:var(--ink);display:block;font-size:17px}
 .letter-img{width:100%;border-radius:16px;border:1.5px solid var(--line-2);box-shadow:var(--shadow);display:block;background:#fff}
-.ct{display:flex;align-items:center;gap:20px;padding:20px 22px;border:1.5px solid var(--line);border-radius:var(--radius);background:var(--surface);transition:.18s;text-decoration:none;color:inherit;box-shadow:var(--shadow);width:100%;text-align:left}
+.ct{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1.5px solid var(--line);border-radius:var(--radius);background:var(--surface);transition:.18s;text-decoration:none;color:inherit;box-shadow:var(--shadow);width:100%;text-align:left}
 .ct:hover{transform:translateY(-3px);border-color:var(--accent);text-decoration:none;box-shadow:var(--shadow-lg)}
-.ct .ic{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);flex-shrink:0}
-.ct .l{font-size:13.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);font-weight:750}
-.ct .v{font-size:17.5px;font-weight:650;color:var(--ink);word-break:break-word}
+.ct .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);flex-shrink:0}
+.ct .l{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);font-weight:750}
+.ct .v{font-size:15px;font-weight:650;color:var(--ink);overflow-wrap:anywhere;line-height:1.35}
 .hbtn{border:0;border-radius:14px;height:54px;padding:0 24px;font-weight:700;font-size:17px;display:inline-flex;align-items:center;gap:10px;transition:.16s;background:var(--accent);color:var(--on-accent)}
 .hbtn:hover{transform:translateY(-2px);filter:brightness(1.08);text-decoration:none;color:var(--on-accent)}
 .hbtn.ghost{background:var(--surface);color:var(--ink);border:1.5px solid var(--line-2)}
@@ -1803,7 +1803,7 @@ function rReco(){
 }
 function rContact(){
   var o='<div class="eyebrow">'+t(["Contact","Contact"])+'</div><h2 class="sec">'+t(["Parlons-en","Let's talk"])+'</h2>';
-  o+='<p class="lede">'+t(CONTACT.intro)+'</p><div class="grid g2 blk">';
+  o+='<p class="lede">'+t(CONTACT.intro)+'</p><div class="grid g4 blk ctrow">';
   o+='<a class="ct" href="mailto:'+ME.email+'"><span class="ic">'+ic("M4 5h16v14H4z M4 7l8 6 8-6",19)+'</span><span><span class="l">Email</span><span class="v" style="display:block">'+ME.email+'</span></span></a>';
   o+='<a class="ct" href="tel:'+ME.phoneRaw+'"><span class="ic">'+ic("M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z",19)+'</span><span><span class="l">'+t(["Téléphone","Phone"])+'</span><span class="v" style="display:block">'+ME.phone+'</span></span></a>';
   o+='<a class="ct" href="'+ME.linkedin+'" target="_blank" rel="noopener"><span class="ic">'+liIcon(19)+'</span><span><span class="l">LinkedIn</span><span class="v" style="display:block">linkedin.com/in/axelle-poncet</span></span></a>';
