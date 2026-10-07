@@ -254,7 +254,8 @@ h2.sec{font-size:clamp(26px,3.2vw,35px);margin-bottom:10px}
 .cah>div:nth-child(2) h5{color:var(--accent)}
 .cah>div:nth-child(3) h5{color:var(--ok)}
 .cah p{font-size:16px;line-height:1.65;color:var(--ink-2);margin:0}
-.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:16px}
+.metrics{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+.metric{flex:1 1 220px;min-width:0}
 .metric{border:1.5px solid var(--line);border-radius:16px;padding:16px 18px;background:var(--surface)}
 .metric .m{font-family:var(--sans);font-size:27px;font-weight:800;letter-spacing:-.025em;line-height:1.1}
 .metric .m.up{color:var(--ok)}.metric .m.down{color:var(--bad)}.metric .m.neu{color:var(--accent)}
@@ -387,15 +388,15 @@ td b{color:var(--ink);font-weight:650}
 .tag{font-size:14.5px;font-weight:600;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:6px 13px}
 footer{border-top:1px solid var(--line);background:var(--surface);padding:28px 0;color:var(--ink-3);font-size:15px;margin-top:48px}
 .foot-in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
-.up{position:fixed;right:24px;bottom:24px;width:54px;height:54px;border-radius:16px;border:1.5px solid var(--line-2);background:var(--surface);color:var(--ink-2);display:grid;place-items:center;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:.25s;z-index:80}
-.up.on{opacity:1;pointer-events:auto}
+.totop{position:fixed;right:24px;bottom:24px;width:54px;height:54px;border-radius:16px;border:1.5px solid var(--line-2);background:var(--surface);color:var(--ink-2);display:grid;place-items:center;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:.25s;z-index:80}
+.totop.on{opacity:1;pointer-events:auto}
 .bk{position:fixed;right:86px;bottom:24px;height:54px;border-radius:16px;border:1.5px solid var(--line-2);background:var(--surface);color:var(--ink-2);display:inline-flex;align-items:center;gap:8px;padding:0 18px 0 14px;font:inherit;font-size:15px;font-weight:650;cursor:pointer;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:.25s;z-index:80}
 .bk.on{opacity:1;pointer-events:auto}
 .bk:hover{color:var(--accent);border-color:var(--accent)}
 .bk:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.bk{transition:none}}
 @media(max-width:560px){.bk{right:82px;padding:0 14px;font-size:0;gap:0}}
-.up:hover{color:var(--accent);border-color:var(--accent)}
+.totop:hover{color:var(--accent);border-color:var(--accent)}
 .hl-flash{animation:flash 1.6s ease-out}
 @keyframes flash{0%,18%{background:var(--hl)}100%{background:transparent}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
@@ -425,7 +426,8 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding:28px 0
 
 /* LISIBILITÉ DES TEXTES LONGS : mesure limitée, césure, paragraphes repliables */
 p,li,td,.k,.sub{text-wrap:pretty;hyphens:auto;-webkit-hyphens:auto}
-.lede,.hero p.pitch,.phare p,.mcard>p,.detail-hd p,.fold-body p,.tl-body li,.bullets li,.quote p{max-width:72ch}
+.lede,.hero p.pitch,.phare p,.mcard>p,.detail-hd p,.fold-body p,.quote p{max-width:72ch}
+.tl-body li,.bullets li{max-width:none}
 .bullets li::marker,.tl-body li::marker{color:var(--accent)}
 .bullets li strong:first-child,.tl-body li strong:first-child{color:var(--ink)}
 .clamp{position:relative;max-height:var(--clamp-h,9.9em);overflow:hidden;transition:max-height .3s ease}
@@ -546,7 +548,7 @@ html[data-theme="dark"] #p-contact,html[data-theme="dark"] #tab-contact{--accent
 </div></footer>
 
 <button class="bk" id="bk" onclick="goBack()" aria-label="Retour à la vue précédente"><span class="bki"></span><span class="bkl"></span></button>
-<button class="up" id="up" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Haut de page">
+<button class="totop" id="up" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Haut de page">
   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
 </button>
 <script>
