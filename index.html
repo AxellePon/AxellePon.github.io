@@ -48,7 +48,7 @@ html[data-theme="dark"]{
   --shadow-lg:0 2px 6px rgba(0,0,0,.35), 0 22px 44px -22px rgba(0,0,0,.85);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;zoom:.85}
 body{margin:0;font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:17px}
 h1,h2,h3,h4{line-height:1.25;margin:0;letter-spacing:-.015em;font-weight:750}
 p{margin:0 0 1em}
@@ -147,7 +147,7 @@ h2.sec{font-size:clamp(26px,3.2vw,35px);margin-bottom:10px}
 @keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 55%,transparent)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
 .hero h1{font-size:clamp(34px,5vw,56px);font-weight:800;letter-spacing:-.03em;line-height:1.02;margin-bottom:8px}
 .hero .role{font-size:clamp(18px,2.2vw,24px);font-weight:650;margin-bottom:16px;color:var(--accent)}
-.hero p.pitch{color:var(--hero-ink-2);font-size:18.5px;line-height:1.7;margin-bottom:0;max-width:66ch}
+.hero p.pitch{color:var(--hero-ink-2);font-size:16px;line-height:1.72;margin-bottom:0;max-width:none}
 .hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;font-size:16.5px}
 .hero-meta a,.hero-meta span{display:inline-flex;align-items:center;gap:9px;color:var(--ink);background:var(--surface);border:1.5px solid var(--line-2);border-radius:12px;padding:9px 15px;font-weight:600;white-space:nowrap;transition:border-color .15s,color .15s}
 .hero-meta a svg,.hero-meta span svg{color:var(--accent)}
@@ -505,7 +505,7 @@ html[data-theme="dark"] #p-contact,html[data-theme="dark"] #tab-contact{--accent
   <div class="wrap top-in">
     <div class="brand">
       <div class="mark"><img src="assets/photo-axelle-sq.jpg" alt=""></div>
-      <div>Axelle Poncet<small data-i18n="brandSub">Cheffe de projet Data &amp; IA</small></div>
+      <div>Axelle Poncet<small data-i18n="brandSub">Gestion de projet · Data &amp; IA</small></div>
     </div>
     <div class="searchbar">
       <span class="si"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
@@ -557,7 +557,7 @@ html[data-theme="dark"] #p-contact,html[data-theme="dark"] #tab-contact{--accent
    ========================================================================== */
 var L = 0;
 var T = {
-  brandSub:["Cheffe de projet Data & IA","Data & AI Project Manager"],
+  brandSub:["Gestion de projet · Data & IA","Project management · Data & AI"],
   searchPh:["Rechercher : A/B test, Adobe, IA…","Search: A/B test, Adobe, AI…"],
   cvBtn:["Mon CV","Resume"],
   footUpd:["Mis à jour octobre 2026","Updated October 2026"],
@@ -585,7 +585,7 @@ var TABS = [
 
 var ME = {
   name:"Axelle Poncet",
-  role:["Cheffe de projet Data & IA","Data & AI Project Manager"],
+  role:["Gestion de projet · Data & IA","Project management · Data & AI"],
   avail:["Disponible immédiatement · Paris / Île-de-France","Available immediately · Paris, France"],
   photo:"assets/photo-axelle.jpg",
   pitch:[
