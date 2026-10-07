@@ -343,6 +343,9 @@ html[data-theme="dark"] .cah .stp{color:#06101c}
 .caro{border:1.5px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden;box-shadow:var(--shadow)}
 .caro .stage{position:relative;background:var(--surface-2)}
 .caro .stage img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+/* diapositives : visibles en entier, sans rognage */
+.caro.slides .stage{background:var(--surface-2)}
+.caro.slides .stage img{aspect-ratio:16/9;object-fit:contain}
 .caro .nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:14px;border:0;background:rgba(10,18,30,.66);color:#fff;display:grid;place-items:center;transition:.16s;backdrop-filter:blur(4px)}
 .caro .nav:hover{background:rgba(10,18,30,.88)}
 .caro .nav.p{left:14px}.caro .nav.n{right:14px}
@@ -940,7 +943,7 @@ var WORK = {
    n:["Acculturation \u00e0 l'IA &amp; conduite du changement","AI enablement &amp; change management"],
    s:["Ma r\u00e9alisation la plus r\u00e9cente : faire passer tout un p\u00f4le \u00e0 l'IA g\u00e9n\u00e9rative.","My most recent work: getting a whole division started with generative AI."],
    items:[
-    {h:["Concevoir et animer l'atelier d'acculturation \u00e0 l'IA du p\u00f4le digital","Designing and running the digital division's AI enablement workshop"], imgs:[{src:"assets/atelier-slide-1.jpg", cap:["Le programme de l'atelier : trois objectifs de sortie et un minutage au quart d'heure, sur une heure trente.","The workshop agenda: three take-away objectives and a quarter-hour timing, across ninety minutes."]},{src:"assets/atelier-slide-2.jpg", cap:["La slide d'ouverture : l'outil déjà disponible, son coût et le temps récupérable, annoncés d'entrée.","The opening slide: the tool already available, its cost and the recoverable time, stated up front."]}], per:["Septembre 2026","September 2026"],
+    {h:["Concevoir et animer l'atelier d'acculturation \u00e0 l'IA du p\u00f4le digital","Designing and running the digital division's AI enablement workshop"], imgs:[{src:"assets/atelier-slide-1.jpg", fit:"contain", cap:["Le programme de l'atelier : trois objectifs de sortie et un minutage au quart d'heure, sur une heure trente.","The workshop agenda: three take-away objectives and a quarter-hour timing, across ninety minutes."]},{src:"assets/atelier-slide-2.jpg", fit:"contain", cap:["La slide d'ouverture : l'outil déjà disponible, son coût et le temps récupérable, annoncés d'entrée.","The opening slide: the tool already available, its cost and the recoverable time, stated up front."]}], per:["Septembre 2026","September 2026"],
      teaser:["Une heure et demie, cinquante-six slides, toutes les \u00e9quipes et les managers du p\u00f4le r\u00e9unis. Un atelier con\u00e7u seule, de l'enqu\u00eate terrain jusqu'aux fiches actions individuelles.","Ninety minutes, fifty-six slides, every team and manager in the division. A workshop built single-handedly, from field survey to individual action sheets."],
      cah:[
        ["L'IA g\u00e9n\u00e9rative arrivait dans l'entreprise sans mode d'emploi. Copilot Chat \u00e9tait d\u00e9j\u00e0 disponible gratuitement pour tous dans Teams, et pratiquement personne ne s'en servait : pas de m\u00e9thode, aucun cas d'usage identifi\u00e9 sur les t\u00e2ches r\u00e9elles, et une r\u00e9putation de gadget. En parall\u00e8le, des demandes de licences remontaient sans dossier pour les arbitrer.","Generative AI was arriving with no instructions. Copilot Chat was already free and available to everyone in Teams, and almost nobody used it: no method, no use cases identified on real tasks, and a reputation as a gimmick. Meanwhile licence requests were coming up with no business case to arbitrate them."],
@@ -1666,7 +1669,8 @@ function docGo(id,i){
 }
 function carousel(imgs){
   var id="c"+(++CN); CAROS[id]={i:0,imgs:imgs};
-  var o='<div class="caro" id="'+id+'"><div class="stage">';
+  var entieres=imgs.every(function(x){return x.fit==="contain"});
+  var o='<div class="caro'+(entieres?" slides":"")+'" id="'+id+'"><div class="stage">';
   o+='<img id="'+id+'-img" src="'+imgs[0].src+'" alt="'+esc(strip(imgs[0].cap))+'" loading="lazy">';
   if(imgs.length>1){
     o+='<button class="nav p" onclick="caroGo(\''+id+'\',-1)" aria-label="Précédent">'+ic("M15 18l-6-6 6-6",18)+'</button>';
