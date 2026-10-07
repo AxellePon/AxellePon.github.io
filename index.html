@@ -362,8 +362,8 @@ html[data-theme="dark"] .cah .stp{color:#06101c}
 .awd .bd{padding:4px 28px 28px}
 .awd .hd{width:100%;text-align:left;border:0;font:inherit;color:inherit;cursor:pointer;transition:.16s}
 .awd .hd:hover{filter:brightness(.985)}
-.awd .hd .car{margin-left:auto;align-self:center;flex-shrink:0;color:var(--ink-2);transition:transform .22s}
-.awd[data-open="1"] .hd .car{transform:rotate(180deg)}
+.awd .hd .caret{margin-left:auto;align-self:center;margin-top:0}
+.awd[data-open="1"] .hd .caret{transform:rotate(180deg)}
 .awd .bd{display:none}
 .awd[data-open="1"] .bd{display:block;animation:fade .26s}
 @media(prefers-reduced-motion:reduce){.awd .hd .car{transition:none}.awd[data-open="1"] .bd{animation:none}}
@@ -1912,7 +1912,7 @@ function rAwards(){
   AWARDS.order.map(function(id){return AWARDS.items.filter(function(x){return x.id===id})[0]}).forEach(function(a,i){
     o+='<div class="awd" id="awd-'+a.id+'" data-open="'+(i===0?"1":"0")+'" data-s="'+esc(t(a.h)+" "+t(a.place)+" "+strip(a.body)+" "+a.bullets.map(strip).join(" "))+'">';
     o+='<button class="hd" onclick="foldAward(\''+a.id+'\')" aria-expanded="'+(i===0?"true":"false")+'" aria-controls="awdbd-'+a.id+'"><div class="tro">'+ic("M6 9H4.5a2.5 2.5 0 010-5H6 M18 9h1.5a2.5 2.5 0 000-5H18 M4 22h16 M10 14.7V17c0 .6-.1 1.2-.4 1.7L9 20h6l-.6-1.3c-.3-.5-.4-1.1-.4-1.7v-2.3 M18 2H6v7a6 6 0 0012 0V2z",26)+'</div>';
-    o+='<div><span class="badge gold" style="margin-bottom:9px;display:inline-block">'+t(a.place)+' · '+a.year+'</span><h3>'+t(a.h)+'</h3><div class="meta">'+t(a.meta)+'</div><span class="car">'+ic("M6 9l6 6 6-6",20)+'</span></button>';
+    o+='<div><span class="badge gold" style="margin-bottom:9px;display:inline-block">'+t(a.place)+' · '+a.year+'</span><h3>'+t(a.h)+'</h3><div class="meta">'+t(a.meta)+'</div>'+caret()+'</button>';
     o+='<div class="bd" id="awdbd-'+a.id+'"><p style="font-size:17px;color:var(--ink-2)">'+t(a.body)+'</p>';
     o+='<div style="margin:22px 0">'+carousel(a.imgs)+'</div>';
     o+='<ul class="bullets" style="margin-bottom:0">';
