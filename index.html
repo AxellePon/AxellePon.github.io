@@ -321,6 +321,29 @@ html[data-theme="dark"] .cah .stp{color:#06101c}
 
 /* CARROUSEL */
 
+/* ---- bandeau de contexte d'un projet ---- */
+.ctxbar{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:1.5px;background:var(--line);border:1.5px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:28px}
+.ctxbar>div{background:var(--surface);padding:15px 17px;display:flex;align-items:flex-start;gap:11px}
+.ctxbar .ci{width:32px;height:32px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.ctxbar .ci svg{width:16px;height:16px}
+.ctxbar .cl{font-size:11px;text-transform:uppercase;letter-spacing:.09em;font-weight:750;color:var(--ink-3);display:block;margin-bottom:3px}
+.ctxbar .cv{font-size:14.5px;font-weight:650;color:var(--ink);line-height:1.35}
+/* ---- schema de flux : etapes reliees ---- */
+.flow{margin-bottom:28px}
+.flow-t{font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:750;color:var(--ink-3);margin-bottom:14px}
+.flow-r{display:flex;flex-wrap:wrap;align-items:stretch;gap:0}
+.flow-s{flex:1 1 150px;min-width:0;position:relative;background:var(--surface);border:1.5px solid var(--line);border-radius:16px;padding:16px 15px 15px;margin:0 16px 14px 0}
+.flow-s:last-child{margin-right:0}
+.flow-s::after{content:"";position:absolute;top:50%;right:-23px;width:13px;height:13px;border-top:3px solid var(--accent);border-right:3px solid var(--accent);transform:translateY(-50%) rotate(45deg);border-radius:2px}
+.flow-s:last-child::after{display:none}
+.flow-s .n{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-size:12.5px;font-weight:800;margin-bottom:9px}
+.flow-s b{display:block;font-size:14.5px;line-height:1.3;margin-bottom:5px}
+.flow-s span{display:block;font-size:13px;color:var(--ink-3);line-height:1.45}
+@media(max-width:700px){
+  .flow-s{flex:1 1 100%;margin:0 0 26px}
+  .flow-s::after{top:auto;bottom:-20px;right:auto;left:26px;transform:rotate(135deg)}
+}
+
 /* ---- visionneuse de documents ---- */
 .docv{border:1.5px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden;box-shadow:var(--shadow);margin-bottom:26px}
 .docv-hd{display:flex;align-items:center;gap:10px;padding:14px 18px 0;color:var(--ink-3);font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:750}
@@ -332,8 +355,16 @@ html[data-theme="dark"] .cah .stp{color:#06101c}
 .docv-tabs button:hover{border-color:var(--accent);color:var(--ink)}
 .docv-tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent);cursor:default}
 .docv-tabs button[aria-selected="true"] em{color:var(--on-accent);opacity:.8}
-.docv-stage{position:relative;background:var(--surface-2)}
-.docv-stage iframe{display:block;width:100%;height:560px;border:0;background:var(--surface-2)}
+.docv-stage{position:relative;background:var(--surface-2);display:grid;place-items:center;padding:18px}
+.docv-page{display:block;max-width:100%;max-height:72vh;width:auto;height:auto;border-radius:6px;box-shadow:0 6px 22px rgba(8,22,45,.3);background:#fff}
+.docv-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(10,18,30,.66);color:#fff;display:grid;place-items:center;cursor:pointer;transition:.16s;backdrop-filter:blur(4px);z-index:2}
+.docv-nav:hover:not(:disabled){background:rgba(10,18,30,.9)}
+.docv-nav:disabled{opacity:.28;cursor:default}
+.docv-nav svg{width:21px;height:21px}
+.docv-nav.p{left:14px}
+.docv-nav.n{right:14px}
+.docv-count{position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:13px;font-weight:700;color:#fff;background:rgba(10,18,30,.72);border-radius:9px;padding:4px 11px;z-index:2}
+@media(max-width:640px){.docv-page{max-height:58vh}.docv-nav{width:38px;height:38px}.docv-nav.p{left:6px}.docv-nav.n{right:6px}}
 .docv-cap{padding:14px 18px;font-size:15px;color:var(--ink-2);border-top:1.5px solid var(--line);line-height:1.55}
 .docv-foot{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:0 18px 16px}
 .docv-foot a{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:12px;border:1.5px solid var(--line-2);background:var(--surface);color:var(--ink-2);font-size:14px;font-weight:650;text-decoration:none;transition:.16s}
@@ -1278,6 +1309,17 @@ var SCHOOL = {
     {id:"hackathon", f:"ml", org:["SKEMA × mc2i","SKEMA × mc2i"], per:["Février 2026","February 2026"], award:true, img:"assets/acad-hackathon.jpg",
      ic:"M12 2l3 6 6 1-4.5 4.3 1 6.2L12 16.8 6.5 19.5l1-6.2L3 9l6-1z",
      h:["Contrôle qualité industriel par vision par ordinateur","Industrial quality control through computer vision"],
+     ctx:{cadre:["Cadre","AI Insights Week, semaine de hackathon du Mastère"],
+       equipe:["Équipe","6 personnes, 9 équipes en compétition"],
+       duree:["Durée","1 semaine à temps plein"],
+       client:["Commanditaire","mc2i, cabinet de conseil, sur un cas industriel réel"],
+       livrable:["Livrable","Modèle de détection + modèle économique chiffré"]},
+     flow:{t:["Comment nous avons procédé","How we proceeded"], steps:[
+       [["Cadrer le besoin","Frame the need"],["Comprendre le contrôle qualité manuel et son coût","Understand manual quality control and its cost"]],
+       [["Explorer les données","Explore the data"],["Images de pièces de fonderie, conformes et défectueuses","Images of cast parts, sound and defective"]],
+       [["Comparer deux approches","Compare two approaches"],["Réseau entraîné de zéro contre apprentissage par transfert","Network trained from scratch versus transfer learning"]],
+       [["Chiffrer la valeur","Quantify the value"],["Rentabilité, coût de déploiement, adoption par les opérateurs","Profitability, deployment cost, operator adoption"]],
+       [["Défendre devant le jury","Pitch to the jury"],["Prix du meilleur modèle économique","Best business model prize"]]]},
      teaser:["Une semaine, neuf équipes, un cas industriel réel. Notre équipe remporte le prix du Meilleur Business Model.","One week, nine teams, a real industrial case. Our team won the Best Business Model prize."],
      kpi:{v:"100 %", l:["de recall sur la classe défectueuse","recall on the defective class"]},
      lead:["Le client, un industriel produisant des turbines de pompes par moulage, contrôle encore la qualité de ses pièces à l'œil nu, un processus lent, fatigant et faillible.","The client, a manufacturer producing pump turbines by casting, still inspects part quality by eye, a slow, tiring and fallible process."],
@@ -1296,6 +1338,16 @@ var SCHOOL = {
     {id:"these", f:"gov", org:"SKEMA", per:["2025-2026","2025-2026"], img:"assets/acad-these.jpg",
      ic:"M4 19.5A2.5 2.5 0 016.5 17H20 M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z",
      h:["Thèse professionnelle : la gouvernance de l'IA","Professional thesis: AI governance"],
+     ctx:{cadre:["Cadre","Thèse professionnelle du Mastère Spécialisé"],
+       equipe:["Format","Binôme, soutenue devant jury"],
+       duree:["Durée","Année universitaire 2025-2026"],
+       client:["Terrain","2 grands groupes financiers, maturités contrastées"],
+       livrable:["Livrable","Mémoire de 93 pages et soutenance"]},
+     flow:{t:["La démarche de recherche","The research approach"], steps:[
+       [["Revue de littérature","Literature review"],["État de l'art récent sur la gouvernance de l'IA","Recent state of the art on AI governance"]],
+       [["Enquête qualitative","Qualitative study"],["Entretiens semi-directifs, profils complémentaires","Semi-structured interviews, complementary roles"]],
+       [["Analyse comparée","Comparative analysis"],["Confronter deux organisations de maturité différente","Comparing two organisations of differing maturity"]],
+       [["Modèle proposé","Proposed model"],["Deux formes de gouvernance, émergente et industrialisée","Two forms of governance, emerging and industrialised"]]]},
      teaser:["Sept entretiens dans deux grands groupes financiers pour comprendre comment on répond concrètement à l'AI Act.","Seven interviews in two large financial groups to understand how the EU AI Act is answered in practice."],
      kpi:{v:"7", l:["entretiens semi-directifs conduits et analysés","semi-structured interviews conducted and analysed"]},
      lead:["Comment les entreprises peuvent-elles répondre aux exigences réglementaires en matière d'intelligence artificielle, et anticiper celles à venir, à travers des mécanismes de gouvernance ?","How can organisations meet AI regulatory requirements, and anticipate those to come, through governance mechanisms?"],
@@ -1315,6 +1367,16 @@ var SCHOOL = {
     {id:"vivatech", f:"conseil", org:["SKEMA × Brexon","SKEMA × Brexon"], per:["Juin 2026","June 2026"], award:true, img:"assets/acad-vivatech.jpg",
      ic:"M12 2a10 10 0 100 20 10 10 0 000-20z M2 12h20 M12 2a15 15 0 010 20 15 15 0 010-20z",
      h:["VivaTech : étude Vertical AI pour Brexon","VivaTech: Vertical AI study for Brexon"],
+     ctx:{cadre:["Cadre","Learning expedition du Mastère, salon VivaTech"],
+       equipe:["Équipe","5 personnes, rôles répartis"],
+       duree:["Durée","3 jours de salon, 72 h d'enquête"],
+       client:["Client","Brexon, startup incubée chez SKEMA Entrepreneurs"],
+       livrable:["Livrable","Rapport d'étude de 13 pages et recommandations"]},
+     flow:{t:["Une démarche hypothético-déductive","A hypothetico-deductive approach"], steps:[
+       [["Poser des hypothèses","State hypotheses"],["Trois hypothèses formulées pour pouvoir être réfutées","Three hypotheses framed so they can be disproved"]],
+       [["Benchmark documentaire","Desk research"],["Cartographie des éditeurs et des briques techniques","Mapping vendors and technical building blocks"]],
+       [["Vérification terrain","Field testing"],["Entretiens sur les stands, logique du Mom Test","Stand interviews, Mom Test logic"]],
+       [["Recommandations","Recommendations"],["À intégrer, à surveiller, à écarter pour 2026-2027","To adopt, to watch, to rule out for 2026-2027"]]]},
      teaser:["72 heures d'enquête terrain au plus grand salon tech européen, en coordination d'une équipe de cinq.","72 hours of field research at Europe's largest tech show, coordinating a team of five."],
      kpi:{v:"72 h", l:["d'enquête terrain, équipe de 5 coordonnée","of field research, team of 5 coordinated"]},
      lead:["Quel est l'état réel des architectures du Vertical AI en 2026, comment s'y positionne Brexon, et quels verticaux d'extension sont pertinents pour les processus à forte intensité documentaire ?","What is the real state of Vertical AI architectures in 2026, how does Brexon sit within it, and which adjacent verticals make sense for document-heavy processes?"],
@@ -1330,9 +1392,14 @@ var SCHOOL = {
         cap:["La commande initiale du client, point de départ du cadrage de l'étude.","The client's initial request, starting point for framing the study."]}],
      tags:["Vertical AI","RAG","Document AI","Benchmark","Entretiens terrain"]},
 
-    {id:"endoless", f:"gov", org:["SKEMA × ENDOless","SKEMA × ENDOless"], per:["2025-2026","2025-2026"], img:"assets/acad-endoless.jpg",
+    {id:"endoless", f:"gov", org:["SKEMA × ENDOless","SKEMA × ENDOless"], per:["2025-2026","2025-2026"], img:"assets/acad-endoless-v2.jpg",
      ic:"M12 21s-7-4.6-9.3-9A5.3 5.3 0 0112 5.8 5.3 5.3 0 0121.3 12c-2.3 4.4-9.3 9-9.3 9z",
      h:["EquaHealth VR : IA et biais de genre en santé","EquaHealth VR: AI and gender bias in healthcare"],
+     ctx:{cadre:["Cadre","Cours Applications de l'IA et cas d'usages"],
+       equipe:["Équipe","Projet de groupe, 7 personnes"],
+       duree:["Durée","Premier semestre du Mastère"],
+       client:["Sujet","Biais de genre dans le diagnostic en santé"],
+       livrable:["Livrable","Pitch de 13 slides et concept de solution"]},
      teaser:["Concevoir un moteur de données de santé « conscient du genre » avec une startup deeptech incubée à Station F.","Designing a \"gender-aware\" health data engine with a deeptech startup incubated at Station F."],
      kpi:{v:"7-10 ans", l:["de retard de diagnostic sur l'endométriose","of diagnostic delay for endometriosis"]},
      lead:["Les maladies chroniques féminines comme l'endométriose restent mal comprises, et la plupart des outils de santé numérique sont construits sur des jeux de données centrés sur des profils masculins.","Chronic female conditions such as endometriosis remain poorly understood, and most digital health tools are built on male-centric datasets."],
@@ -1346,9 +1413,20 @@ var SCHOOL = {
         cap:["La présentation du projet : constat du biais de genre dans le diagnostic, concept de la solution et parcours utilisateur envisagé.","The project presentation: gender bias in diagnosis, the solution concept and the intended user journey."]}],
      tags:["Biais algorithmiques","Éthique de l'IA","Santé numérique","Gouvernance des données"]},
 
-    {id:"qrecc", f:"ml", org:"SKEMA", per:["2026","2026"], img:"assets/acad-qrecc.jpg",
+    {id:"qrecc", f:"ml", org:"SKEMA", per:["2026","2026"], img:"assets/acad-qrecc-v2.jpg",
      ic:"M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z",
      h:["Un tuteur conversationnel qui détecte quand l'élève décroche","A conversational tutor that detects when the learner is lost"],
+     ctx:{cadre:["Cadre","Projet final du cours Machine Learning for Business"],
+       equipe:["Équipe","Binôme"],
+       duree:["Durée","Second semestre du Mastère"],
+       client:["Jeu de données","QReCC, référence en question-réponse conversationnelle"],
+       livrable:["Livrable","Rapport technique de 12 pages et démonstrateur Streamlit"]},
+     flow:{t:["La chaîne de traitement du tuteur","The tutor's processing pipeline"], steps:[
+       [["Mémoire conversationnelle","Conversational memory"],["Retrouver les seuls échanges pertinents, pas tout l'historique","Retrieve only the relevant turns, not the whole history"]],
+       [["Réécriture","Rewriting"],["Transformer une relance ambiguë en question autonome","Turn an ambiguous follow-up into a standalone question"]],
+       [["Recherche sémantique","Semantic retrieval"],["Aller chercher la connaissance pédagogique utile","Fetch the relevant educational knowledge"]],
+       [["Détection de confusion","Confusion detection"],["Repérer les signaux d'incompréhension dans le langage","Spot signs of misunderstanding in the wording"]],
+       [["Adaptation","Adaptation"],["Changer de style d'explication, mode analogie compris","Switch explanation style, including analogy mode"]]]},
      teaser:["Projet final de machine learning, en binôme : construire un tuteur capable de suivre une conversation, de repérer l'incompréhension et de changer de façon d'expliquer.","Final machine learning project, in a pair: building a tutor able to follow a conversation, spot confusion and change the way it explains."],
      kpi:{v:["0", "0"], l:["grand modèle de langage utilisé, par choix d'architecture","large language models used, by architectural choice"]},
      lead:["Les systèmes de question-réponse sont optimisés pour l'exactitude de la réponse. Un bon professeur fait bien davantage : il se souvient de ce qui a été vu, comprend une question de relance, repère la confusion et adapte son explication. C'est cet écart que le projet cherche à combler.","Question-answering systems are optimised for answer correctness. A good teacher does far more: they remember what has been covered, understand a follow-up question, spot confusion and adapt their explanation. The project set out to close that gap."],
@@ -1362,17 +1440,29 @@ var SCHOOL = {
        {m:"12", c:"neu", l:["pages de rapport technique","pages of technical report"]}],
      bullets:[
        ["<b>Le choix d'architecture le plus intéressant</b> : ne pas utiliser de grand modèle de langage. Les petits modèles génératifs testés produisaient des réécritures instables. Nous avons basculé sur une approche hybride, extraction de sujet et règles plus ancrage conversationnel, qui s'est révélée plus stable, explicable et fiable.","<b>The most interesting design decision</b>: using no large language model. The small generative models tested produced unstable rewrites. We switched to a hybrid approach, topic extraction and rules plus conversational grounding, which proved more stable, explainable and reliable."],
-       ["<b>Technologies</b> : plongements SentenceTransformers, recherche de similarité FAISS, détection de confusion à base de motifs, interface Streamlit.","<b>Technologies</b>: SentenceTransformers embeddings, FAISS similarity search, pattern-based confusion detection, Streamlit interface."],
-       ["<b>Le jeu de données QReCC</b>, pour Question Rewriting in Conversational Context, sert de référence : il fournit des conversations à plusieurs tours, des questions dépendantes du contexte, leur version reformulée en question autonome et les passages de preuve associés.","<b>The QReCC dataset</b>, Question Rewriting in Conversational Context, is the benchmark: it provides multi-turn conversations, context-dependent questions, their standalone rewritten form and the associated evidence passages."],
        ["<b>Pourquoi ce projet compte pour moi</b> : il porte sur la qualité de l'interaction, pas seulement sur l'exactitude. C'est la même question que je me pose en expérimentation en ligne, où un résultat juste mais incompris ne change aucune décision.","<b>Why this project matters to me</b>: it is about interaction quality, not correctness alone. The same question I face in online experimentation, where a correct but misunderstood result changes no decision."]],
      docs:[
        {src:"assets/docs/qrecc-rapport.pdf", pg:12, n:["Rapport technique","Technical report"],
         cap:["Le rapport complet : problème posé, objectifs, composants du système, analyse du jeu de données, chaîne de traitement et application de démonstration.","The full report: problem statement, objectives, system components, dataset analysis, pipeline and demo application."]}],
      tags:["NLP","Recherche sémantique","FAISS","SentenceTransformers","Streamlit","Python"]},
 
-    {id:"conseil", f:"conseil", org:["SKEMA × AVISIA","SKEMA × AVISIA"], per:["Décembre 2025","December 2025"], img:"assets/acad-conseil.jpg",
+    {id:"conseil", f:"conseil", org:["SKEMA × AVISIA","SKEMA × AVISIA"], per:["Décembre 2025","December 2025"], img:"assets/acad-conseil-v2.jpg",
      ic:"M9 11l3 3L22 4 M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11",
      h:["Proposition commerciale : un moteur de recommandation pour les conseillers d'un assureur","Commercial proposal: a recommendation engine for an insurer's advisers"],
+     ctx:{cadre:["Cadre","Cours Méthodes de conseil appliquées aux projets d'IA"],
+       equipe:["Équipe","Travail de groupe, exercice d'avant-vente"],
+       duree:["Durée","Décembre 2025"],
+       client:["Commanditaire","AVISIA, cabinet de conseil data, pour un client assureur"],
+       livrable:["Livrable","Proposition commerciale de 8 pages, chiffrée"]},
+     flow2:{t:["Le déroulé proposé au client, douze semaines","The twelve-week plan proposed to the client"], steps:[
+       [["Cadrage","Framing"],["Semaines 1 à 3, forfait : immersion, audit des données, règles d'éligibilité","Weeks 1 to 3, fixed price: shadowing, data audit, eligibility rules"]],
+       [["Réalisation","Build"],["Semaines 4 à 9 : modèles de scoring, connecteur CRM, bouton de retour","Weeks 4 to 9: scoring models, CRM connector, feedback button"]],
+       [["Pilote","Pilot"],["Semaines 10 à 12 : groupe restreint, test A/B, décision de généralisation","Weeks 10 to 12: restricted group, A/B test, scale-up decision"]]]},
+     flow:{t:["L'architecture proposée, dite Glass Box","The proposed Glass Box architecture"], steps:[
+       [["Données","Data"],["Contrats, sinistres, navigation web, journaux d'appels","Policies, claims, web browsing, call logs"]],
+       [["Scoring d'appétence","Propensity scoring"],["Modèle d'apprentissage sur l'historique client","Learning model over customer history"]],
+       [["Règles métier","Business rules"],["Éligibilité, exclusions, pression commerciale","Eligibility, exclusions, contact pressure"]],
+       [["Restitution au conseiller","Adviser hand-off"],["Le produit, mais aussi pourquoi et comment l'amener","The product, but also why and how to raise it"]]]},
      teaser:["Un exercice de conseil mené avec le cabinet data AVISIA : répondre à un appel d'offres fictif, du cadrage de l'enjeu métier jusqu'au budget au jour près.","A consulting exercise run with the data consultancy AVISIA: answering a mock request for proposal, from framing the business issue to a budget costed down to the day."],
      kpi:{v:["70 k€","€70k"], l:["de budget chiffré sur trois phases et douze semaines","budgeted across three phases and twelve weeks"]},
      lead:["AAXXAA, un assureur, veut aider ses conseillers à proposer le bon produit au bon moment. L'exercice consistait à produire la proposition d'accompagnement complète qu'un cabinet de conseil data remettrait réellement à ce client : compréhension des enjeux, architecture cible, méthode, planning, budget et prochaines étapes.","AAXXAA, an insurer, wants to help its advisers offer the right product at the right time. The exercise was to produce the full engagement proposal a data consultancy would genuinely submit to that client: business understanding, target architecture, method, schedule, budget and next steps."],
@@ -1386,9 +1476,6 @@ var SCHOOL = {
        {m:"70 k€", c:"neu", l:["de budget, dont un forfait de sécurisation sur le cadrage","budget, including a fixed-price framing phase"]},
        {m:"5", c:"neu", l:["conseillers ambassadeurs suivis en immersion","ambassador advisers shadowed on the job"]}],
      bullets:[
-       ["<b>Phase 1, cadrage</b> (semaines 1 à 3, forfait) : immersion auprès des conseillers, audit et cartographie de la qualité des données, définition des règles d'éligibilité impératives.","<b>Phase 1, framing</b> (weeks 1 to 3, fixed price): shadowing advisers, auditing and mapping data quality, defining mandatory eligibility rules."],
-       ["<b>Phase 2, réalisation</b> (semaines 4 à 9) : entraînement des modèles de scoring, développement du connecteur vers le CRM, intégration du bouton de retour pour le conseiller.","<b>Phase 2, build</b> (weeks 4 to 9): training the scoring models, developing the CRM connector, embedding the adviser feedback button."],
-       ["<b>Phase 3, pilote</b> (semaines 10 à 12) : activation sur le seul groupe ambassadeur, mesure par test A/B, puis décision de généralisation.","<b>Phase 3, pilot</b> (weeks 10 to 12): activation on the ambassador group only, A/B measurement, then a scale-up decision."],
        ["<b>Ce que l'exercice m'a appris</b> : un cabinet ne vend pas un modèle, il vend une trajectoire de décision. Le point « continuer ou arrêter » placé après le cadrage vaut autant que la précision de l'algorithme.","<b>What the exercise taught me</b>: a consultancy does not sell a model, it sells a decision path. The go or no-go point placed after framing matters as much as the algorithm's accuracy."]],
      docs:[
        {src:"assets/docs/avisia-propale.pdf", pg:8, n:["Proposition commerciale","Commercial proposal"],
@@ -1434,7 +1521,7 @@ var ASSO = {
        {src:"assets/asso-spa-gantt-full.jpg", cap:["Le planning prévisionnel du projet : six chantiers menés en parallèle sur sept mois, du sponsoring au dépôt du logo.","The project schedule: six workstreams run in parallel over seven months, from sponsorship to trademark filing."]}],
      tags:["Coordination d'équipe","Budget prévisionnel","Planning","Trello","Sponsoring","Relations institutionnelles"]},
 
-    {id:"sourires", org:["Un cadeau des sourires","Un cadeau des sourires"], per:["2018","2018"], img:"assets/asso-sourires.jpg",
+    {id:"sourires", org:["Un cadeau des sourires","Un cadeau des sourires"], per:["2018","2018"], img:"assets/asso-sourires-v2.jpg",
      ic:"M12 8v8 M8 12h8 M12 2a10 10 0 100 20 10 10 0 000-20z",
      h:["« 36 rayons de sourires » : communication externe","\"36 rayons de sourires\" : external communications"],
      teaser:["Collecter des jouets pour les urgences pédiatriques de Châteauroux, et faire connaître une association naissante.","Collecting toys for the Châteauroux paediatric emergency unit, and putting a young charity on the map."],
@@ -1453,7 +1540,8 @@ var ASSO = {
        {m:"3", c:"neu", l:["créneaux d'événement négociés auprès de la ville","event slots negotiated with the city"]},
        {m:"100 %", c:"up", l:["des recettes reversées à l'association","of proceeds donated to the charity"]}],
      imgs:[
-       {src:"assets/asso-sourires-full.jpg", cap:["Le logo de l'association « Un cadeau, des sourires, des urgences »","The logo of the charity \"Un cadeau, des sourires, des urgences\""]}],
+       {src:"assets/asso-sourires-v2-full.jpg", cap:["Une partie des jouets collectés, prêts à être remis au service des urgences pédiatriques","Part of the toys collected, ready to be handed over to the paediatric emergency unit"]},
+       {src:"assets/asso-sourires-logo.jpg", cap:["Le logo de l'association « Un cadeau, des sourires, des urgences »","The logo of the charity \"Un cadeau, des sourires, des urgences\""]}],
      tags:["Relations presse","Partenariat","Relations institutionnelles","Événementiel","Collecte de fonds"]},
 
     {id:"cci", org:["Chambre de Commerce et d'Industrie","Chamber of Commerce and Industry"], per:["2017-2018","2017-2018"], img:"assets/asso-cci.jpg",
@@ -1634,9 +1722,13 @@ function chartQualities(){
 
 /* ---------- CARROUSEL ---------- */
 var CAROS={},CN=0;
-var DVN=0, DOCV={};
+var DVN=0, DOCV={}, DOCP={};
+function docSrc(d,i){
+  var n=(i+1)<10 ? "0"+(i+1) : ""+(i+1);
+  return "assets/docs/p/"+d.src.split("/").pop().replace(".pdf","")+"-"+n+".jpg";
+}
 function docViewer(docs){
-  var id="dv"+(++DVN); DOCV[id]=docs;
+  var id="dv"+(++DVN); DOCV[id]=docs; DOCP[id]=0;
   var o='<div class="docv" id="'+id+'">';
   o+='<div class="docv-hd">'+ic("M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z M14 2v6h6 M16 13H8 M16 17H8 M10 9H8",15)+t(["Documents du projet","Project documents"])+'</div>';
   o+='<div class="docv-tabs" role="tablist">';
@@ -1645,26 +1737,57 @@ function docViewer(docs){
       +ic("M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z M14 2v6h6",16)+'<span>'+t(d.n)+'</span><em>'+d.pg+' p.</em></button>';
   });
   o+='</div>';
-  o+='<div class="docv-stage"><iframe id="'+id+'-f" src="'+docs[0].src+'#view=FitH&toolbar=1" title="'+esc(t(docs[0].n))+'" loading="lazy"></iframe></div>';
+  o+='<div class="docv-stage">';
+  o+='<button class="docv-nav p" id="'+id+'-prev" disabled onclick="docPage(\''+id+'\',-1)" aria-label="Page précédente">'+ic("M15 18l-6-6 6-6",21)+'</button>';
+  o+='<img class="docv-page" id="'+id+'-img" src="'+docSrc(docs[0],0)+'" alt="'+esc(t(docs[0].n))+', page 1" loading="lazy">';
+  o+='<button class="docv-nav n" id="'+id+'-next"'+(docs[0].pg>1?"":" disabled")+' onclick="docPage(\''+id+'\',1)" aria-label="Page suivante">'+ic("M9 18l6-6-6-6",21)+'</button>';
+  o+='<span class="docv-count mono" id="'+id+'-cnt">1 / '+docs[0].pg+'</span>';
+  o+='</div>';
   o+='<div class="docv-cap" id="'+id+'-c">'+t(docs[0].cap)+'</div>';
   o+='<div class="docv-foot">';
-  o+='<a id="'+id+'-o" href="'+docs[0].src+'" target="_blank" rel="noopener">'+ic("M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6 M15 3h6v6 M10 14L21 3",15)+t(["Ouvrir en plein écran","Open full screen"])+'</a>';
+  o+='<a id="'+id+'-o" href="'+docs[0].src+'" target="_blank" rel="noopener">'+ic("M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6 M15 3h6v6 M10 14L21 3",15)+t(["Ouvrir le PDF","Open the PDF"])+'</a>';
   o+='<a id="'+id+'-d" href="'+docs[0].src+'" download>'+ic("M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4 M7 10l5 5 5-5 M12 15V3",15)+t(["Télécharger","Download"])+'</a>';
   o+='</div></div>';
+  setTimeout(function(){ docMaj(id); },0);
   return o;
+}
+function docMaj(id){
+  var d=DOCV[id], i=DOCP[id]; if(!d) return;
+  var doc=d[docActif(id)];
+  var im=document.getElementById(id+"-img"); if(!im) return;
+  im.setAttribute("src", docSrc(doc,i));
+  im.setAttribute("alt", t(doc.n)+", page "+(i+1));
+  var c=document.getElementById(id+"-cnt"); if(c) c.textContent=(i+1)+" / "+doc.pg;
+  var pv=document.getElementById(id+"-prev"), nx=document.getElementById(id+"-next");
+  if(pv) pv.disabled = i<=0;
+  if(nx) nx.disabled = i>=doc.pg-1;
+}
+function docActif(id){
+  var d=DOCV[id]; if(!d) return 0;
+  for(var k=0;k<d.length;k++){
+    var b=document.getElementById(id+"-t"+k);
+    if(b && b.getAttribute("aria-selected")==="true") return k;
+  }
+  return 0;
+}
+function docPage(id,pas){
+  var d=DOCV[id]; if(!d) return;
+  var doc=d[docActif(id)];
+  var n=DOCP[id]+pas;
+  if(n<0 || n>doc.pg-1) return;
+  DOCP[id]=n; docMaj(id);
 }
 function docGo(id,i){
   var d=DOCV[id]; if(!d||!d[i]) return;
-  var f=document.getElementById(id+"-f"); if(!f) return;
-  if(f.getAttribute("src").split("#")[0]===d[i].src) return;   /* deja affiche : rien a faire */
-  f.setAttribute("src", d[i].src+"#view=FitH&toolbar=1");
-  f.setAttribute("title", t(d[i].n));
-  document.getElementById(id+"-c").innerHTML=t(d[i].cap);
-  document.getElementById(id+"-o").setAttribute("href", d[i].src);
-  document.getElementById(id+"-d").setAttribute("href", d[i].src);
+  if(docActif(id)===i) return;
   d.forEach(function(_,k){
     var b=document.getElementById(id+"-t"+k); if(b) b.setAttribute("aria-selected", k===i?"true":"false");
   });
+  DOCP[id]=0;
+  document.getElementById(id+"-c").innerHTML=t(d[i].cap);
+  document.getElementById(id+"-o").setAttribute("href", d[i].src);
+  document.getElementById(id+"-d").setAttribute("href", d[i].src);
+  docMaj(id);
 }
 function carousel(imgs){
   var id="c"+(++CN); CAROS[id]={i:0,imgs:imgs};
@@ -1862,9 +1985,34 @@ function cardIndex(items,filters,cur,filterFn,openFn){
   });
   return o+'</div>';
 }
+var CTXIC={
+  cadre:"M4 19.5A2.5 2.5 0 016.5 17H20 M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z",
+  equipe:"M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2 M9 11a4 4 0 100-8 4 4 0 000 8 M23 21v-2a4 4 0 00-3-3.9 M16 3.1a4 4 0 010 7.8",
+  duree:"M12 22a10 10 0 100-20 10 10 0 000 20z M12 6v6l4 2",
+  client:"M3 21h18 M5 21V7l8-4v18 M19 21V11l-6-4",
+  livrable:"M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z M14 2v6h6 M16 13H8 M16 17H8"
+};
+function ctxBar(c){
+  if(!c) return "";
+  var o='<div class="ctxbar">';
+  ["cadre","equipe","duree","client","livrable"].forEach(function(k){
+    if(!c[k]) return;
+    o+='<div><span class="ci">'+ic(CTXIC[k],16)+'</span><div><span class="cl">'+t(c[k][0])+'</span><span class="cv">'+t(c[k][1])+'</span></div></div>';
+  });
+  return o+'</div>';
+}
+function flowChart(f){
+  if(!f) return "";
+  var o='<div class="flow"><div class="flow-t">'+t(f.t)+'</div><div class="flow-r">';
+  f.steps.forEach(function(st,i){
+    o+='<div class="flow-s"><span class="n">'+(i+1)+'</span><b>'+t(st[0])+'</b><span>'+t(st[1])+'</span></div>';
+  });
+  return o+'</div></div>';
+}
 function detailView(x,backFn){
   var o='<button class="back" onclick="'+backFn+'(null)">'+ic("M19 12H5 M11 18l-6-6 6-6",15)+t(T.back)+'</button>';
   o+='<div class="detail-hd"><div class="org">'+t(x.org)+' · '+t(x.per)+'</div><h2>'+(x.award?'🏆 ':'')+t(x.h)+'</h2><p>'+t(x.lead)+'</p></div>';
+  o+=ctxBar(x.ctx);
   if(x.imgs) o+='<div style="margin-bottom:30px">'+carousel(x.imgs)+'</div>';
   o+='<div class="cah" style="margin-bottom:30px">';
   var lb=[["Constat","Action","Résultat"],["Observation","Action","Result"]][L];
@@ -1872,6 +2020,8 @@ function detailView(x,backFn){
   x.cah.forEach(function(c,i){o+='<div><span class="stp">'+sic[i]+'</span><h5>'+lb[i]+'</h5><p>'+t(c)+'</p></div>'});
   o+='</div>';
   if(x.metrics){o+='<div class="metrics" style="margin-bottom:30px">';x.metrics.forEach(function(m){o+='<div class="metric">'+trendIc(m.c)+'<div class="m '+m.c+'">'+t(m.m)+'</div><div class="l">'+t(m.l)+'</div></div>'});o+='</div>'}
+  if(x.flow) o+=flowChart(x.flow);
+  if(x.flow2) o+=flowChart(x.flow2);
   if(x.bullets){o+='<ul class="bullets" style="margin-bottom:30px">';x.bullets.forEach(function(b){o+='<li>'+t(b)+'</li>'});o+='</ul>'}
   if(x.chart&&CHARTS[x.chart]) o+='<div style="margin-bottom:30px">'+CHARTS[x.chart]()+'</div>';
   if(x.docs) o+=docViewer(x.docs);
