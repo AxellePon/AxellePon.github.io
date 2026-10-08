@@ -1494,9 +1494,7 @@ var RECO = {
      by:["Visite tripartite école / entreprise","Tripartite school / company review"], ctx:["Axe de progrès et plan d'action","Improvement area and action plan"]},
     {q:["Dix-neuf compétences du référentiel évaluées en fin de parcours : douze en maîtrise totale, sept presque maîtrisées. Aucune en cours d'acquisition, aucune non acquise.","Nineteen competencies from the qualification framework assessed at the end of the programme: twelve fully mastered, seven almost mastered. None still being acquired, none unacquired."],
      by:["Positionnement de fin de parcours, validé conjointement par l'entreprise et l'apprenante","End-of-programme assessment, jointly validated by the company and the apprentice"], ctx:["Livret d'apprentissage, septembre 2026","Apprenticeship logbook, September 2026"]},
-    {q:["Objectif atteint : réaliser 80 à 100 % des analyses et reportings sans supervision, sur des environnements exposés à plusieurs centaines de milliers de visiteurs.","Objective met: deliver 80 to 100% of analyses and reports without supervision, on environments exposed to several hundred thousand visitors."],
-     by:["Objectif de responsabilité : livret de suivi","Accountability objective: apprenticeship logbook"], ctx:["Bilan de fin d'année","End-of-year review"]}
-  ],
+],
   refNote:["Les coordonnées de mes référents professionnels sont disponibles sur demande.","Contact details for my professional referees are available on request."]
 };
 
@@ -2290,10 +2288,17 @@ function submitSearch(){
 (function init(){
   var th="light", lg="fr";
   try{
-    th=localStorage.getItem("ap-theme-aube")||"light";
+    th=localStorage.getItem("ap-theme-aube")||((window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light");
     lg=localStorage.getItem("ap-lang")||"fr";
   }catch(e){}
   applyTheme(th);
+  try{
+    if(window.matchMedia){
+      var mq=matchMedia("(prefers-color-scheme:dark)");
+      var maj=function(e){ try{ if(!localStorage.getItem("ap-theme-aube")) applyTheme(e.matches?"dark":"light"); }catch(x){} };
+      if(mq.addEventListener) mq.addEventListener("change",maj); else if(mq.addListener) mq.addListener(maj);
+    }
+  }catch(e){}
   L=lg==="en"?1:0;
   document.documentElement.lang=lg;
   document.getElementById("lang-fr").setAttribute("aria-pressed",L===0);
