@@ -7,6 +7,7 @@
 <meta name="description" content="Portfolio d'Axelle Poncet : gestion de projet, data et IA. CRO et A/B testing, analytics, IA appliquée. Réalisations chiffrées, prix et projets.">
 <meta name="author" content="Axelle Poncet">
 <link rel="canonical" href="https://axellepon.github.io/">
+<!-- Mesure d'audience : anonyme, sans cookie. Le script se charge seul, voir AN_ID plus bas. -->
 <meta property="og:site_name" content="Axelle Poncet">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:type" content="profile">
@@ -508,6 +509,8 @@ td b{color:var(--ink);font-weight:650}
 .tag{font-size:14.5px;font-weight:600;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:6px 13px}
 footer{border-top:1px solid var(--line);background:var(--surface);padding:28px 0;color:var(--ink-3);font-size:15px;margin-top:48px}
 .foot-in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.moi{color:var(--accent);font-weight:700}
+.moi[hidden]{display:none}
 .totop{position:fixed;right:24px;bottom:24px;width:54px;height:54px;border-radius:16px;border:1.5px solid var(--line-2);background:var(--surface);color:var(--ink-2);display:grid;place-items:center;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:.25s;z-index:80}
 .totop.on{opacity:1;pointer-events:auto}
 .bk{position:fixed;right:86px;bottom:24px;height:54px;border-radius:16px;border:1.5px solid var(--line-2);background:var(--surface);color:var(--ink-2);display:inline-flex;align-items:center;gap:8px;padding:0 18px 0 14px;font:inherit;font-size:15px;font-weight:650;cursor:pointer;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:.25s;z-index:80}
@@ -664,7 +667,7 @@ html[data-theme="dark"] #p-contact,html[data-theme="dark"] #tab-contact{--accent
 
 <footer><div class="wrap foot-in">
   <div>© 2026 Axelle Poncet</div>
-  <div class="mono" style="font-size:11.5px"><span data-i18n="footUpd">Mis à jour octobre 2026</span></div>
+  <div class="mono" style="font-size:11.5px"><span data-i18n="footUpd">Mis à jour octobre 2026</span><span class="foot-sep"> · </span><span id="foot-mes" data-i18n="footMes">Mesure d'audience anonyme, sans cookie</span><span id="foot-moi" class="moi" hidden data-i18n="footMoi">Mes visites ne sont pas comptées</span></div>
 </div></footer>
 
 <button class="bk" id="bk" onclick="goBack()" aria-label="Retour à la vue précédente"><span class="bki"></span><span class="bkl"></span></button>
@@ -680,6 +683,8 @@ var T = {
   brandSub:["Gestion de projet · Data & IA","Project management · Data & AI"],
   searchPh:["Rechercher : A/B test, Adobe, IA…","Search: A/B test, Adobe, AI…"],
   cvBtn:["Mon CV","Resume"],
+  footMes:["Mesure d'audience anonyme, sans cookie","Anonymous, cookie-free analytics"],
+  footMoi:["Mes visites ne sont pas comptées","My own visits are not counted"],
   footUpd:["Mis à jour octobre 2026","Updated October 2026"],
   noRes:["Aucun résultat","No result"],
   suggTitle:["Suggestions","Suggested"],
@@ -690,6 +695,175 @@ var T = {
   less:["Réduire","Show less"]
 };
 function t(a){ return Array.isArray(a) ? a[L] : a; }
+
+
+/* ==========================================================================
+   MESURE D'AUDIENCE
+   Couche neutre : si le script de mesure est absent, bloque par une extension
+   ou desactive, rien ne casse, les appels sont simplement ignores.
+   ========================================================================== */
+/* Identifiant du site Umami. Tant qu'il est vide, aucun script n'est charge
+   et aucune donnee n'est envoyee : le portfolio fonctionne exactement pareil. */
+var AN_ID = "0f654323-f09a-4eab-bbe8-c6f0867954d1";
+
+var ANQ = [], AN = { debut: Date.now(), rubrique: null, depuis: Date.now(), premier: true, scroll: {}, docmax: {}, chrono: {} };
+
+/* ---------------------------------------------------------------------------
+   MES PROPRES VISITES
+   Ouvrir le portfolio avec ?moi marque ce navigateur une fois pour toutes :
+   plus aucune visite, aucun clic, aucun evenement n'est compte depuis lui.
+   ?public retire la marque. Le reglage tient tant que les donnees du
+   navigateur ne sont pas effacees, et vaut pour ce navigateur seulement :
+   a refaire sur le telephone, sur un autre navigateur, ou apres un nettoyage.
+   --------------------------------------------------------------------------- */
+var AN_OFF = false;
+(function(){
+  var q = location.search || "", CLE = "ap-moi";
+  function marque(actif){
+    try{
+      if(actif){ localStorage.setItem(CLE, "1"); localStorage.setItem("umami.disabled", "1"); }
+      else { localStorage.removeItem(CLE); localStorage.removeItem("umami.disabled"); }
+    }catch(e){}
+  }
+  if(/[?&]moi(=(1|on|oui))?(&|$)/i.test(q)) marque(true);
+  else if(/[?&](public|moi=(0|off|non))(&|$)/i.test(q)) marque(false);
+  if(/[?&](moi|public)(=[^&]*)?(&|$)/i.test(q)){
+    /* on nettoie l'adresse pour ne pas polluer le rapport des pages */
+    try{ history.replaceState(null, "", location.pathname + location.hash); }catch(e){}
+  }
+  try{ AN_OFF = localStorage.getItem(CLE) === "1" || localStorage.getItem("umami.disabled") === "1"; }
+  catch(e){ AN_OFF = false; }
+})();
+
+/* Dernier filtre avant tout envoi. Deux roles : couper net si ce navigateur
+   est le mien, et n'accepter comme page que mes rubriques, pour qu'aucune
+   page parasite ne vienne doubler le comptage. */
+window.anAvantEnvoi = function(type, charge){
+  if(AN_OFF || !charge) return false;
+  if(!charge.name){
+    var ids = (window.TABS || []).map(function(x){ return x.id; });
+    var page = String(charge.url || "").split("?")[0].split("#")[0].replace(/^\//, "");
+    if(!ids.length || ids.indexOf(page) < 0) return false;
+  }
+  return charge;
+};
+
+(function(){
+  if(AN_OFF) return;
+  if(!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(AN_ID)) return;
+  if(location.protocol === "file:" || /^(localhost|127\.|\[?::1)/.test(location.hostname)) return;
+  var s = document.createElement("script");
+  s.defer = true;
+  s.src = "https://cloud.umami.is/script.js";
+  s.setAttribute("data-website-id", AN_ID);
+  s.setAttribute("data-auto-pageview", "false");
+  s.setAttribute("data-domains", "axellepon.github.io");
+  s.setAttribute("data-before-send", "anAvantEnvoi");
+  (document.head || document.documentElement).appendChild(s);
+})();
+
+function anPret(){ return !AN_OFF && typeof window.umami !== "undefined" && window.umami && typeof window.umami.track === "function"; }
+function anFile(fn){
+  if(AN_OFF) return;                      /* mes visites : rien n'est garde, rien n'est envoye */
+  if(anPret()){ try{ fn(); }catch(e){} }
+  else if(ANQ.length < 60){ ANQ.push(fn); }
+}
+(function(){
+  if(AN_OFF) return;
+  var n = 0;
+  var tm = setInterval(function(){
+    if(anPret()){
+      clearInterval(tm);
+      while(ANQ.length){ var f = ANQ.shift(); try{ f(); }catch(e){} }
+    } else if(++n > 40){ clearInterval(tm); ANQ.length = 0; }
+  }, 300);
+})();
+
+/* evenement nomme, avec proprietes facultatives */
+function track(nom, data){
+  anFile(function(){ data ? window.umami.track(nom, data) : window.umami.track(nom); });
+}
+
+/* page virtuelle : chaque rubrique compte comme une page a part entiere */
+function trackPage(id){
+  var tab = TABS.filter(function(x){ return x.id === id; })[0];
+  var titre = tab ? t(tab.label).replace(/&amp;/g, "&") : id;
+  anFile(function(){
+    window.umami.track(function(props){
+      var o = {}; for(var k in props) o[k] = props[k];
+      /* la premiere page porte les parametres de campagne, les suivantes non,
+         pour que le rapport des pages reste lisible */
+      o.url = "/" + id + (AN.premier ? (location.search || "") : "");
+      AN.premier = false;
+      o.title = "Axelle Poncet · " + titre;
+      return o;
+    });
+  });
+}
+
+/* temps passe sur la rubrique que l'on quitte */
+function anTemps(fin){
+  if(!AN.rubrique) return;
+  var sec = Math.round((Date.now() - AN.depuis) / 1000);
+  if(sec >= 3 && sec <= 3600) track("temps-rubrique", { rubrique: AN.rubrique, secondes: sec, sortie: !!fin });
+  AN.depuis = Date.now();
+}
+
+/* profondeur de lecture, une fois par rubrique et par palier */
+function anScroll(){
+  var h = document.documentElement;
+  var total = (h.scrollHeight - window.innerHeight);
+  if(total < 400 || !AN.rubrique) return;
+  var pct = Math.round(((window.scrollY || 0) / total) * 100);
+  var cle = AN.rubrique;
+  AN.scroll[cle] = AN.scroll[cle] || {};
+  [50, 90].forEach(function(seuil){
+    if(pct >= seuil && !AN.scroll[cle][seuil]){
+      AN.scroll[cle][seuil] = 1;
+      track("lecture", { rubrique: cle, palier: seuil });
+    }
+  });
+}
+
+/* liens : contact, documents, sorties externes */
+function anLien(e){
+  var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+  if(!a) return;
+  var h = a.getAttribute("href") || "";
+  if(a.classList.contains("btn-cv")){ track("cv-telecharge", { langue: L ? "en" : "fr" }); return; }
+  if(/^mailto:/i.test(h)){ track("contact", { canal: "email" }); return; }
+  if(/^tel:/i.test(h)){ track("contact", { canal: "telephone" }); return; }
+  if(/\.pdf($|\?)/i.test(h)){
+    var nom = h.split("/").pop().replace(/\.pdf.*$/i, "");
+    track(a.hasAttribute("download") ? "document-telecharge" : "document-ouvert-pdf", { document: nom });
+    return;
+  }
+  if(/^https?:/i.test(h)){
+    var dom = "";
+    try{ dom = new URL(h).hostname.replace(/^www\./, ""); }catch(err){ dom = "inconnu"; }
+    if(dom && dom !== location.hostname){
+      var canal = /linkedin/.test(dom) ? "linkedin" : (/github/.test(dom) ? "github" : dom);
+      track("lien-externe", { destination: canal });
+    }
+  }
+}
+
+/* paliers d'engagement, pour distinguer un coup d'oeil d'une vraie lecture */
+function anEngagement(){
+  [[30, "session-30s"], [120, "session-2min"], [300, "session-5min"]].forEach(function(x){
+    setTimeout(function(){
+      if(!document.hidden || AN.chrono[x[1]]) { if(!AN.chrono[x[1]]){ AN.chrono[x[1]] = 1; track(x[1]); } }
+    }, x[0] * 1000);
+  });
+}
+
+window.addEventListener("scroll", function(){
+  clearTimeout(AN.st); AN.st = setTimeout(anScroll, 220);
+}, { passive: true });
+document.addEventListener("click", anLien, true);
+document.addEventListener("visibilitychange", function(){ if(document.hidden) anTemps(true); else AN.depuis = Date.now(); });
+window.addEventListener("pagehide", function(){ anTemps(true); });
+window.addEventListener("load", anEngagement);
 
 var TABS = [
   {id:"home",   label:["Accueil","Home"],              icon:"M3 11l9-8 9 8v9a2 2 0 01-2 2h-4v-7H9v7H5a2 2 0 01-2-2z"},
@@ -1798,10 +1972,17 @@ function docPage(id,pas){
   var n=DOCP[id]+pas;
   if(n<0 || n>doc.pg-1) return;
   DOCP[id]=n; docMaj(id);
+  var cle=doc.src.split("/").pop().replace(".pdf","");
+  if((AN.docmax[cle]||0) < n+1){
+    AN.docmax[cle]=n+1;
+    track("document-page", { document: cle, page: n+1, sur: doc.pg });
+    if(n+1===doc.pg) track("document-lu-en-entier", { document: cle, pages: doc.pg });
+  }
 }
 function docGo(id,i){
   var d=DOCV[id]; if(!d||!d[i]) return;
   if(docActif(id)===i) return;
+  track("document-choisi", { document: d[i].src.split("/").pop().replace(".pdf","") });
   d.forEach(function(_,k){
     var b=document.getElementById(id+"-t"+k); if(b) b.setAttribute("aria-selected", k===i?"true":"false");
   });
@@ -1989,7 +2170,7 @@ function rWork(){
   });
   return o;
 }
-function goPhare(){ go("work"); setTimeout(function(){ openTheme("accult"); var e=document.getElementById("th-accult"); if(e) window.scrollTo({top:e.getBoundingClientRect().top+window.scrollY-140,behavior:"smooth"}); },120); }
+function goPhare(){ track("realisation-phare"); go("work"); setTimeout(function(){ openTheme("accult"); var e=document.getElementById("th-accult"); if(e) window.scrollTo({top:e.getBoundingClientRect().top+window.scrollY-140,behavior:"smooth"}); },120); }
 function openTheme(id){ var el=document.getElementById("th-"+id); if(el){ el.classList.add("open"); } }
 
 /* ---------- SOMMAIRE DE CARTES + DÉTAIL ---------- */
@@ -2058,8 +2239,8 @@ function rSchool(){
   o+='<p class="lede">'+t(SCHOOL.intro)+'</p>';
   return o+cardIndex(SCHOOL.items,SCHOOL.filters,schoolFilter,"setSchoolFilter","openSchool");
 }
-function setSchoolFilter(id){schoolFilter=id;schoolOpen=null;document.getElementById("p-school").innerHTML=rSchool();reHL();}
-function openSchool(id){schoolOpen=id;document.getElementById("p-school").innerHTML=rSchool();window.scrollTo({top:0,behavior:"smooth"});reHL();}
+function setSchoolFilter(id){track("filtre-academique",{filtre:id});schoolFilter=id;schoolOpen=null;document.getElementById("p-school").innerHTML=rSchool();reHL();}
+function openSchool(id){track("fiche-ouverte",{type:"academique",fiche:id});schoolOpen=id;document.getElementById("p-school").innerHTML=rSchool();window.scrollTo({top:0,behavior:"smooth"});reHL();}
 
 var assoOpen=null;
 function rAsso(){
@@ -2068,12 +2249,13 @@ function rAsso(){
   o+='<p class="lede">'+t(ASSO.intro)+'</p>';
   return o+cardIndex(ASSO.items,null,null,null,"openAsso");
 }
-function openAsso(id){assoOpen=id;document.getElementById("p-asso").innerHTML=rAsso();window.scrollTo({top:0,behavior:"smooth"});reHL();}
+function openAsso(id){track("fiche-ouverte",{type:"associatif",fiche:id});assoOpen=id;document.getElementById("p-asso").innerHTML=rAsso();window.scrollTo({top:0,behavior:"smooth"});reHL();}
 
 /* ---------- PRIX ---------- */
 function foldAward(id){
   var e=document.getElementById("awd-"+id); if(!e) return;
   var ouvert=e.getAttribute("data-open")==="1";
+  if(!ouvert) track("prix-deplie", { prix: id });
   e.setAttribute("data-open", ouvert?"0":"1");
   var b=e.querySelector(".hd"); if(b) b.setAttribute("aria-expanded", ouvert?"false":"true");
   if(ouvert){
@@ -2267,6 +2449,7 @@ function updBack(){
   b.setAttribute("aria-label", t(T.navBack));
 }
 function goBack(){
+  track("retour");
   var prev=NAVSTACK.pop();
   updBack();
   if(!prev){ window.scrollTo({top:0,behavior:"smooth"}); return; }
@@ -2275,6 +2458,7 @@ function goBack(){
 }
 function go(id,anchor,noPush){
   if(!noPush && CUR && (CUR!==id || anchor)) pushNav();
+  if(AN.rubrique!==id){ anTemps(false); AN.rubrique=id; AN.depuis=Date.now(); trackPage(id); }
   CUR=id;
   TABS.forEach(function(x){
     document.getElementById("p-"+x.id).classList.toggle("on", x.id===id);
@@ -2292,7 +2476,15 @@ function go(id,anchor,noPush){
   updBack();
   animateBars();
 }
-function fold(el){ el.classList.toggle("open"); }
+function fold(el){
+  var ouvert=el.classList.contains("open");
+  el.classList.toggle("open");
+  if(!ouvert){
+    var id=el.id||"";
+    if(id.indexOf("th-")===0) track("mission-depliee", { mission: id.slice(3) });
+    else if(id.indexOf("tl-")===0) track("etape-parcours", { etape: id.slice(3) });
+  }
+}
 function animateBars(){
   requestAnimationFrame(function(){
     document.querySelectorAll(".bar i[data-w], .trk i[data-w]").forEach(function(b,i){
@@ -2306,6 +2498,8 @@ function applyStatic(){
   document.querySelectorAll("[data-i18n]").forEach(function(e){ e.innerHTML=t(T[e.getAttribute("data-i18n")]); });
   document.querySelectorAll("[data-i18n-ph]").forEach(function(e){ e.placeholder=t(T[e.getAttribute("data-i18n-ph")]); });
   document.title = L ? "Axelle Poncet · Project management and Data & AI" : "Axelle Poncet · Gestion de projet et Data & IA";
+  var fmes=document.getElementById("foot-mes"), fmoi=document.getElementById("foot-moi");
+  if(fmes && fmoi){ fmes.hidden=AN_OFF; fmoi.hidden=!AN_OFF; }
   var cv=document.querySelector(".btn-cv");
   if(cv){
     cv.setAttribute("href", L ? "assets/CV-Axelle-Poncet-Data-AI-EN.pdf" : "assets/CV-Axelle-Poncet-Data-IA.pdf");
@@ -2314,6 +2508,7 @@ function applyStatic(){
   }
 }
 function setLang(l){
+  if((l==="en"?1:0)!==L) track("langue", { vers: l==="en"?"en":"fr" });
   try{ document.documentElement.setAttribute("lang", l===1?"en":"fr"); }catch(e){}
   L=(l==="en")?1:0;
   document.documentElement.lang=l;
@@ -2331,7 +2526,11 @@ function applyTheme(th){
     : '<path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/>';
   try{ localStorage.setItem("ap-theme-aube",th); }catch(e){}
 }
-function toggleTheme(){ applyTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark"); }
+function toggleTheme(){
+  var v=document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark";
+  track("theme", { vers: v==="dark"?"sombre":"clair" });
+  applyTheme(v);
+}
 
 /* ---------- SURLIGNAGE DANS LA PAGE ---------- */
 function norm(s){ return String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""); }
@@ -2430,6 +2629,14 @@ function hi(txt,q){
 }
 function doSearch(q){
   var r=document.getElementById("results");
+  clearTimeout(AN.rech);
+  if(q && q.trim().length>=3){
+    var terme=q.trim().toLowerCase().slice(0,60);
+    AN.rech=setTimeout(function(){
+      var n=IDX.filter(function(x){return x.n.indexOf(norm(terme))>-1}).length;
+      track("recherche", { terme: terme, resultats: n });
+    }, 1100);
+  }
   if(!q||q.trim().length<2){ showSuggestions(); return; }
   var nq=norm(q.trim()), hits=IDX.filter(function(x){return x.n.indexOf(nq)>-1}), seen={}, out=[];
   hits.forEach(function(h){ var k=h.tab+"|"+h.title; if(!seen[k]){seen[k]=1;out.push(h)} });
@@ -2450,6 +2657,7 @@ function doSearch(q){
 }
 function jump(i){
   var h=LAST[i]; if(!h) return;
+  track("recherche-resultat", { rubrique: h.tab });
   closeRes();
   var term=document.getElementById("q").value;
   if(h.act){
