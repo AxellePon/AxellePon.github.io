@@ -832,7 +832,6 @@ function anLien(e){
   var h = a.getAttribute("href") || "";
   if(a.classList.contains("btn-cv")){ track("cv-telecharge", { langue: L ? "en" : "fr" }); return; }
   if(/^mailto:/i.test(h)){ track("contact", { canal: "email" }); return; }
-  if(/^tel:/i.test(h)){ track("contact", { canal: "telephone" }); return; }
   if(/\.pdf($|\?)/i.test(h)){
     var nom = h.split("/").pop().replace(/\.pdf.*$/i, "");
     track(a.hasAttribute("download") ? "document-telecharge" : "document-ouvert-pdf", { document: nom });
@@ -887,8 +886,6 @@ var ME = {
     "For one year, digital project manager at Groupama within the CRO &amp; Analytics team: running A/B tests across the website, the customer area and the mobile app, analysing user journeys in Adobe Analytics and Contentsquare, and designing the workshop that introduced the whole digital division to generative AI. Trained in project management and applied AI."
   ],
   email:"axelle-poncet@hotmail.com",
-  phone:"",
-  phoneRaw:"",
   linkedin:"https://www.linkedin.com/in/axelle-poncet",
   city:["Paris, France","Paris, France"]
 };
@@ -2313,9 +2310,8 @@ function rReco(){
 }
 function rContact(){
   var o='<div class="eyebrow">'+t(["Contact","Contact"])+'</div><h2 class="sec">'+t(["Parlons-en","Let's talk"])+'</h2>';
-  o+='<p class="lede">'+t(CONTACT.intro)+'</p><div class="grid g4 blk ctrow">';
+  o+='<p class="lede">'+t(CONTACT.intro)+'</p><div class="grid g3 blk ctrow">';
   o+='<a class="ct" href="mailto:'+ME.email+'"><span class="ic">'+ic("M4 5h16v14H4z M4 7l8 6 8-6",19)+'</span><span><span class="l">Email</span><span class="v" style="display:block">'+ME.email+'</span></span></a>';
-  o+='<a class="ct" href="tel:'+ME.phoneRaw+'"><span class="ic">'+ic("M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z",19)+'</span><span><span class="l">'+t(["Téléphone","Phone"])+'</span><span class="v" style="display:block">'+ME.phone+'</span></span></a>';
   o+='<a class="ct" href="'+ME.linkedin+'" target="_blank" rel="noopener"><span class="ic">'+liIcon(19)+'</span><span><span class="l">LinkedIn</span><span class="v" style="display:block">linkedin.com/in/axelle-poncet</span></span></a>';
   o+='<button class="ct" onclick="vcard()"><span class="ic">'+ic("M16 21v-2a4 4 0 00-8 0v2 M12 11a4 4 0 100-8 4 4 0 000 8 M20 8v6 M23 11h-6",19)+'</span><span><span class="l">'+t(["Fiche contact","Contact card"])+'</span><span class="v" style="display:block">'+t(["Ajouter à mes contacts (.vcf)","Add to my contacts (.vcf)"])+'</span></span></button></div>';
   o+='<div class="grid g2" style="align-items:start;gap:24px"><div class="card pad"><div class="eyebrow" style="margin-bottom:16px">'+t(CONTACT.lookTitle)+'</div>';
@@ -2333,7 +2329,7 @@ function rContact(){
 }
 function vcard(){
   var v="BEGIN:VCARD\r\nVERSION:3.0\r\nN:Poncet;Axelle;;;\r\nFN:Axelle Poncet\r\nTITLE:"+(L?"Data & AI Project Manager":"Cheffe de projet Data & IA")+
-  "\r\nEMAIL;TYPE=INTERNET:"+ME.email+"\r\nTEL;TYPE=CELL:"+ME.phoneRaw+"\r\nADR;TYPE=HOME:;;;Paris;;;France\r\nURL:"+ME.linkedin+"\r\nEND:VCARD\r\n";
+  "\r\nEMAIL;TYPE=INTERNET:"+ME.email+"\r\nADR;TYPE=HOME:;;;Paris;;;France\r\nURL:"+ME.linkedin+"\r\nEND:VCARD\r\n";
   var a=document.createElement("a");
   a.href=URL.createObjectURL(new Blob([v],{type:"text/vcard;charset=utf-8"}));
   a.download="Axelle-Poncet.vcf"; document.body.appendChild(a); a.click(); a.remove();
