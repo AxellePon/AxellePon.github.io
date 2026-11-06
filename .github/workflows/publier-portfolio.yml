@@ -1,4 +1,4 @@
-# Publie le fichier « Portfolio Axelle Poncet (sans numéro téléphone) ... .html »
+# Publie le fichier « Portfolio Axelle Poncet.html »
 # sur https://axellepon.github.io/ sans index.html dans le dépôt.
 name: Publier le portfolio
 
@@ -27,19 +27,18 @@ jobs:
 
       - name: Préparer le site
         run: |
-          shopt -s nullglob
-          fichiers=("Portfolio Axelle Poncet (sans "*.html)
-          if [ "${#fichiers[@]}" -ne 1 ]; then
-            echo "Il faut exactement un fichier « Portfolio Axelle Poncet (sans ... ».html"
+          fichier="Portfolio Axelle Poncet.html"
+          if [ ! -f "$fichier" ]; then
+            echo "Fichier introuvable : $fichier"
             exit 1
           fi
           # Refuse de publier une version qui contient le téléphone.
-          if grep -q -E 'phoneRaw|TEL;TYPE' "${fichiers[0]}"; then
+          if grep -q -E 'phoneRaw|TEL;TYPE' "$fichier"; then
             echo "Ce fichier contient le téléphone : publication annulée."
             exit 1
           fi
           mkdir _site
-          cp "${fichiers[0]}" _site/index.html
+          cp "$fichier" _site/index.html
           cp -r assets app-ads.txt _site/
 
       - uses: actions/upload-pages-artifact@v3
