@@ -1,0 +1,50 @@
+# Publie le fichier « Portfolio Axelle Poncet (sans numéro téléphone) ... .html »
+# sur https://axellepon.github.io/ sans index.html dans le dépôt.
+name: Publier le portfolio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploiement.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Préparer le site
+        run: |
+          shopt -s nullglob
+          fichiers=("Portfolio Axelle Poncet (sans "*.html)
+          if [ "${#fichiers[@]}" -ne 1 ]; then
+            echo "Il faut exactement un fichier « Portfolio Axelle Poncet (sans ... ».html"
+            exit 1
+          fi
+          # Refuse de publier une version qui contient le téléphone.
+          if grep -q -E 'phoneRaw|TEL;TYPE' "${fichiers[0]}"; then
+            echo "Ce fichier contient le téléphone : publication annulée."
+            exit 1
+          fi
+          mkdir _site
+          cp "${fichiers[0]}" _site/index.html
+          cp -r assets app-ads.txt _site/
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deploiement
+        uses: actions/deploy-pages@v4
